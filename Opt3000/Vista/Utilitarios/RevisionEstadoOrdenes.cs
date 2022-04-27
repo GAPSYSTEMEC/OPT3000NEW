@@ -126,7 +126,7 @@ namespace Opt3000.Vista.Utilitarios
             // chkGenerado
             // 
             this.chkGenerado.AutoSize = true;
-            this.chkGenerado.BackColor = System.Drawing.Color.Transparent;
+            this.chkGenerado.BackColor = System.Drawing.Color.LightGray;
             this.chkGenerado.Location = new System.Drawing.Point(167, 12);
             this.chkGenerado.Name = "chkGenerado";
             this.chkGenerado.Size = new System.Drawing.Size(73, 17);
@@ -137,7 +137,7 @@ namespace Opt3000.Vista.Utilitarios
             // chkEnviado
             // 
             this.chkEnviado.AutoSize = true;
-            this.chkEnviado.BackColor = System.Drawing.Color.Transparent;
+            this.chkEnviado.BackColor = System.Drawing.Color.LightGray;
             this.chkEnviado.Location = new System.Drawing.Point(279, 12);
             this.chkEnviado.Name = "chkEnviado";
             this.chkEnviado.Size = new System.Drawing.Size(65, 17);
@@ -148,7 +148,7 @@ namespace Opt3000.Vista.Utilitarios
             // chkRecibido
             // 
             this.chkRecibido.AutoSize = true;
-            this.chkRecibido.BackColor = System.Drawing.Color.Transparent;
+            this.chkRecibido.BackColor = System.Drawing.Color.LightGray;
             this.chkRecibido.Location = new System.Drawing.Point(373, 13);
             this.chkRecibido.Name = "chkRecibido";
             this.chkRecibido.Size = new System.Drawing.Size(68, 17);
@@ -159,8 +159,8 @@ namespace Opt3000.Vista.Utilitarios
             // chkEntregado
             // 
             this.chkEntregado.AutoSize = true;
-            this.chkEntregado.BackColor = System.Drawing.Color.Transparent;
-            this.chkEntregado.Location = new System.Drawing.Point(478, 15);
+            this.chkEntregado.BackColor = System.Drawing.Color.LightGray;
+            this.chkEntregado.Location = new System.Drawing.Point(466, 12);
             this.chkEntregado.Name = "chkEntregado";
             this.chkEntregado.Size = new System.Drawing.Size(75, 17);
             this.chkEntregado.TabIndex = 80;
@@ -170,7 +170,7 @@ namespace Opt3000.Vista.Utilitarios
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(14, 14);
             this.label2.Name = "label2";
@@ -218,6 +218,7 @@ namespace Opt3000.Vista.Utilitarios
             {
                 NegConsultas.actualizaOrdenes(chkGenerado.Checked,chkEnviado.Checked,chkRecibido.Checked,chkEntregado.Checked,Convert.ToUInt16(txtcodigo.Text));
                 MessageBox.Show("Datos Almacenados Correctamente.", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
                 CargaOrdenes();
             }
             catch (Exception)
@@ -230,22 +231,38 @@ namespace Opt3000.Vista.Utilitarios
         {
             this.Close();
         }
+        public void limpiar()
+        {
+            chkGenerado.Checked = false;
+            chkEnviado.Checked = false;
+            chkRecibido.Checked = false;
+            chkEntregado.Checked = false;
+            txtcodigo.Text = "";
+        }
 
         private void dgv_Detalle1_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (dgv_Detalle1.SelectedRows.Count==1)
             {
-                chkGenerado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[0].Value);
-                chkEnviado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[1].Value);
-                chkRecibido.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[2].Value);
-                chkEntregado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[3].Value);
-                txtcodigo.Text = Convert.ToString(this.dgv_Detalle1.SelectedRows[0].Cells[4].Value);
+                try
+                {
+                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[0].Value;
+                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[1].Value;
+                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[2].Value;
+                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[3].Value;
+                    //txtcodigo.Text = (string)dgv_Detalle1.Rows[e.RowIndex].Cells[4].Value;
+                    chkGenerado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[0].Value);
+                    chkEnviado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[1].Value);
+                    chkRecibido.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[2].Value);
+                    chkEntregado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[3].Value);
+                    txtcodigo.Text = Convert.ToString(this.dgv_Detalle1.SelectedRows[0].Cells[4].Value);
 
-            }
-            catch (Exception)
-            {
+                }
+                catch (Exception)
+                {
 
-                throw;
+                    throw;
+                }
             }
         }
     }

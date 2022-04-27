@@ -24,6 +24,7 @@ namespace Opt3000.Vista.Utilitarios
         PRODUCTO producto = new PRODUCTO();
         public string identificacion = "";
         bool mensaje = true;
+        string _cedula = "";
         public Orden_Normal(Int64 _ateCodigo = 0, string _identificacion = "", bool _mensaje = false)
         {
             InitializeComponent();

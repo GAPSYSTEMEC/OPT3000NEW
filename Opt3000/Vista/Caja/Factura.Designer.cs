@@ -1267,6 +1267,7 @@ namespace Opt3000.Vista.Caja
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Factura";
             this.Text = "Factura";
+            this.Load += new System.EventHandler(this.Factura_Load);
             this.p_superior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();

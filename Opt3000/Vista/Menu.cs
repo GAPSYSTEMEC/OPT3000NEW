@@ -249,7 +249,7 @@ namespace Opt3000.Vista
         {
             btnCaja1.BackColor = oColor1;
             btnCajaImg.BackColor = oColor1;
-            AbrirFormulario<Caja.Factura>();
+            AbrirFormulario < Caja.Factura>();
         }
 
         public void AccederLentes()

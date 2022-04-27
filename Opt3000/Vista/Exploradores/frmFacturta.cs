@@ -1,20 +1,30 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Grid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraPrinting;
 using Opt3000.Datos;
+using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraPrinting;
+using System.IO;
+using Opt3000.Vista.Utilitarios;
 
 namespace Opt3000.Vista.Exploradores
 {
     public partial class frmFacturta : Form
     {
+        public string numliq;
+        public bool abrir = false;
+        string reimprimirOrden;
+        bool modelo = true;
+        string _cedula = "";
+        string _atencion = "";
         public frmFacturta()
         {
             InitializeComponent();
@@ -160,6 +170,37 @@ namespace Opt3000.Vista.Exploradores
             gridView1.Columns[4].OptionsColumn.AllowEdit = false;
             gridView1.Columns[5].OptionsColumn.AllowEdit = false;
             gridView1.Columns[6].OptionsColumn.AllowEdit = false;
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                GridView view = sender as GridView;
+                object recordObject = view.GetRow(view.FocusedRowHandle);
+                _cedula = view.GetRowCellValue(view.FocusedRowHandle, "Identificacion").ToString().Trim();
+                reimprimirOrden = view.GetRowCellValue(view.FocusedRowHandle, "Paciente").ToString().Trim();
+                _atencion = view.GetRowCellValue(view.FocusedRowHandle, "ReciboCaja").ToString().Trim();
+
+                DialogResult dialogResult = MessageBox.Show("Se abrira las cuentas del paciente "+reimprimirOrden+" "+_cedula+
+                    " ¿Desea Continuar?", "Cuentas", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //OrdenVisionLejana frm = new OrdenVisionLejana(Convert.ToInt64(numliq), reimprimirOrden);
+                    //frm.ShowDialog();
+                    Caja.Factura xr = new Caja.Factura();
+                    xr.cargar = modelo;
+                    xr.cedula = _cedula;
+                    xr.atencion = _atencion;
+                    xr.ShowDialog();
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
     }
 }

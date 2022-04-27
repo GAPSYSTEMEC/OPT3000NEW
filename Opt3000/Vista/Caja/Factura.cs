@@ -24,6 +24,9 @@ namespace Opt3000.Vista.Caja
         DataTable datForamaPago = new DataTable();
         private decimal valorAnticipo = 0;
         bool gridFPago = false;
+        public bool cargar = false;
+        public string cedula ="";
+        public string atencion = "";
         public Factura()
         {
             InitializeComponent();
@@ -39,9 +42,55 @@ namespace Opt3000.Vista.Caja
             lblIva.Text = NegConsultas.getInstance().RecuperaParametro("iva");
             string[] iva = lblIva.Text.Split('.');
             lblIva.Text = iva[1] + "%:";
-
         }
+        public void desdeExplorador()
+        {
+            if (cedula != "")
+                objPaciente = NegConsultas.getInstance().CargaPaciente(cedula);
+            else
+                return;
+            if (objPaciente != null)
+            {
+                lblNombrePaciente.Text = objPaciente.Apellidos + " " + objPaciente.Nombres;
+                lblIdentificacion.Text = objPaciente.Identificacion;
+                lblOcupacion.Text = objPaciente.Ocupacion;
+                lblHc.Text = objPaciente.ID_PACIENTE.ToString();
+                lblEdad.Text = FuncionesBasicas.getInstance().CalculaEdad(objPaciente.F_Nacimiento).ToString();
+                CONVENIO objConvenio = new CONVENIO();
+                objConvenio = NegConsultas.getInstance().ConsultaConvenio(objPaciente.ID_TIPO);
+                lblTipo.Text = objConvenio.Detalle;
 
+                    if (atencion != "")
+                    {
+                        objAtencion = NegConsultas.getInstance().CargaAtencion(Convert.ToInt64(atencion));
+                        p_PacienteDatos.Visible = true;
+                        p_Atencion.Enabled = true;
+                        btnBusca.Visible = false;
+                        btnFacturar.Visible = true;
+                        btnAgrupacion.Visible = true;
+                    }
+                    else
+                        return;
+
+                    if (objAtencion != null)
+                    {
+                        lblAtencion.Text = objAtencion.ID_ATENCION.ToString();
+                        p_Atencion.Enabled = true;
+                        btnFacturar.Visible = false;
+                        btnAgrupacion.Visible = false;
+                        btnNuevo.Visible = false;
+                    }
+                    txtNombre.Text = objPaciente.Nombres;
+                    txtApellido.Text = objPaciente.Apellidos;
+                    txtDireccion.Text = objPaciente.Direccion;
+                    txtTelefono.Text = objPaciente.Celular;
+                    txtIdentificacion.Text = objPaciente.Identificacion;
+                    txtEmail.Text = objPaciente.Email;
+                    CargaCuentaPaciente();
+                    CargaAnticipos();
+                    SumaSaldos();
+            }
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             if (FuncionesBasicas.getInstance().CerrarFormulario("LA FACTURA"))
@@ -1142,6 +1191,15 @@ namespace Opt3000.Vista.Caja
             if (frm.dividida)
             {
                 this.Close();
+            }
+        }
+
+        private void Factura_Load(object sender, EventArgs e)
+        {
+
+            if (cargar)
+            {
+                desdeExplorador();
             }
         }
     }
