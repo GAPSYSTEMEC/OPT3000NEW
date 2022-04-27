@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b87599a272214c66b1d36dbf94d78e94" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="Opt3000Model.ADAPTACION_LENTES" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.AGENDA" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.ATENCION" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CAJA" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CIE_10" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CLIENTE" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CONSULTORIO" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CONVENIO" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.CUENTA_PACIENTE" Width="1.5" PointX="10.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.DETALLE" Width="1.5" PointX="12.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.DIAS_SEMANA" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.HONRARIOATENCION" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.LENTE_DEFINITIVO" Width="1.5" PointX="7.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.LENTE_PRUEBA" Width="1.5" PointX="7.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.MEDICO" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.NIVEL_USUARIO" Width="1.5" PointX="1.5" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.OFTALMOLOGIA" Width="1.5" PointX="7.5" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.PACIENTE" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.PRODUCTO" Width="1.5" PointX="10.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.RETINOSCOPIA_DILATADA" Width="1.5" PointX="7.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.RX_EN_USO" Width="1.5" PointX="7.5" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.RX_FINAL" Width="1.5" PointX="7.5" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.SUCURSAL" Width="1.5" PointX="1.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.TIPO_LENTECONTACTO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Opt3000Model.USUARIO" Width="1.5" PointX="1.5" PointY="25.125" IsExpanded="true" />
+        <AssociationConnector Association="Opt3000Model.FK_ADAPTACION_LENTES_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_AGENDA_HONRARIOATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_AGENDA_PACIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_ATENCION_PACIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_CUENTA_PACIENTE_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_LENTE_DEFINITIVO_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_LENTE_PRUEBA_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_OFTALMOLOGIA_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_RETINOSCOPIA_DILATADA_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_RX_EN_USO_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_RX_FINAL_ATENCION" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_CAJA_SUCURSAL" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_CUENTA_PACIENTE_CLIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_CONSULTORIO_SUCURSAL" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_HONRARIOATENCION_CONSULTORIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_PACIENTE_CONVENIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_DETALLE_CUENTA_PACIENTE" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_DETALLE_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_HONRARIOATENCION_DIAS_SEMANA" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_HONRARIOATENCION_MEDICO" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_MEDICO_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="Opt3000Model.FK_USUARIO_NIVEL_USUARIO" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Opt3000Model.PARAMETRO" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ANTICIPOS" Width="1.5" PointX="5.25" PointY="15.875" />
+        <AssociationConnector Association="Opt3000Model.FK_ANTICIPOS_PACIENTE" />
+        <EntityTypeShape EntityType="Opt3000Model.FACTURA" Width="1.5" PointX="10.5" PointY="17" />
+        <EntityTypeShape EntityType="Opt3000Model.FACTURA_PAGO" Width="1.5" PointX="12.75" PointY="17.25" />
+        <EntityTypeShape EntityType="Opt3000Model.FORMA_PAGO" Width="1.5" PointX="10.5" PointY="13.25" />
+        <AssociationConnector Association="Opt3000Model.FK_FACTURA_ATENCION" />
+        <AssociationConnector Association="Opt3000Model.FK_FACTURA_CAJA" />
+        <AssociationConnector Association="Opt3000Model.FK_FACTURA_PAGO_FACTURA1" />
+        <AssociationConnector Association="Opt3000Model.FK_FACTURA_PAGO_FORMA_PAGO" />
+        <EntityTypeShape EntityType="Opt3000Model.TIEMPODIFERIDO" Width="1.5" PointX="0.75" PointY="3.875" />
+        <AssociationConnector Association="Opt3000Model.FK_FACTURA_PAGO_TIEMPODIFERIDO" />
+        <EntityTypeShape EntityType="Opt3000Model.EMPRESA" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ESPECIALIDAD" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Opt3000Model.DETALLE_ORDEN" Width="1.5" PointX="9.625" PointY="1.125" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_PEDIDO" Width="1.5" PointX="7.375" PointY="1" />
+        <AssociationConnector Association="Opt3000Model.FK_DETALLE_ORDEN_ORDEN_PEDIDO" />
+        <EntityTypeShape EntityType="Opt3000Model.CONTADOR_PRODUCTOS" Width="1.5" PointX="10.375" PointY="5.75" />
+        <EntityTypeShape EntityType="Opt3000Model.TIPO_PRODUCTO" Width="1.5" PointX="10.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_LENTES_CONTACTO" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_LENTES_PROGESIVOS" Width="1.5" PointX="13.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Opt3000Model.Orden1" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Opt3000Model.BANCOS" Width="1.5" PointX="7.375" PointY="14.75" />
+        <EntityTypeShape EntityType="Opt3000Model.LENTES_CONTACTO" Width="1.5" PointX="7.5" PointY="26.125" />
+        <AssociationConnector Association="Opt3000Model.FK_LENTES_CONTACTO_ATENCION" />
+        <EntityTypeShape EntityType="Opt3000Model.GARANTIA" Width="1.5" PointX="15.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Opt3000Model.vAtenciones" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_VISION_CERCA" Width="1.5" PointX="17.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_LEJANA" Width="1.5" PointX="17.375" PointY="12.75" />
+        <EntityTypeShape EntityType="Opt3000Model.ORDEN_LENTESBLANDOS" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Opt3000Model.visFactura" Width="1.5" PointX="19.375" PointY="6.75" />
+        <EntityTypeShape EntityType="Opt3000Model.vAtenciones1" Width="1.5" PointX="19.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

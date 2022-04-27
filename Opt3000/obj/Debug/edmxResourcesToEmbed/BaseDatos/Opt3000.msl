@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Opt3000ModelStoreContainer" CdmEntityContainer="Opt3000Entities">
+    <EntitySetMapping Name="ADAPTACION_LENTES">
+      <EntityTypeMapping TypeName="Opt3000Model.ADAPTACION_LENTES">
+        <MappingFragment StoreEntitySet="ADAPTACION_LENTES">
+          <ScalarProperty Name="ID_ADAPTACIONLENTES" ColumnName="ID_ADAPTACIONLENTES" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="PupilarOD" ColumnName="PupilarOD" />
+          <ScalarProperty Name="PupilarOI" ColumnName="PupilarOI" />
+          <ScalarProperty Name="CornealOD" ColumnName="CornealOD" />
+          <ScalarProperty Name="CornealOI" ColumnName="CornealOI" />
+          <ScalarProperty Name="PaipebralOD" ColumnName="PaipebralOD" />
+          <ScalarProperty Name="PaipebralOI" ColumnName="PaipebralOI" />
+          <ScalarProperty Name="But" ColumnName="But" />
+          <ScalarProperty Name="Shirmer" ColumnName="Shirmer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AGENDA">
+      <EntityTypeMapping TypeName="Opt3000Model.AGENDA">
+        <MappingFragment StoreEntitySet="AGENDA">
+          <ScalarProperty Name="ID_AGENDA" ColumnName="ID_AGENDA" />
+          <ScalarProperty Name="ID_DIASATENCION" ColumnName="ID_DIASATENCION" />
+          <ScalarProperty Name="FachaCita" ColumnName="FachaCita" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="Minutos" ColumnName="Minutos" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Cie10" ColumnName="Cie10" />
+          <ScalarProperty Name="CONSULTORIO" ColumnName="CONSULTORIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ATENCION">
+      <EntityTypeMapping TypeName="Opt3000Model.ATENCION">
+        <MappingFragment StoreEntitySet="ATENCION">
+          <ScalarProperty Name="CUENTADIVIDIA" ColumnName="CUENTADIVIDIA" />
+          <ScalarProperty Name="FACTURAR" ColumnName="FACTURAR" />
+          <ScalarProperty Name="Mpc" ColumnName="Mpc" />
+          <ScalarProperty Name="OPTOMETRA" ColumnName="OPTOMETRA" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="Tipo_Consulta" ColumnName="Tipo_Consulta" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Tipo_Seguro" ColumnName="Tipo_Seguro" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="DiagnosticoOD" ColumnName="DiagnosticoOD" />
+          <ScalarProperty Name="DiagnosticoOI" ColumnName="DiagnosticoOI" />
+          <ScalarProperty Name="Recomendaciones" ColumnName="Recomendaciones" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Ate_Facturada" ColumnName="Ate_Facturada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAJA">
+      <EntityTypeMapping TypeName="Opt3000Model.CAJA">
+        <MappingFragment StoreEntitySet="CAJA">
+          <ScalarProperty Name="ID_CAJA" ColumnName="ID_CAJA" />
+          <ScalarProperty Name="ID_SUCURSAL" ColumnName="ID_SUCURSAL" />
+          <ScalarProperty Name="PtoEmision" ColumnName="PtoEmision" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="Secuencial" ColumnName="Secuencial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CIE_10">
+      <EntityTypeMapping TypeName="Opt3000Model.CIE_10">
+        <MappingFragment StoreEntitySet="CIE_10">
+          <ScalarProperty Name="IDCIE10" ColumnName="IDCIE10" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cie_Padre" ColumnName="Cie_Padre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="Opt3000Model.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSULTORIO">
+      <EntityTypeMapping TypeName="Opt3000Model.CONSULTORIO">
+        <MappingFragment StoreEntitySet="CONSULTORIO">
+          <ScalarProperty Name="ID_CONSULTORIO" ColumnName="ID_CONSULTORIO" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_SUCURSAL" ColumnName="ID_SUCURSAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONVENIO">
+      <EntityTypeMapping TypeName="Opt3000Model.CONVENIO">
+        <MappingFragment StoreEntitySet="CONVENIO">
+          <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUENTA_PACIENTE">
+      <EntityTypeMapping TypeName="Opt3000Model.CUENTA_PACIENTE">
+        <MappingFragment StoreEntitySet="CUENTA_PACIENTE">
+          <ScalarProperty Name="AGRUPACION" ColumnName="AGRUPACION" />
+          <ScalarProperty Name="ID_CUENTA_PACIENTE" ColumnName="ID_CUENTA_PACIENTE" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE">
+      <EntityTypeMapping TypeName="Opt3000Model.DETALLE">
+        <MappingFragment StoreEntitySet="DETALLE">
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Sub_total" ColumnName="Sub_total" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
+          <ScalarProperty Name="ID_CUENTA_PACIENTE" ColumnName="ID_CUENTA_PACIENTE" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Iva" ColumnName="Iva" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIAS_SEMANA">
+      <EntityTypeMapping TypeName="Opt3000Model.DIAS_SEMANA">
+        <MappingFragment StoreEntitySet="DIAS_SEMANA">
+          <ScalarProperty Name="ID_DIAS" ColumnName="ID_DIAS" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HONRARIOATENCION">
+      <EntityTypeMapping TypeName="Opt3000Model.HONRARIOATENCION">
+        <MappingFragment StoreEntitySet="HONRARIOATENCION">
+          <ScalarProperty Name="ID_DIASATENCION" ColumnName="ID_DIASATENCION" />
+          <ScalarProperty Name="ID_MEDICO" ColumnName="ID_MEDICO" />
+          <ScalarProperty Name="ID_DIA" ColumnName="ID_DIA" />
+          <ScalarProperty Name="ID_CONSULTORIO" ColumnName="ID_CONSULTORIO" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+          <ScalarProperty Name="HoraAlmuerzo" ColumnName="HoraAlmuerzo" />
+          <ScalarProperty Name="Intervalo" ColumnName="Intervalo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LENTE_DEFINITIVO">
+      <EntityTypeMapping TypeName="Opt3000Model.LENTE_DEFINITIVO">
+        <MappingFragment StoreEntitySet="LENTE_DEFINITIVO">
+          <ScalarProperty Name="ID_LENTEDEFINITIVO" ColumnName="ID_LENTEDEFINITIVO" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="BaseOD" ColumnName="BaseOD" />
+          <ScalarProperty Name="BaseOI" ColumnName="BaseOI" />
+          <ScalarProperty Name="PoderOD" ColumnName="PoderOD" />
+          <ScalarProperty Name="PoderOI" ColumnName="PoderOI" />
+          <ScalarProperty Name="DiametroOD" ColumnName="DiametroOD" />
+          <ScalarProperty Name="DiametroOI" ColumnName="DiametroOI" />
+          <ScalarProperty Name="MaterialOD" ColumnName="MaterialOD" />
+          <ScalarProperty Name="MaterialOI" ColumnName="MaterialOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LENTE_PRUEBA">
+      <EntityTypeMapping TypeName="Opt3000Model.LENTE_PRUEBA">
+        <MappingFragment StoreEntitySet="LENTE_PRUEBA">
+          <ScalarProperty Name="ID_LENTEPRUEBA" ColumnName="ID_LENTEPRUEBA" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="BaseOD" ColumnName="BaseOD" />
+          <ScalarProperty Name="BaseOI" ColumnName="BaseOI" />
+          <ScalarProperty Name="PoderOD" ColumnName="PoderOD" />
+          <ScalarProperty Name="PoderOI" ColumnName="PoderOI" />
+          <ScalarProperty Name="MaterialOD" ColumnName="MaterialOD" />
+          <ScalarProperty Name="MaterialOI" ColumnName="MaterialOI" />
+          <ScalarProperty Name="DiametroOD" ColumnName="DiametroOD" />
+          <ScalarProperty Name="DiametroOI" ColumnName="DiametroOI" />
+          <ScalarProperty Name="RefraccionOD" ColumnName="RefraccionOD" />
+          <ScalarProperty Name="RefraccionOI" ColumnName="RefraccionOI" />
+          <ScalarProperty Name="VisualOD" ColumnName="VisualOD" />
+          <ScalarProperty Name="VisualOI" ColumnName="VisualOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICO">
+      <EntityTypeMapping TypeName="Opt3000Model.MEDICO">
+        <MappingFragment StoreEntitySet="MEDICO">
+          <ScalarProperty Name="ID_MEDICO" ColumnName="ID_MEDICO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="TiempoConsulta" ColumnName="TiempoConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIVEL_USUARIO">
+      <EntityTypeMapping TypeName="Opt3000Model.NIVEL_USUARIO">
+        <MappingFragment StoreEntitySet="NIVEL_USUARIO">
+          <ScalarProperty Name="ID_NIVEL" ColumnName="ID_NIVEL" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Descripsion" ColumnName="Descripsion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OFTALMOLOGIA">
+      <EntityTypeMapping TypeName="Opt3000Model.OFTALMOLOGIA">
+        <MappingFragment StoreEntitySet="OFTALMOLOGIA">
+          <ScalarProperty Name="ID_OFTALMICA" ColumnName="ID_OFTALMICA" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="Anamnesis" ColumnName="Anamnesis" />
+          <ScalarProperty Name="Examen_Fisico" ColumnName="Examen_Fisico" />
+          <ScalarProperty Name="Biomicroscopia" ColumnName="Biomicroscopia" />
+          <ScalarProperty Name="ButOD" ColumnName="ButOD" />
+          <ScalarProperty Name="ButOI" ColumnName="ButOI" />
+          <ScalarProperty Name="PioOD" ColumnName="PioOD" />
+          <ScalarProperty Name="PioID" ColumnName="PioID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACIENTE">
+      <EntityTypeMapping TypeName="Opt3000Model.PACIENTE">
+        <MappingFragment StoreEntitySet="PACIENTE">
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Convencional" ColumnName="Convencional" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="F_Nacimiento" ColumnName="F_Nacimiento" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO">
+      <EntityTypeMapping TypeName="Opt3000Model.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="CodProducto" ColumnName="CodProducto" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="PagaIva" ColumnName="PagaIva" />
+          <ScalarProperty Name="Especificaciones" ColumnName="Especificaciones" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RETINOSCOPIA_DILATADA">
+      <EntityTypeMapping TypeName="Opt3000Model.RETINOSCOPIA_DILATADA">
+        <MappingFragment StoreEntitySet="RETINOSCOPIA_DILATADA">
+          <ScalarProperty Name="ID_RETINOSCOPIA" ColumnName="ID_RETINOSCOPIA" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="Esfera" ColumnName="Esfera" />
+          <ScalarProperty Name="Cilindro" ColumnName="Cilindro" />
+          <ScalarProperty Name="Eje" ColumnName="Eje" />
+          <ScalarProperty Name="Avl" ColumnName="Avl" />
+          <ScalarProperty Name="OJO" ColumnName="OJO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RX_EN_USO">
+      <EntityTypeMapping TypeName="Opt3000Model.RX_EN_USO">
+        <MappingFragment StoreEntitySet="RX_EN_USO">
+          <ScalarProperty Name="ID_RXUSO" ColumnName="ID_RXUSO" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="AvsLejosOD" ColumnName="AvsLejosOD" />
+          <ScalarProperty Name="AvsLejosOI" ColumnName="AvsLejosOI" />
+          <ScalarProperty Name="AVcercaOD" ColumnName="AVcercaOD" />
+          <ScalarProperty Name="AVcercaOI" ColumnName="AVcercaOI" />
+          <ScalarProperty Name="RxUsoOD" ColumnName="RxUsoOD" />
+          <ScalarProperty Name="RxUsoOI" ColumnName="RxUsoOI" />
+          <ScalarProperty Name="AddOD" ColumnName="AddOD" />
+          <ScalarProperty Name="AddOI" ColumnName="AddOI" />
+          <ScalarProperty Name="AvcLejosOD" ColumnName="AvcLejosOD" />
+          <ScalarProperty Name="AvcLejosOI" ColumnName="AvcLejosOI" />
+          <ScalarProperty Name="AvcCercaOD" ColumnName="AvcCercaOD" />
+          <ScalarProperty Name="AvcCercaOI" ColumnName="AvcCercaOI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RX_FINAL">
+      <EntityTypeMapping TypeName="Opt3000Model.RX_FINAL">
+        <MappingFragment StoreEntitySet="RX_FINAL">
+          <ScalarProperty Name="AVCC" ColumnName="AVCC" />
+          <ScalarProperty Name="AVSC" ColumnName="AVSC" />
+          <ScalarProperty Name="ID_RXFINAL" ColumnName="ID_RXFINAL" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="Esfera" ColumnName="Esfera" />
+          <ScalarProperty Name="Cilindro" ColumnName="Cilindro" />
+          <ScalarProperty Name="Eje" ColumnName="Eje" />
+          <ScalarProperty Name="A_D_D" ColumnName="A_D_D" />
+          <ScalarProperty Name="AVL" ColumnName="AVL" />
+          <ScalarProperty Name="AVC" ColumnName="AVC" />
+          <ScalarProperty Name="ALT" ColumnName="ALT" />
+          <ScalarProperty Name="DNP_DP" ColumnName="DNP_DP" />
+          <ScalarProperty Name="OJO" ColumnName="OJO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUCURSAL">
+      <EntityTypeMapping TypeName="Opt3000Model.SUCURSAL">
+        <MappingFragment StoreEntitySet="SUCURSAL">
+          <ScalarProperty Name="ID_SUCURSAL" ColumnName="ID_SUCURSAL" />
+          <ScalarProperty Name="FacturaElectronica" ColumnName="FacturaElectronica" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_LENTECONTACTO">
+      <EntityTypeMapping TypeName="Opt3000Model.TIPO_LENTECONTACTO">
+        <MappingFragment StoreEntitySet="TIPO_LENTECONTACTO">
+          <ScalarProperty Name="ID_TIPO" ColumnName="ID_TIPO" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Opt3000Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_NIVEL" ColumnName="ID_NIVEL" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARAMETRO">
+      <EntityTypeMapping TypeName="Opt3000Model.PARAMETRO">
+        <MappingFragment StoreEntitySet="PARAMETRO">
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descripciones" ColumnName="Descripciones" />
+          <ScalarProperty Name="ID_PARAMETRO" ColumnName="ID_PARAMETRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANTICIPOS">
+      <EntityTypeMapping TypeName="Opt3000Model.ANTICIPOS">
+        <MappingFragment StoreEntitySet="ANTICIPOS">
+          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha_Registro" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_PACIENTE" ColumnName="ID_PACIENTE" />
+          <ScalarProperty Name="ID_ANTICIPOS" ColumnName="ID_ANTICIPOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURA">
+      <EntityTypeMapping TypeName="Opt3000Model.FACTURA">
+        <MappingFragment StoreEntitySet="FACTURA">
+          <ScalarProperty Name="Numero_Factura" ColumnName="Numero_Factura" />
+          <ScalarProperty Name="ID_CAJA" ColumnName="ID_CAJA" />
+          <ScalarProperty Name="Fecha_Arqueo" ColumnName="Fecha_Arqueo" />
+          <ScalarProperty Name="Arqueada" ColumnName="Arqueada" />
+          <ScalarProperty Name="Fecha_Emision" ColumnName="Fecha_Emision" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURA_PAGO">
+      <EntityTypeMapping TypeName="Opt3000Model.FACTURA_PAGO">
+        <MappingFragment StoreEntitySet="FACTURA_PAGO">
+          <ScalarProperty Name="Tiempo_Diferido" ColumnName="Tiempo_Diferido" />
+          <ScalarProperty Name="Duenio" ColumnName="Duenio" />
+          <ScalarProperty Name="Autorizacion" ColumnName="Autorizacion" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="ID_FORMAPAGO" ColumnName="ID_FORMAPAGO" />
+          <ScalarProperty Name="ID_FACTURAPAGO" ColumnName="ID_FACTURAPAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMA_PAGO">
+      <EntityTypeMapping TypeName="Opt3000Model.FORMA_PAGO">
+        <MappingFragment StoreEntitySet="FORMA_PAGO">
+          <ScalarProperty Name="Diferido" ColumnName="Diferido" />
+          <ScalarProperty Name="CodigoSri" ColumnName="CodigoSri" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_FORMAPAGO" ColumnName="ID_FORMAPAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIEMPODIFERIDO">
+      <EntityTypeMapping TypeName="Opt3000Model.TIEMPODIFERIDO">
+        <MappingFragment StoreEntitySet="TIEMPODIFERIDO">
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_TIEMPODIFERIDO" ColumnName="ID_TIEMPODIFERIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPRESA">
+      <EntityTypeMapping TypeName="Opt3000Model.EMPRESA">
+        <MappingFragment StoreEntitySet="EMPRESA">
+          <ScalarProperty Name="Lleva_Contabilidad" ColumnName="Lleva_Contabilidad" />
+          <ScalarProperty Name="Contribuyente" ColumnName="Contribuyente" />
+          <ScalarProperty Name="Direccion_Matriz" ColumnName="Direccion_Matriz" />
+          <ScalarProperty Name="Emision" ColumnName="Emision" />
+          <ScalarProperty Name="Ambiente" ColumnName="Ambiente" />
+          <ScalarProperty Name="Ruc" ColumnName="Ruc" />
+          <ScalarProperty Name="Nombre_Comercial" ColumnName="Nombre_Comercial" />
+          <ScalarProperty Name="Razon_Social" ColumnName="Razon_Social" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESPECIALIDAD">
+      <EntityTypeMapping TypeName="Opt3000Model.ESPECIALIDAD">
+        <MappingFragment StoreEntitySet="ESPECIALIDAD">
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_ESPECIALIDAD" ColumnName="ID_ESPECIALIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_ORDEN">
+      <EntityTypeMapping TypeName="Opt3000Model.DETALLE_ORDEN">
+        <MappingFragment StoreEntitySet="DETALLE_ORDEN">
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="Ganacia" ColumnName="Ganacia" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="PagaIva" ColumnName="PagaIva" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodProducto" ColumnName="CodProducto" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_PEDIDO">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_PEDIDO">
+        <MappingFragment StoreEntitySet="ORDEN_PEDIDO">
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="CargaInventario" ColumnName="CargaInventario" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
+          <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+          <ScalarProperty Name="TotalFactura" ColumnName="TotalFactura" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID_ORDEN" ColumnName="ID_ORDEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTADOR_PRODUCTOS">
+      <EntityTypeMapping TypeName="Opt3000Model.CONTADOR_PRODUCTOS">
+        <MappingFragment StoreEntitySet="CONTADOR_PRODUCTOS">
+          <ScalarProperty Name="Contador" ColumnName="Contador" />
+          <ScalarProperty Name="ID_TIPOPRODUCTO" ColumnName="ID_TIPOPRODUCTO" />
+          <ScalarProperty Name="ID_SECUENCIACODIGO" ColumnName="ID_SECUENCIACODIGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_PRODUCTO">
+      <EntityTypeMapping TypeName="Opt3000Model.TIPO_PRODUCTO">
+        <MappingFragment StoreEntitySet="TIPO_PRODUCTO">
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="ID_TIPOPRODUCTO" ColumnName="ID_TIPOPRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_LENTES_CONTACTO">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_LENTES_CONTACTO">
+        <MappingFragment StoreEntitySet="ORDEN_LENTES_CONTACTO">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="TipoIz" ColumnName="TipoIz" />
+          <ScalarProperty Name="TipoDer" ColumnName="TipoDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN3" ColumnName="ID_ORDEN3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_LENTES_PROGESIVOS">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_LENTES_PROGESIVOS">
+        <MappingFragment StoreEntitySet="ORDEN_LENTES_PROGESIVOS">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Bisel" ColumnName="Bisel" />
+          <ScalarProperty Name="Luna" ColumnName="Luna" />
+          <ScalarProperty Name="Tinturado" ColumnName="Tinturado" />
+          <ScalarProperty Name="Filtros" ColumnName="Filtros" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CodArmazon" ColumnName="CodArmazon" />
+          <ScalarProperty Name="Puente" ColumnName="Puente" />
+          <ScalarProperty Name="Verical" ColumnName="Verical" />
+          <ScalarProperty Name="Horinzotal" ColumnName="Horinzotal" />
+          <ScalarProperty Name="Mayor" ColumnName="Mayor" />
+          <ScalarProperty Name="Mecanica" ColumnName="Mecanica" />
+          <ScalarProperty Name="AvccIz" ColumnName="AvccIz" />
+          <ScalarProperty Name="AvccDer" ColumnName="AvccDer" />
+          <ScalarProperty Name="DnpIz" ColumnName="DnpIz" />
+          <ScalarProperty Name="DnpDer" ColumnName="DnpDer" />
+          <ScalarProperty Name="AvIz" ColumnName="AvIz" />
+          <ScalarProperty Name="AvDer" ColumnName="AvDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN2" ColumnName="ID_ORDEN2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orden1">
+      <EntityTypeMapping TypeName="Opt3000Model.Orden1">
+        <MappingFragment StoreEntitySet="Orden1">
+          <ScalarProperty Name="ENTREGADO" ColumnName="ENTREGADO" />
+          <ScalarProperty Name="RECIBIDO" ColumnName="RECIBIDO" />
+          <ScalarProperty Name="enviado" ColumnName="enviado" />
+          <ScalarProperty Name="GENERADO" ColumnName="GENERADO" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Bisel" ColumnName="Bisel" />
+          <ScalarProperty Name="Luna" ColumnName="Luna" />
+          <ScalarProperty Name="Tinturado" ColumnName="Tinturado" />
+          <ScalarProperty Name="Filtros" ColumnName="Filtros" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CodArmazon" ColumnName="CodArmazon" />
+          <ScalarProperty Name="Puente" ColumnName="Puente" />
+          <ScalarProperty Name="Verical" ColumnName="Verical" />
+          <ScalarProperty Name="Horinzotal" ColumnName="Horinzotal" />
+          <ScalarProperty Name="Mayor" ColumnName="Mayor" />
+          <ScalarProperty Name="Mecanica" ColumnName="Mecanica" />
+          <ScalarProperty Name="DnpIz" ColumnName="DnpIz" />
+          <ScalarProperty Name="DnpDer" ColumnName="DnpDer" />
+          <ScalarProperty Name="AltIz" ColumnName="AltIz" />
+          <ScalarProperty Name="AltDer" ColumnName="AltDer" />
+          <ScalarProperty Name="AddIz" ColumnName="AddIz" />
+          <ScalarProperty Name="AddDer" ColumnName="AddDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN1" ColumnName="ID_ORDEN1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANCOS">
+      <EntityTypeMapping TypeName="Opt3000Model.BANCOS">
+        <MappingFragment StoreEntitySet="BANCOS">
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ID_BANCO" ColumnName="ID_BANCO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LENTES_CONTACTO">
+      <EntityTypeMapping TypeName="Opt3000Model.LENTES_CONTACTO">
+        <MappingFragment StoreEntitySet="LENTES_CONTACTO">
+          <ScalarProperty Name="OJO" ColumnName="OJO" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Eje" ColumnName="Eje" />
+          <ScalarProperty Name="Cilindro" ColumnName="Cilindro" />
+          <ScalarProperty Name="Esfera" ColumnName="Esfera" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="ID_LENTES" ColumnName="ID_LENTES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GARANTIA">
+      <EntityTypeMapping TypeName="Opt3000Model.GARANTIA">
+        <MappingFragment StoreEntitySet="GARANTIA">
+          <ScalarProperty Name="Cantidad_Producto" ColumnName="Cantidad_Producto" />
+          <ScalarProperty Name="Valor_Producto" ColumnName="Valor_Producto" />
+          <ScalarProperty Name="Detalle_Producto" ColumnName="Detalle_Producto" />
+          <ScalarProperty Name="Cod_Producto" ColumnName="Cod_Producto" />
+          <ScalarProperty Name="DetalleGarantia" ColumnName="DetalleGarantia" />
+          <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+          <ScalarProperty Name="ID_ATENCION" ColumnName="ID_ATENCION" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ID_GARANTIA" ColumnName="ID_GARANTIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vAtenciones">
+      <EntityTypeMapping TypeName="Opt3000Model.vAtenciones">
+        <MappingFragment StoreEntitySet="vAtenciones">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Iva" ColumnName="Iva" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="Atencion" ColumnName="Atencion" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_VISION_CERCA">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_VISION_CERCA">
+        <MappingFragment StoreEntitySet="ORDEN_VISION_CERCA">
+          <ScalarProperty Name="Entregado" ColumnName="Entregado" />
+          <ScalarProperty Name="Recibido" ColumnName="Recibido" />
+          <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+          <ScalarProperty Name="Generado" ColumnName="Generado" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Tinturado" ColumnName="Tinturado" />
+          <ScalarProperty Name="Filtros" ColumnName="Filtros" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CodArmazon" ColumnName="CodArmazon" />
+          <ScalarProperty Name="Puente" ColumnName="Puente" />
+          <ScalarProperty Name="Vertical" ColumnName="Vertical" />
+          <ScalarProperty Name="Horizontal" ColumnName="Horizontal" />
+          <ScalarProperty Name="Mayor" ColumnName="Mayor" />
+          <ScalarProperty Name="Metrica" ColumnName="Metrica" />
+          <ScalarProperty Name="AvccIz" ColumnName="AvccIz" />
+          <ScalarProperty Name="AvccDer" ColumnName="AvccDer" />
+          <ScalarProperty Name="DnpIz" ColumnName="DnpIz" />
+          <ScalarProperty Name="DnpDer" ColumnName="DnpDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedio" ColumnName="FechaPedio" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN2" ColumnName="ID_ORDEN2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_LEJANA">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_LEJANA">
+        <MappingFragment StoreEntitySet="ORDEN_LEJANA">
+          <ScalarProperty Name="Entregado" ColumnName="Entregado" />
+          <ScalarProperty Name="Recibido" ColumnName="Recibido" />
+          <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+          <ScalarProperty Name="Generado" ColumnName="Generado" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Tinturado" ColumnName="Tinturado" />
+          <ScalarProperty Name="Filtros" ColumnName="Filtros" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="CodArmazon" ColumnName="CodArmazon" />
+          <ScalarProperty Name="Puente" ColumnName="Puente" />
+          <ScalarProperty Name="Vertical" ColumnName="Vertical" />
+          <ScalarProperty Name="Horizontal" ColumnName="Horizontal" />
+          <ScalarProperty Name="Mayor" ColumnName="Mayor" />
+          <ScalarProperty Name="Metrica" ColumnName="Metrica" />
+          <ScalarProperty Name="DnpIz" ColumnName="DnpIz" />
+          <ScalarProperty Name="DnpDer" ColumnName="DnpDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedio" ColumnName="FechaPedio" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN3" ColumnName="ID_ORDEN3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDEN_LENTESBLANDOS">
+      <EntityTypeMapping TypeName="Opt3000Model.ORDEN_LENTESBLANDOS">
+        <MappingFragment StoreEntitySet="ORDEN_LENTESBLANDOS">
+          <ScalarProperty Name="Entregado" ColumnName="Entregado" />
+          <ScalarProperty Name="Recibido" ColumnName="Recibido" />
+          <ScalarProperty Name="Enviado" ColumnName="Enviado" />
+          <ScalarProperty Name="Generado" ColumnName="Generado" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Filtros" ColumnName="Filtros" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="TipoIz" ColumnName="TipoIz" />
+          <ScalarProperty Name="TipoDer" ColumnName="TipoDer" />
+          <ScalarProperty Name="EjeIz" ColumnName="EjeIz" />
+          <ScalarProperty Name="EjeDer" ColumnName="EjeDer" />
+          <ScalarProperty Name="CilindroIz" ColumnName="CilindroIz" />
+          <ScalarProperty Name="CilindroDer" ColumnName="CilindroDer" />
+          <ScalarProperty Name="EsferaIz" ColumnName="EsferaIz" />
+          <ScalarProperty Name="EsferaDer" ColumnName="EsferaDer" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaPedio" ColumnName="FechaPedio" />
+          <ScalarProperty Name="CodPaciente" ColumnName="CodPaciente" />
+          <ScalarProperty Name="AteCodigo" ColumnName="AteCodigo" />
+          <ScalarProperty Name="ID_ORDEN4" ColumnName="ID_ORDEN4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DuplicaFactura" FunctionName="Opt3000Model.Store.sp_DuplicaFactura" />
+    <EntitySetMapping Name="visFactura">
+      <EntityTypeMapping TypeName="Opt3000Model.visFactura">
+        <MappingFragment StoreEntitySet="visFactura">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Iva" ColumnName="Iva" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Caja" ColumnName="Caja" />
+          <ScalarProperty Name="TiempoDiferido" ColumnName="TiempoDiferido" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Factura" ColumnName="Factura" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="ReciboCaja" ColumnName="ReciboCaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vAtenciones1">
+      <EntityTypeMapping TypeName="Opt3000Model.vAtenciones1">
+        <MappingFragment StoreEntitySet="vAtenciones1">
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Anticipo" ColumnName="Anticipo" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Iva" ColumnName="Iva" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Paciente" ColumnName="Paciente" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="ReciboCaja" ColumnName="ReciboCaja" />
+          <ScalarProperty Name="HCL" ColumnName="HCL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CertificadoDatos" targetNamespace="http://tempuri.org/CertificadoDatos.xsd" xmlns:mstns="http://tempuri.org/CertificadoDatos.xsd" xmlns="http://tempuri.org/CertificadoDatos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CertificadoDatos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CertificadoDatos" msprop:Generator_UserDSName="CertificadoDatos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Certificado" msprop:Generator_TableClassName="CertificadoDataTable" msprop:Generator_TableVarName="tableCertificado" msprop:Generator_TablePropName="Certificado" msprop:Generator_RowDeletingName="CertificadoRowDeleting" msprop:Generator_RowChangingName="CertificadoRowChanging" msprop:Generator_RowEvHandlerName="CertificadoRowChangeEventHandler" msprop:Generator_RowDeletedName="CertificadoRowDeleted" msprop:Generator_UserTableName="Certificado" msprop:Generator_RowChangedName="CertificadoRowChanged" msprop:Generator_RowEvArgName="CertificadoRowChangeEvent" msprop:Generator_RowClassName="CertificadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Paciente" msprop:Generator_ColumnVarNameInTable="columnPaciente" msprop:Generator_ColumnPropNameInRow="Paciente" msprop:Generator_ColumnPropNameInTable="PacienteColumn" msprop:Generator_UserColumnName="Paciente" type="xs:string" minOccurs="0" />
+              <xs:element name="Edad" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:string" minOccurs="0" />
+              <xs:element name="ODavlsc" msprop:Generator_ColumnVarNameInTable="columnODavlsc" msprop:Generator_ColumnPropNameInRow="ODavlsc" msprop:Generator_ColumnPropNameInTable="ODavlscColumn" msprop:Generator_UserColumnName="ODavlsc" type="xs:string" minOccurs="0" />
+              <xs:element name="OIavlsc" msprop:Generator_ColumnVarNameInTable="columnOIavlsc" msprop:Generator_ColumnPropNameInRow="OIavlsc" msprop:Generator_ColumnPropNameInTable="OIavlscColumn" msprop:Generator_UserColumnName="OIavlsc" type="xs:string" minOccurs="0" />
+              <xs:element name="ODavlcc" msprop:Generator_ColumnVarNameInTable="columnODavlcc" msprop:Generator_ColumnPropNameInRow="ODavlcc" msprop:Generator_ColumnPropNameInTable="ODavlccColumn" msprop:Generator_UserColumnName="ODavlcc" type="xs:string" minOccurs="0" />
+              <xs:element name="OIavlcc" msprop:Generator_ColumnVarNameInTable="columnOIavlcc" msprop:Generator_ColumnPropNameInRow="OIavlcc" msprop:Generator_ColumnPropNameInTable="OIavlccColumn" msprop:Generator_UserColumnName="OIavlcc" type="xs:string" minOccurs="0" />
+              <xs:element name="ODavcsc" msprop:Generator_ColumnVarNameInTable="columnODavcsc" msprop:Generator_ColumnPropNameInRow="ODavcsc" msprop:Generator_ColumnPropNameInTable="ODavcscColumn" msprop:Generator_UserColumnName="ODavcsc" type="xs:string" minOccurs="0" />
+              <xs:element name="OIavcsc" msprop:Generator_ColumnVarNameInTable="columnOIavcsc" msprop:Generator_ColumnPropNameInRow="OIavcsc" msprop:Generator_ColumnPropNameInTable="OIavcscColumn" msprop:Generator_UserColumnName="OIavcsc" type="xs:string" minOccurs="0" />
+              <xs:element name="ODavccc" msprop:Generator_ColumnVarNameInTable="columnODavccc" msprop:Generator_ColumnPropNameInRow="ODavccc" msprop:Generator_ColumnPropNameInTable="ODavcccColumn" msprop:Generator_UserColumnName="ODavccc" type="xs:string" minOccurs="0" />
+              <xs:element name="OIavccc" msprop:Generator_ColumnVarNameInTable="columnOIavccc" msprop:Generator_ColumnPropNameInRow="OIavccc" msprop:Generator_ColumnPropNameInTable="OIavcccColumn" msprop:Generator_UserColumnName="OIavccc" type="xs:string" minOccurs="0" />
+              <xs:element name="ODLejosEsfera" msprop:Generator_ColumnVarNameInTable="columnODLejosEsfera" msprop:Generator_ColumnPropNameInRow="ODLejosEsfera" msprop:Generator_ColumnPropNameInTable="ODLejosEsferaColumn" msprop:Generator_UserColumnName="ODLejosEsfera" type="xs:string" minOccurs="0" />
+              <xs:element name="OILejosesfera" msprop:Generator_ColumnVarNameInTable="columnOILejosesfera" msprop:Generator_ColumnPropNameInRow="OILejosesfera" msprop:Generator_ColumnPropNameInTable="OILejosesferaColumn" msprop:Generator_UserColumnName="OILejosesfera" type="xs:string" minOccurs="0" />
+              <xs:element name="ODLejosCilindro" msprop:Generator_ColumnVarNameInTable="columnODLejosCilindro" msprop:Generator_ColumnPropNameInRow="ODLejosCilindro" msprop:Generator_ColumnPropNameInTable="ODLejosCilindroColumn" msprop:Generator_UserColumnName="ODLejosCilindro" type="xs:string" minOccurs="0" />
+              <xs:element name="OILejosCilindro" msprop:Generator_ColumnVarNameInTable="columnOILejosCilindro" msprop:Generator_ColumnPropNameInRow="OILejosCilindro" msprop:Generator_ColumnPropNameInTable="OILejosCilindroColumn" msprop:Generator_UserColumnName="OILejosCilindro" type="xs:string" minOccurs="0" />
+              <xs:element name="ODLejosEje" msprop:Generator_ColumnVarNameInTable="columnODLejosEje" msprop:Generator_ColumnPropNameInRow="ODLejosEje" msprop:Generator_ColumnPropNameInTable="ODLejosEjeColumn" msprop:Generator_UserColumnName="ODLejosEje" type="xs:string" minOccurs="0" />
+              <xs:element name="OILejosEje" msprop:Generator_ColumnVarNameInTable="columnOILejosEje" msprop:Generator_ColumnPropNameInRow="OILejosEje" msprop:Generator_ColumnPropNameInTable="OILejosEjeColumn" msprop:Generator_UserColumnName="OILejosEje" type="xs:string" minOccurs="0" />
+              <xs:element name="ODAddEsfera" msprop:Generator_ColumnVarNameInTable="columnODAddEsfera" msprop:Generator_ColumnPropNameInRow="ODAddEsfera" msprop:Generator_ColumnPropNameInTable="ODAddEsferaColumn" msprop:Generator_UserColumnName="ODAddEsfera" type="xs:string" minOccurs="0" />
+              <xs:element name="OIAddEsfera" msprop:Generator_ColumnVarNameInTable="columnOIAddEsfera" msprop:Generator_ColumnPropNameInRow="OIAddEsfera" msprop:Generator_ColumnPropNameInTable="OIAddEsferaColumn" msprop:Generator_UserColumnName="OIAddEsfera" type="xs:string" minOccurs="0" />
+              <xs:element name="ODLecturaEsfera" msprop:Generator_ColumnVarNameInTable="columnODLecturaEsfera" msprop:Generator_ColumnPropNameInRow="ODLecturaEsfera" msprop:Generator_ColumnPropNameInTable="ODLecturaEsferaColumn" msprop:Generator_UserColumnName="ODLecturaEsfera" type="xs:string" minOccurs="0" />
+              <xs:element name="OILecturaEsfera" msprop:Generator_ColumnVarNameInTable="columnOILecturaEsfera" msprop:Generator_ColumnPropNameInRow="OILecturaEsfera" msprop:Generator_ColumnPropNameInTable="OILecturaEsferaColumn" msprop:Generator_UserColumnName="OILecturaEsfera" type="xs:string" minOccurs="0" />
+              <xs:element name="ODLecturaCilindro" msprop:Generator_ColumnVarNameInTable="columnODLecturaCilindro" msprop:Generator_ColumnPropNameInRow="ODLecturaCilindro" msprop:Generator_ColumnPropNameInTable="ODLecturaCilindroColumn" msprop:Generator_UserColumnName="ODLecturaCilindro" type="xs:string" minOccurs="0" />
+              <xs:element name="OILecturaCilindro" msprop:Generator_ColumnVarNameInTable="columnOILecturaCilindro" msprop:Generator_ColumnPropNameInRow="OILecturaCilindro" msprop:Generator_ColumnPropNameInTable="OILecturaCilindroColumn" msprop:Generator_UserColumnName="OILecturaCilindro" type="xs:string" minOccurs="0" />
+              <xs:element name="Cie10OD" msprop:Generator_ColumnVarNameInTable="columnCie10OD" msprop:Generator_ColumnPropNameInRow="Cie10OD" msprop:Generator_ColumnPropNameInTable="Cie10ODColumn" msprop:Generator_UserColumnName="Cie10OD" type="xs:string" minOccurs="0" />
+              <xs:element name="Cie10OI" msprop:Generator_ColumnVarNameInTable="columnCie10OI" msprop:Generator_ColumnPropNameInRow="Cie10OI" msprop:Generator_ColumnPropNameInTable="Cie10OIColumn" msprop:Generator_UserColumnName="Cie10OI" type="xs:string" minOccurs="0" />
+              <xs:element name="Recomendaciones" msprop:Generator_ColumnVarNameInTable="columnRecomendaciones" msprop:Generator_ColumnPropNameInRow="Recomendaciones" msprop:Generator_ColumnPropNameInTable="RecomendacionesColumn" msprop:Generator_UserColumnName="Recomendaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Oftalmoscopia" msprop:Generator_ColumnVarNameInTable="columnOftalmoscopia" msprop:Generator_ColumnPropNameInRow="Oftalmoscopia" msprop:Generator_ColumnPropNameInTable="OftalmoscopiaColumn" msprop:Generator_UserColumnName="Oftalmoscopia" type="xs:string" minOccurs="0" />
+              <xs:element name="VisionColor" msprop:Generator_ColumnVarNameInTable="columnVisionColor" msprop:Generator_ColumnPropNameInRow="VisionColor" msprop:Generator_ColumnPropNameInTable="VisionColorColumn" msprop:Generator_UserColumnName="VisionColor" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

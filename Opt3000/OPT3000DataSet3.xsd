@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OPT3000DataSet3" targetNamespace="http://tempuri.org/OPT3000DataSet3.xsd" xmlns:mstns="http://tempuri.org/OPT3000DataSet3.xsd" xmlns="http://tempuri.org/OPT3000DataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OPT3000ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OPT3000ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Opt3000.Properties.Settings.GlobalReference.Default.OPT3000ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ColsultaTableAdapter" GeneratorDataComponentClassName="ColsultaTableAdapter" Name="Colsulta" UserDataComponentName="ColsultaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OPT3000ConnectionString (Settings)" DbObjectName="OPT3000.dbo.Colsulta" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Identificacion, PACIENTE, ID_ATENCION, Tipo_Consulta, Fecha_Creacion, DiagnosticoOD, DiagnosticoOI, Observaciones, Mpc, Esfera, Cilindro, Eje, A_D_D, AVL, AVC, ALT, DNP_DP, OJO, AVSC, AVCC, lEsfera, lCILINDRO, lEJE, lAVL, lOJO FROM dbo.Colsulta</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Identificacion" DataSetColumn="Identificacion" />
+              <Mapping SourceColumn="PACIENTE" DataSetColumn="PACIENTE" />
+              <Mapping SourceColumn="ID_ATENCION" DataSetColumn="ID_ATENCION" />
+              <Mapping SourceColumn="Tipo_Consulta" DataSetColumn="Tipo_Consulta" />
+              <Mapping SourceColumn="Fecha_Creacion" DataSetColumn="Fecha_Creacion" />
+              <Mapping SourceColumn="DiagnosticoOD" DataSetColumn="DiagnosticoOD" />
+              <Mapping SourceColumn="DiagnosticoOI" DataSetColumn="DiagnosticoOI" />
+              <Mapping SourceColumn="Observaciones" DataSetColumn="Observaciones" />
+              <Mapping SourceColumn="Mpc" DataSetColumn="Mpc" />
+              <Mapping SourceColumn="Esfera" DataSetColumn="Esfera" />
+              <Mapping SourceColumn="Cilindro" DataSetColumn="Cilindro" />
+              <Mapping SourceColumn="Eje" DataSetColumn="Eje" />
+              <Mapping SourceColumn="A_D_D" DataSetColumn="A_D_D" />
+              <Mapping SourceColumn="AVL" DataSetColumn="AVL" />
+              <Mapping SourceColumn="AVC" DataSetColumn="AVC" />
+              <Mapping SourceColumn="ALT" DataSetColumn="ALT" />
+              <Mapping SourceColumn="DNP_DP" DataSetColumn="DNP_DP" />
+              <Mapping SourceColumn="OJO" DataSetColumn="OJO" />
+              <Mapping SourceColumn="AVSC" DataSetColumn="AVSC" />
+              <Mapping SourceColumn="AVCC" DataSetColumn="AVCC" />
+              <Mapping SourceColumn="lEsfera" DataSetColumn="lEsfera" />
+              <Mapping SourceColumn="lCILINDRO" DataSetColumn="lCILINDRO" />
+              <Mapping SourceColumn="lEJE" DataSetColumn="lEJE" />
+              <Mapping SourceColumn="lAVL" DataSetColumn="lAVL" />
+              <Mapping SourceColumn="lOJO" DataSetColumn="lOJO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OPT3000DataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="OPT3000DataSet3" msprop:Generator_UserDSName="OPT3000DataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Colsulta" msprop:Generator_TableClassName="ColsultaDataTable" msprop:Generator_TableVarName="tableColsulta" msprop:Generator_TablePropName="Colsulta" msprop:Generator_RowDeletingName="ColsultaRowDeleting" msprop:Generator_RowChangingName="ColsultaRowChanging" msprop:Generator_RowEvHandlerName="ColsultaRowChangeEventHandler" msprop:Generator_RowDeletedName="ColsultaRowDeleted" msprop:Generator_UserTableName="Colsulta" msprop:Generator_RowChangedName="ColsultaRowChanged" msprop:Generator_RowEvArgName="ColsultaRowChangeEvent" msprop:Generator_RowClassName="ColsultaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Identificacion" msprop:Generator_ColumnVarNameInTable="columnIdentificacion" msprop:Generator_ColumnPropNameInRow="Identificacion" msprop:Generator_ColumnPropNameInTable="IdentificacionColumn" msprop:Generator_UserColumnName="Identificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PACIENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPACIENTE" msprop:Generator_ColumnPropNameInRow="PACIENTE" msprop:Generator_ColumnPropNameInTable="PACIENTEColumn" msprop:Generator_UserColumnName="PACIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_ATENCION" msprop:Generator_ColumnVarNameInTable="columnID_ATENCION" msprop:Generator_ColumnPropNameInRow="ID_ATENCION" msprop:Generator_ColumnPropNameInTable="ID_ATENCIONColumn" msprop:Generator_UserColumnName="ID_ATENCION" type="xs:long" />
+              <xs:element name="Tipo_Consulta" msprop:Generator_ColumnVarNameInTable="columnTipo_Consulta" msprop:Generator_ColumnPropNameInRow="Tipo_Consulta" msprop:Generator_ColumnPropNameInTable="Tipo_ConsultaColumn" msprop:Generator_UserColumnName="Tipo_Consulta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha_Creacion" msprop:Generator_ColumnVarNameInTable="columnFecha_Creacion" msprop:Generator_ColumnPropNameInRow="Fecha_Creacion" msprop:Generator_ColumnPropNameInTable="Fecha_CreacionColumn" msprop:Generator_UserColumnName="Fecha_Creacion" type="xs:dateTime" />
+              <xs:element name="DiagnosticoOD" msprop:Generator_ColumnVarNameInTable="columnDiagnosticoOD" msprop:Generator_ColumnPropNameInRow="DiagnosticoOD" msprop:Generator_ColumnPropNameInTable="DiagnosticoODColumn" msprop:Generator_UserColumnName="DiagnosticoOD">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiagnosticoOI" msprop:Generator_ColumnVarNameInTable="columnDiagnosticoOI" msprop:Generator_ColumnPropNameInRow="DiagnosticoOI" msprop:Generator_ColumnPropNameInTable="DiagnosticoOIColumn" msprop:Generator_UserColumnName="DiagnosticoOI">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observaciones" msprop:Generator_ColumnVarNameInTable="columnObservaciones" msprop:Generator_ColumnPropNameInRow="Observaciones" msprop:Generator_ColumnPropNameInTable="ObservacionesColumn" msprop:Generator_UserColumnName="Observaciones">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mpc" msprop:Generator_ColumnVarNameInTable="columnMpc" msprop:Generator_ColumnPropNameInRow="Mpc" msprop:Generator_ColumnPropNameInTable="MpcColumn" msprop:Generator_UserColumnName="Mpc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Esfera" msprop:Generator_ColumnVarNameInTable="columnEsfera" msprop:Generator_ColumnPropNameInRow="Esfera" msprop:Generator_ColumnPropNameInTable="EsferaColumn" msprop:Generator_UserColumnName="Esfera" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cilindro" msprop:Generator_ColumnVarNameInTable="columnCilindro" msprop:Generator_ColumnPropNameInRow="Cilindro" msprop:Generator_ColumnPropNameInTable="CilindroColumn" msprop:Generator_UserColumnName="Cilindro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eje" msprop:Generator_ColumnVarNameInTable="columnEje" msprop:Generator_ColumnPropNameInRow="Eje" msprop:Generator_ColumnPropNameInTable="EjeColumn" msprop:Generator_UserColumnName="Eje" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="A_D_D" msprop:Generator_ColumnVarNameInTable="columnA_D_D" msprop:Generator_ColumnPropNameInRow="A_D_D" msprop:Generator_ColumnPropNameInTable="A_D_DColumn" msprop:Generator_UserColumnName="A_D_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AVL" msprop:Generator_ColumnVarNameInTable="columnAVL" msprop:Generator_ColumnPropNameInRow="AVL" msprop:Generator_ColumnPropNameInTable="AVLColumn" msprop:Generator_UserColumnName="AVL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AVC" msprop:Generator_ColumnVarNameInTable="columnAVC" msprop:Generator_ColumnPropNameInRow="AVC" msprop:Generator_ColumnPropNameInTable="AVCColumn" msprop:Generator_UserColumnName="AVC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ALT" msprop:Generator_ColumnVarNameInTable="columnALT" msprop:Generator_ColumnPropNameInRow="ALT" msprop:Generator_ColumnPropNameInTable="ALTColumn" msprop:Generator_UserColumnName="ALT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DNP_DP" msprop:Generator_ColumnVarNameInTable="columnDNP_DP" msprop:Generator_ColumnPropNameInRow="DNP_DP" msprop:Generator_ColumnPropNameInTable="DNP_DPColumn" msprop:Generator_UserColumnName="DNP_DP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OJO" msprop:Generator_ColumnVarNameInTable="columnOJO" msprop:Generator_ColumnPropNameInRow="OJO" msprop:Generator_ColumnPropNameInTable="OJOColumn" msprop:Generator_UserColumnName="OJO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AVSC" msprop:Generator_ColumnVarNameInTable="columnAVSC" msprop:Generator_ColumnPropNameInRow="AVSC" msprop:Generator_ColumnPropNameInTable="AVSCColumn" msprop:Generator_UserColumnName="AVSC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AVCC" msprop:Generator_ColumnVarNameInTable="columnAVCC" msprop:Generator_ColumnPropNameInRow="AVCC" msprop:Generator_ColumnPropNameInTable="AVCCColumn" msprop:Generator_UserColumnName="AVCC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lEsfera" msprop:Generator_ColumnVarNameInTable="columnlEsfera" msprop:Generator_ColumnPropNameInRow="lEsfera" msprop:Generator_ColumnPropNameInTable="lEsferaColumn" msprop:Generator_UserColumnName="lEsfera" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lCILINDRO" msprop:Generator_ColumnVarNameInTable="columnlCILINDRO" msprop:Generator_ColumnPropNameInRow="lCILINDRO" msprop:Generator_ColumnPropNameInTable="lCILINDROColumn" msprop:Generator_UserColumnName="lCILINDRO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lEJE" msprop:Generator_ColumnVarNameInTable="columnlEJE" msprop:Generator_ColumnPropNameInRow="lEJE" msprop:Generator_ColumnPropNameInTable="lEJEColumn" msprop:Generator_UserColumnName="lEJE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lAVL" msprop:Generator_ColumnVarNameInTable="columnlAVL" msprop:Generator_ColumnPropNameInRow="lAVL" msprop:Generator_ColumnPropNameInTable="lAVLColumn" msprop:Generator_UserColumnName="lAVL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lOJO" msprop:Generator_ColumnVarNameInTable="columnlOJO" msprop:Generator_ColumnPropNameInRow="lOJO" msprop:Generator_ColumnPropNameInTable="lOJOColumn" msprop:Generator_UserColumnName="lOJO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Colsulta" />
+      <xs:field xpath="mstns:ID_ATENCION" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

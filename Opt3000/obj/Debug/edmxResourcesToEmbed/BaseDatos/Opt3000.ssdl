@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Opt3000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADAPTACION_LENTES">
+    <Key>
+      <PropertyRef Name="ID_ADAPTACIONLENTES" />
+    </Key>
+    <Property Name="ID_ADAPTACIONLENTES" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="PupilarOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PupilarOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CornealOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CornealOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaipebralOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaipebralOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="But" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Shirmer" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AGENDA">
+    <Key>
+      <PropertyRef Name="ID_AGENDA" />
+    </Key>
+    <Property Name="ID_AGENDA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_DIASATENCION" Type="bigint" Nullable="false" />
+    <Property Name="FachaCita" Type="date" Nullable="false" />
+    <Property Name="Hora" Type="smallint" Nullable="false" />
+    <Property Name="Minutos" Type="smallint" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID_PACIENTE" Type="bigint" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Cie10" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="CONSULTORIO" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ANTICIPOS">
+    <Key>
+      <PropertyRef Name="ID_ANTICIPOS" />
+    </Key>
+    <Property Name="ID_ANTICIPOS" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PACIENTE" Type="bigint" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Fecha_Registro" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ATENCION">
+    <Key>
+      <PropertyRef Name="ID_ATENCION" />
+    </Key>
+    <Property Name="ID_ATENCION" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PACIENTE" Type="bigint" Nullable="false" />
+    <Property Name="Tipo_Consulta" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+    <Property Name="Tipo_Seguro" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="DiagnosticoOD" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="DiagnosticoOI" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Recomendaciones" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Usuario" Type="int" Nullable="false" />
+    <Property Name="Ate_Facturada" Type="bit" Nullable="false" />
+    <Property Name="OPTOMETRA" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Mpc" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="FACTURAR" Type="bit" />
+    <Property Name="CUENTADIVIDIA" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="BANCOS">
+    <Key>
+      <PropertyRef Name="ID_BANCO" />
+    </Key>
+    <Property Name="ID_BANCO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CAJA">
+    <Key>
+      <PropertyRef Name="ID_CAJA" />
+    </Key>
+    <Property Name="ID_CAJA" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SUCURSAL" Type="smallint" Nullable="false" />
+    <Property Name="PtoEmision" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Caja" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Secuencial" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CIE_10">
+    <Key>
+      <PropertyRef Name="IDCIE10" />
+    </Key>
+    <Property Name="IDCIE10" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Cie_Padre" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONSULTORIO">
+    <Key>
+      <PropertyRef Name="ID_CONSULTORIO" />
+    </Key>
+    <Property Name="ID_CONSULTORIO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_SUCURSAL" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONTADOR_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_SECUENCIACODIGO" />
+    </Key>
+    <Property Name="ID_SECUENCIACODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TIPOPRODUCTO" Type="int" Nullable="false" />
+    <Property Name="Contador" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONVENIO">
+    <Key>
+      <PropertyRef Name="ID_TIPO" />
+    </Key>
+    <Property Name="ID_TIPO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUENTA_PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_CUENTA_PACIENTE" />
+    </Key>
+    <Property Name="ID_CUENTA_PACIENTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="bigint" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="AGRUPACION" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_CUENTA_PACIENTE" Type="bigint" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Iva" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Sub_total" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Descuento" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE_ORDEN">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ORDEN" Type="bigint" Nullable="false" />
+    <Property Name="CodProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Cantidad" Type="smallint" Nullable="false" />
+    <Property Name="Costo" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="PagaIva" Type="bit" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Ganacia" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Imagen" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIAS_SEMANA">
+    <Key>
+      <PropertyRef Name="ID_DIAS" />
+    </Key>
+    <Property Name="ID_DIAS" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="ID_EMPRESA" />
+    </Key>
+    <Property Name="ID_EMPRESA" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Razon_Social" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Nombre_Comercial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ruc" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Ambiente" Type="smallint" Nullable="false" />
+    <Property Name="Emision" Type="smallint" Nullable="false" />
+    <Property Name="Direccion_Matriz" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Contribuyente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lleva_Contabilidad" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESPECIALIDAD">
+    <Key>
+      <PropertyRef Name="ID_ESPECIALIDAD" />
+    </Key>
+    <Property Name="ID_ESPECIALIDAD" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="Fecha_Emision" Type="datetime" Nullable="false" />
+    <Property Name="Arqueada" Type="bit" Nullable="false" />
+    <Property Name="Fecha_Arqueo" Type="datetime" />
+    <Property Name="ID_CAJA" Type="smallint" Nullable="false" />
+    <Property Name="Numero_Factura" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="FACTURA_PAGO">
+    <Key>
+      <PropertyRef Name="ID_FACTURAPAGO" />
+    </Key>
+    <Property Name="ID_FACTURAPAGO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_FORMAPAGO" Type="int" Nullable="false" />
+    <Property Name="ID_FACTURA" Type="bigint" Nullable="false" />
+    <Property Name="Lote" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Autorizacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Duenio" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tiempo_Diferido" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FORMA_PAGO">
+    <Key>
+      <PropertyRef Name="ID_FORMAPAGO" />
+    </Key>
+    <Property Name="ID_FORMAPAGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="CodigoSri" Type="smallint" Nullable="false" />
+    <Property Name="Diferido" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GARANTIA">
+    <Key>
+      <PropertyRef Name="ID_GARANTIA" />
+    </Key>
+    <Property Name="ID_GARANTIA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="ID_FACTURA" Type="bigint" Nullable="false" />
+    <Property Name="DetalleGarantia" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Cod_Producto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detalle_Producto" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Valor_Producto" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cantidad_Producto" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HONRARIOATENCION">
+    <Key>
+      <PropertyRef Name="ID_DIASATENCION" />
+    </Key>
+    <Property Name="ID_DIASATENCION" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_MEDICO" Type="int" Nullable="false" />
+    <Property Name="ID_DIA" Type="smallint" Nullable="false" />
+    <Property Name="ID_CONSULTORIO" Type="smallint" Nullable="false" />
+    <Property Name="HoraInicio" Type="smallint" Nullable="false" />
+    <Property Name="HoraFin" Type="smallint" Nullable="false" />
+    <Property Name="HoraAlmuerzo" Type="smallint" Nullable="false" />
+    <Property Name="Intervalo" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LENTE_DEFINITIVO">
+    <Key>
+      <PropertyRef Name="ID_LENTEDEFINITIVO" />
+    </Key>
+    <Property Name="ID_LENTEDEFINITIVO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="BaseOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BaseOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PoderOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PoderOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiametroOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiametroOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialOI" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LENTE_PRUEBA">
+    <Key>
+      <PropertyRef Name="ID_LENTEPRUEBA" />
+    </Key>
+    <Property Name="ID_LENTEPRUEBA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="BaseOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BaseOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PoderOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PoderOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaterialOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiametroOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiametroOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefraccionOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefraccionOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisualOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisualOI" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LENTES_CONTACTO">
+    <Key>
+      <PropertyRef Name="ID_LENTES" />
+    </Key>
+    <Property Name="ID_LENTES" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="Esfera" Type="varchar" MaxLength="10" />
+    <Property Name="Cilindro" Type="varchar" MaxLength="10" />
+    <Property Name="Eje" Type="varchar" MaxLength="10" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" />
+    <Property Name="OJO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MEDICO">
+    <Key>
+      <PropertyRef Name="ID_MEDICO" />
+    </Key>
+    <Property Name="ID_MEDICO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Especialidad" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="TiempoConsulta" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NIVEL_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_NIVEL" />
+    </Key>
+    <Property Name="ID_NIVEL" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripsion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="OFTALMOLOGIA">
+    <Key>
+      <PropertyRef Name="ID_OFTALMICA" />
+    </Key>
+    <Property Name="ID_OFTALMICA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="Anamnesis" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Examen_Fisico" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Biomicroscopia" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="ButOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ButOI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PioOD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PioID" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LEJANA">
+    <Key>
+      <PropertyRef Name="ID_ORDEN3" />
+    </Key>
+    <Property Name="ID_ORDEN3" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" Nullable="false" />
+    <Property Name="CodPaciente" Type="bigint" Nullable="false" />
+    <Property Name="FechaPedio" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DnpDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DnpIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Metrica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mayor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Horizontal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vertical" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Puente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodArmazon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Material" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Filtros" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Tinturado" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Generado" Type="bit" Nullable="false" />
+    <Property Name="Enviado" Type="bit" Nullable="false" />
+    <Property Name="Recibido" Type="bit" Nullable="false" />
+    <Property Name="Entregado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTES_CONTACTO">
+    <Key>
+      <PropertyRef Name="ID_ORDEN3" />
+    </Key>
+    <Property Name="ID_ORDEN3" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" />
+    <Property Name="CodPaciente" Type="bigint" />
+    <Property Name="FechaPedido" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" />
+    <Property Name="TipoDer" Type="varchar" MaxLength="50" />
+    <Property Name="TipoIz" Type="varchar" MaxLength="50" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" />
+    <Property Name="Color" Type="varchar" MaxLength="50" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+    <Property Name="ID_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTES_PROGESIVOS">
+    <Key>
+      <PropertyRef Name="ID_ORDEN2" />
+    </Key>
+    <Property Name="ID_ORDEN2" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" />
+    <Property Name="CodPaciente" Type="bigint" />
+    <Property Name="FechaPedido" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" />
+    <Property Name="AvDer" Type="varchar" MaxLength="50" />
+    <Property Name="AvIz" Type="varchar" MaxLength="50" />
+    <Property Name="DnpDer" Type="varchar" MaxLength="50" />
+    <Property Name="DnpIz" Type="varchar" MaxLength="50" />
+    <Property Name="AvccDer" Type="varchar" MaxLength="50" />
+    <Property Name="AvccIz" Type="varchar" MaxLength="50" />
+    <Property Name="Mecanica" Type="varchar" MaxLength="50" />
+    <Property Name="Mayor" Type="varchar" MaxLength="50" />
+    <Property Name="Horinzotal" Type="varchar" MaxLength="50" />
+    <Property Name="Verical" Type="varchar" MaxLength="50" />
+    <Property Name="Puente" Type="varchar" MaxLength="50" />
+    <Property Name="CodArmazon" Type="varchar" MaxLength="50" />
+    <Property Name="Material" Type="varchar" MaxLength="50" />
+    <Property Name="Filtros" Type="varchar" MaxLength="50" />
+    <Property Name="Tinturado" Type="varchar" MaxLength="50" />
+    <Property Name="Luna" Type="varchar" MaxLength="50" />
+    <Property Name="Bisel" Type="varchar" MaxLength="50" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+    <Property Name="ID_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTESBLANDOS">
+    <Key>
+      <PropertyRef Name="ID_ORDEN4" />
+    </Key>
+    <Property Name="ID_ORDEN4" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" Nullable="false" />
+    <Property Name="CodPaciente" Type="bigint" Nullable="false" />
+    <Property Name="FechaPedio" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoDer" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TipoIz" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Material" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Filtros" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Generado" Type="bit" Nullable="false" />
+    <Property Name="Enviado" Type="bit" Nullable="false" />
+    <Property Name="Recibido" Type="bit" Nullable="false" />
+    <Property Name="Entregado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_ORDEN" />
+    </Key>
+    <Property Name="ID_ORDEN" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="TotalFactura" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="NumeroFactura" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaFactura" Type="date" Nullable="false" />
+    <Property Name="Proveedor" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CargaInventario" Type="bit" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="IMAGEN" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_VISION_CERCA">
+    <Key>
+      <PropertyRef Name="ID_ORDEN2" />
+    </Key>
+    <Property Name="ID_ORDEN2" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" Nullable="false" />
+    <Property Name="CodPaciente" Type="bigint" Nullable="false" />
+    <Property Name="FechaPedio" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DnpDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DnpIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AvccDer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AvccIz" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Metrica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mayor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Horizontal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vertical" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Puente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodArmazon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Material" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Filtros" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Tinturado" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Id_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Generado" Type="bit" Nullable="false" />
+    <Property Name="Enviado" Type="bit" Nullable="false" />
+    <Property Name="Recibido" Type="bit" Nullable="false" />
+    <Property Name="Entregado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orden1">
+    <Key>
+      <PropertyRef Name="ID_ORDEN1" />
+    </Key>
+    <Property Name="ID_ORDEN1" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AteCodigo" Type="bigint" />
+    <Property Name="CodPaciente" Type="bigint" />
+    <Property Name="FechaPedido" Type="date" Nullable="false" />
+    <Property Name="FechaEntrega" Type="date" Nullable="false" />
+    <Property Name="EsferaDer" Type="varchar" MaxLength="50" />
+    <Property Name="EsferaIz" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroDer" Type="varchar" MaxLength="50" />
+    <Property Name="CilindroIz" Type="varchar" MaxLength="50" />
+    <Property Name="EjeDer" Type="varchar" MaxLength="50" />
+    <Property Name="EjeIz" Type="varchar" MaxLength="50" />
+    <Property Name="AddDer" Type="varchar" MaxLength="50" />
+    <Property Name="AddIz" Type="varchar" MaxLength="50" />
+    <Property Name="AltDer" Type="varchar" MaxLength="50" />
+    <Property Name="AltIz" Type="varchar" MaxLength="50" />
+    <Property Name="DnpDer" Type="varchar" MaxLength="50" />
+    <Property Name="DnpIz" Type="varchar" MaxLength="50" />
+    <Property Name="Mecanica" Type="varchar" MaxLength="50" />
+    <Property Name="Mayor" Type="varchar" MaxLength="50" />
+    <Property Name="Horinzotal" Type="varchar" MaxLength="50" />
+    <Property Name="Verical" Type="varchar" MaxLength="50" />
+    <Property Name="Puente" Type="varchar" MaxLength="50" />
+    <Property Name="CodArmazon" Type="varchar" MaxLength="50" />
+    <Property Name="Material" Type="varchar" MaxLength="50" />
+    <Property Name="Filtros" Type="varchar" MaxLength="50" />
+    <Property Name="Tinturado" Type="varchar" MaxLength="50" />
+    <Property Name="Luna" Type="varchar" MaxLength="50" />
+    <Property Name="Bisel" Type="varchar" MaxLength="50" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="500" />
+    <Property Name="ID_Usuario" Type="int" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="GENERADO" Type="bit" />
+    <Property Name="enviado" Type="bit" />
+    <Property Name="RECIBIDO" Type="bit" />
+    <Property Name="ENTREGADO" Type="bit" />
+  </EntityType>
+  <EntityType Name="PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_PACIENTE" />
+    </Key>
+    <Property Name="ID_PACIENTE" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TIPO" Type="smallint" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Convencional" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="F_Nacimiento" Type="date" Nullable="false" />
+    <Property Name="Ocupacion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PARAMETRO">
+    <Key>
+      <PropertyRef Name="ID_PARAMETRO" />
+    </Key>
+    <Property Name="ID_PARAMETRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripciones" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Valor" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="PagaIva" Type="bit" Nullable="false" />
+    <Property Name="Especificaciones" Type="varchar" MaxLength="8000" Nullable="false" />
+    <Property Name="STOCK" Type="int" Nullable="false" />
+    <Property Name="ID_DETALLE" Type="bigint" Nullable="false" />
+    <Property Name="CodProducto" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RETINOSCOPIA_DILATADA">
+    <Key>
+      <PropertyRef Name="ID_RETINOSCOPIA" />
+    </Key>
+    <Property Name="ID_RETINOSCOPIA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="Esfera" Type="varchar" MaxLength="10" />
+    <Property Name="Cilindro" Type="varchar" MaxLength="10" />
+    <Property Name="Eje" Type="varchar" MaxLength="10" />
+    <Property Name="Avl" Type="varchar" MaxLength="10" />
+    <Property Name="OJO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="RX_EN_USO">
+    <Key>
+      <PropertyRef Name="ID_RXUSO" />
+    </Key>
+    <Property Name="ID_RXUSO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="AvsLejosOD" Type="varchar" MaxLength="50" />
+    <Property Name="AvsLejosOI" Type="varchar" MaxLength="50" />
+    <Property Name="AVcercaOD" Type="varchar" MaxLength="50" />
+    <Property Name="AVcercaOI" Type="varchar" MaxLength="50" />
+    <Property Name="RxUsoOD" Type="varchar" MaxLength="50" />
+    <Property Name="RxUsoOI" Type="varchar" MaxLength="50" />
+    <Property Name="AddOD" Type="varchar" MaxLength="50" />
+    <Property Name="AddOI" Type="varchar" MaxLength="50" />
+    <Property Name="AvcLejosOD" Type="varchar" MaxLength="50" />
+    <Property Name="AvcLejosOI" Type="varchar" MaxLength="50" />
+    <Property Name="AvcCercaOD" Type="varchar" MaxLength="50" />
+    <Property Name="AvcCercaOI" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RX_FINAL">
+    <Key>
+      <PropertyRef Name="ID_RXFINAL" />
+    </Key>
+    <Property Name="ID_RXFINAL" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="bigint" Nullable="false" />
+    <Property Name="Esfera" Type="varchar" MaxLength="10" />
+    <Property Name="Cilindro" Type="varchar" MaxLength="10" />
+    <Property Name="Eje" Type="varchar" MaxLength="10" />
+    <Property Name="A_D_D" Type="varchar" MaxLength="10" />
+    <Property Name="AVL" Type="varchar" MaxLength="10" />
+    <Property Name="AVC" Type="varchar" MaxLength="10" />
+    <Property Name="ALT" Type="varchar" MaxLength="10" />
+    <Property Name="DNP_DP" Type="varchar" MaxLength="10" />
+    <Property Name="OJO" Type="varchar" MaxLength="10" />
+    <Property Name="AVSC" Type="varchar" MaxLength="10" />
+    <Property Name="AVCC" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SUCURSAL">
+    <Key>
+      <PropertyRef Name="ID_SUCURSAL" />
+    </Key>
+    <Property Name="ID_SUCURSAL" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacturaElectronica" Type="bit" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIEMPODIFERIDO">
+    <Key>
+      <PropertyRef Name="ID_TIEMPODIFERIDO" />
+    </Key>
+    <Property Name="ID_TIEMPODIFERIDO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPO_LENTECONTACTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO" />
+    </Key>
+    <Property Name="ID_TIPO" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPO_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_TIPOPRODUCTO" />
+    </Key>
+    <Property Name="ID_TIPOPRODUCTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_NIVEL" Type="smallint" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'OPT3000.dbo.vAtenciones' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vAtenciones">
+    <Key>
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="Cuenta" />
+      <PropertyRef Name="Atencion" />
+      <PropertyRef Name="Detalle" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Identificacion" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Cliente" Type="varchar" MaxLength="201" Nullable="false" />
+    <Property Name="Cuenta" Type="bigint" Nullable="false" />
+    <Property Name="Atencion" Type="bigint" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="4" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'OPT3000.dbo.vAtenciones1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vAtenciones1">
+    <Key>
+      <PropertyRef Name="HCL" />
+      <PropertyRef Name="ReciboCaja" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Observaciones" />
+      <PropertyRef Name="Anticipo" />
+    </Key>
+    <Property Name="HCL" Type="bigint" Nullable="false" />
+    <Property Name="ReciboCaja" Type="bigint" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Paciente" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Anticipo" Type="decimal" Precision="38" Scale="4" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Precision="38" Scale="4" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'OPT3000.dbo.visFactura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="visFactura">
+    <Key>
+      <PropertyRef Name="ReciboCaja" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="TiempoDiferido" />
+      <PropertyRef Name="Caja" />
+      <PropertyRef Name="Direccion" />
+    </Key>
+    <Property Name="ReciboCaja" Type="bigint" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Paciente" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="Factura" Type="varchar" MaxLength="15" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="TiempoDiferido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Caja" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SubTotal" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="4" />
+  </EntityType>
+  <Association Name="FK_ADAPTACION_LENTES_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="ADAPTACION_LENTES" Type="Self.ADAPTACION_LENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="ADAPTACION_LENTES">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AGENDA_HONRARIOATENCION">
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="1" />
+    <End Role="AGENDA" Type="Self.AGENDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_DIASATENCION" />
+      </Principal>
+      <Dependent Role="AGENDA">
+        <PropertyRef Name="ID_DIASATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AGENDA_PACIENTE">
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="1" />
+    <End Role="AGENDA" Type="Self.AGENDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="AGENDA">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ANTICIPOS_PACIENTE">
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="1" />
+    <End Role="ANTICIPOS" Type="Self.ANTICIPOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="ANTICIPOS">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATENCION_PACIENTE">
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="1" />
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="ATENCION">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CAJA_SUCURSAL">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="CAJA" Type="Self.CAJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Principal>
+      <Dependent Role="CAJA">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONSULTORIO_SUCURSAL">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="CONSULTORIO" Type="Self.CONSULTORIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Principal>
+      <Dependent Role="CONSULTORIO">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_PACIENTE_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_PACIENTE_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_CUENTA_PACIENTE">
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_CUENTA_PACIENTE" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="ID_CUENTA_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_ORDEN_ORDEN_PEDIDO">
+    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="1" />
+    <End Role="DETALLE_ORDEN" Type="Self.DETALLE_ORDEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_PEDIDO">
+        <PropertyRef Name="ID_ORDEN" />
+      </Principal>
+      <Dependent Role="DETALLE_ORDEN">
+        <PropertyRef Name="ID_ORDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PRODUCTO">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_CAJA">
+    <End Role="CAJA" Type="Self.CAJA" Multiplicity="1" />
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAJA">
+        <PropertyRef Name="ID_CAJA" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_CAJA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_PAGO_FACTURA1">
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="1" />
+    <End Role="FACTURA_PAGO" Type="Self.FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA">
+        <PropertyRef Name="ID_FACTURA" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="ID_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_PAGO_FORMA_PAGO">
+    <End Role="FORMA_PAGO" Type="Self.FORMA_PAGO" Multiplicity="1" />
+    <End Role="FACTURA_PAGO" Type="Self.FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FORMA_PAGO">
+        <PropertyRef Name="ID_FORMAPAGO" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="ID_FORMAPAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_PAGO_TIEMPODIFERIDO">
+    <End Role="TIEMPODIFERIDO" Type="Self.TIEMPODIFERIDO" Multiplicity="1" />
+    <End Role="FACTURA_PAGO" Type="Self.FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIEMPODIFERIDO">
+        <PropertyRef Name="ID_TIEMPODIFERIDO" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="Tiempo_Diferido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_CONSULTORIO">
+    <End Role="CONSULTORIO" Type="Self.CONSULTORIO" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONSULTORIO">
+        <PropertyRef Name="ID_CONSULTORIO" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_CONSULTORIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_DIAS_SEMANA">
+    <End Role="DIAS_SEMANA" Type="Self.DIAS_SEMANA" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIAS_SEMANA">
+        <PropertyRef Name="ID_DIAS" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_DIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_MEDICO">
+    <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICO">
+        <PropertyRef Name="ID_MEDICO" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_MEDICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LENTE_DEFINITIVO_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="LENTE_DEFINITIVO" Type="Self.LENTE_DEFINITIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTE_DEFINITIVO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LENTE_PRUEBA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="LENTE_PRUEBA" Type="Self.LENTE_PRUEBA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTE_PRUEBA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LENTES_CONTACTO_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="LENTES_CONTACTO" Type="Self.LENTES_CONTACTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTES_CONTACTO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICO_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="MEDICO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OFTALMOLOGIA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="OFTALMOLOGIA" Type="Self.OFTALMOLOGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="OFTALMOLOGIA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTE_CONVENIO">
+    <End Role="CONVENIO" Type="Self.CONVENIO" Multiplicity="1" />
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONVENIO">
+        <PropertyRef Name="ID_TIPO" />
+      </Principal>
+      <Dependent Role="PACIENTE">
+        <PropertyRef Name="ID_TIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETINOSCOPIA_DILATADA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RETINOSCOPIA_DILATADA" Type="Self.RETINOSCOPIA_DILATADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RETINOSCOPIA_DILATADA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RX_EN_USO_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RX_EN_USO" Type="Self.RX_EN_USO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RX_EN_USO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RX_FINAL_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RX_FINAL" Type="Self.RX_FINAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RX_FINAL">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_NIVEL_USUARIO">
+    <End Role="NIVEL_USUARIO" Type="Self.NIVEL_USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIVEL_USUARIO">
+        <PropertyRef Name="ID_NIVEL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_NIVEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_DuplicaFactura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="atencion" Type="bigint" Mode="In" />
+    <Parameter Name="valor1" Type="decimal" Mode="In" />
+    <Parameter Name="valor2" Type="decimal" Mode="In" />
+    <Parameter Name="iva" Type="decimal" Mode="In" />
+  </Function>
+  <EntityContainer Name="Opt3000ModelStoreContainer">
+    <EntitySet Name="ADAPTACION_LENTES" EntityType="Self.ADAPTACION_LENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AGENDA" EntityType="Self.AGENDA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ANTICIPOS" EntityType="Self.ANTICIPOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ATENCION" EntityType="Self.ATENCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANCOS" EntityType="Self.BANCOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CAJA" EntityType="Self.CAJA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CIE_10" EntityType="Self.CIE_10" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONSULTORIO" EntityType="Self.CONSULTORIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTADOR_PRODUCTOS" EntityType="Self.CONTADOR_PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONVENIO" EntityType="Self.CONVENIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUENTA_PACIENTE" EntityType="Self.CUENTA_PACIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE" EntityType="Self.DETALLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLE_ORDEN" EntityType="Self.DETALLE_ORDEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIAS_SEMANA" EntityType="Self.DIAS_SEMANA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ESPECIALIDAD" EntityType="Self.ESPECIALIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURA_PAGO" EntityType="Self.FACTURA_PAGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FORMA_PAGO" EntityType="Self.FORMA_PAGO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GARANTIA" EntityType="Self.GARANTIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HONRARIOATENCION" EntityType="Self.HONRARIOATENCION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LENTE_DEFINITIVO" EntityType="Self.LENTE_DEFINITIVO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LENTE_PRUEBA" EntityType="Self.LENTE_PRUEBA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LENTES_CONTACTO" EntityType="Self.LENTES_CONTACTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEDICO" EntityType="Self.MEDICO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NIVEL_USUARIO" EntityType="Self.NIVEL_USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OFTALMOLOGIA" EntityType="Self.OFTALMOLOGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_LEJANA" EntityType="Self.ORDEN_LEJANA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_LENTES_CONTACTO" EntityType="Self.ORDEN_LENTES_CONTACTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_LENTES_PROGESIVOS" EntityType="Self.ORDEN_LENTES_PROGESIVOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_LENTESBLANDOS" EntityType="Self.ORDEN_LENTESBLANDOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_PEDIDO" EntityType="Self.ORDEN_PEDIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDEN_VISION_CERCA" EntityType="Self.ORDEN_VISION_CERCA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orden1" EntityType="Self.Orden1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PACIENTE" EntityType="Self.PACIENTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PARAMETRO" EntityType="Self.PARAMETRO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RETINOSCOPIA_DILATADA" EntityType="Self.RETINOSCOPIA_DILATADA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RX_EN_USO" EntityType="Self.RX_EN_USO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RX_FINAL" EntityType="Self.RX_FINAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIEMPODIFERIDO" EntityType="Self.TIEMPODIFERIDO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_LENTECONTACTO" EntityType="Self.TIPO_LENTECONTACTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_PRODUCTO" EntityType="Self.TIPO_PRODUCTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vAtenciones" EntityType="Self.vAtenciones" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vAtenciones].[Identificacion] AS [Identificacion], 
+[vAtenciones].[Cliente] AS [Cliente], 
+[vAtenciones].[Cuenta] AS [Cuenta], 
+[vAtenciones].[Atencion] AS [Atencion], 
+[vAtenciones].[Detalle] AS [Detalle], 
+[vAtenciones].[Fecha] AS [Fecha], 
+[vAtenciones].[SubTotal] AS [SubTotal], 
+[vAtenciones].[Iva] AS [Iva], 
+[vAtenciones].[Total] AS [Total]
+FROM [dbo].[vAtenciones] AS [vAtenciones]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vAtenciones1" EntityType="Self.vAtenciones1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vAtenciones1].[HCL] AS [HCL], 
+[vAtenciones1].[ReciboCaja] AS [ReciboCaja], 
+[vAtenciones1].[Identificacion] AS [Identificacion], 
+[vAtenciones1].[Paciente] AS [Paciente], 
+[vAtenciones1].[Fecha] AS [Fecha], 
+[vAtenciones1].[Observaciones] AS [Observaciones], 
+[vAtenciones1].[SubTotal] AS [SubTotal], 
+[vAtenciones1].[Iva] AS [Iva], 
+[vAtenciones1].[Total] AS [Total], 
+[vAtenciones1].[Anticipo] AS [Anticipo], 
+[vAtenciones1].[Saldo] AS [Saldo]
+FROM [dbo].[vAtenciones1] AS [vAtenciones1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="visFactura" EntityType="Self.visFactura" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[visFactura].[ReciboCaja] AS [ReciboCaja], 
+[visFactura].[Identificacion] AS [Identificacion], 
+[visFactura].[Paciente] AS [Paciente], 
+[visFactura].[Factura] AS [Factura], 
+[visFactura].[Fecha] AS [Fecha], 
+[visFactura].[TiempoDiferido] AS [TiempoDiferido], 
+[visFactura].[Caja] AS [Caja], 
+[visFactura].[Direccion] AS [Direccion], 
+[visFactura].[SubTotal] AS [SubTotal], 
+[visFactura].[Iva] AS [Iva], 
+[visFactura].[Total] AS [Total]
+FROM [dbo].[visFactura] AS [visFactura]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ADAPTACION_LENTES_ATENCION" Association="Self.FK_ADAPTACION_LENTES_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="ADAPTACION_LENTES" EntitySet="ADAPTACION_LENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AGENDA_HONRARIOATENCION" Association="Self.FK_AGENDA_HONRARIOATENCION">
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+      <End Role="AGENDA" EntitySet="AGENDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AGENDA_PACIENTE" Association="Self.FK_AGENDA_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="AGENDA" EntitySet="AGENDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ANTICIPOS_PACIENTE" Association="Self.FK_ANTICIPOS_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="ANTICIPOS" EntitySet="ANTICIPOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATENCION_PACIENTE" Association="Self.FK_ATENCION_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="ATENCION" EntitySet="ATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CAJA_SUCURSAL" Association="Self.FK_CAJA_SUCURSAL">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="CAJA" EntitySet="CAJA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONSULTORIO_SUCURSAL" Association="Self.FK_CONSULTORIO_SUCURSAL">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="CONSULTORIO" EntitySet="CONSULTORIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_PACIENTE_ATENCION" Association="Self.FK_CUENTA_PACIENTE_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_PACIENTE_CLIENTE" Association="Self.FK_CUENTA_PACIENTE_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_CUENTA_PACIENTE" Association="Self.FK_DETALLE_CUENTA_PACIENTE">
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_ORDEN_ORDEN_PEDIDO" Association="Self.FK_DETALLE_ORDEN_ORDEN_PEDIDO">
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PRODUCTO" Association="Self.FK_DETALLE_PRODUCTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_ATENCION" Association="Self.FK_FACTURA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_CAJA" Association="Self.FK_FACTURA_CAJA">
+      <End Role="CAJA" EntitySet="CAJA" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_PAGO_FACTURA1" Association="Self.FK_FACTURA_PAGO_FACTURA1">
+      <End Role="FACTURA" EntitySet="FACTURA" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_PAGO_FORMA_PAGO" Association="Self.FK_FACTURA_PAGO_FORMA_PAGO">
+      <End Role="FORMA_PAGO" EntitySet="FORMA_PAGO" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_PAGO_TIEMPODIFERIDO" Association="Self.FK_FACTURA_PAGO_TIEMPODIFERIDO">
+      <End Role="TIEMPODIFERIDO" EntitySet="TIEMPODIFERIDO" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_CONSULTORIO" Association="Self.FK_HONRARIOATENCION_CONSULTORIO">
+      <End Role="CONSULTORIO" EntitySet="CONSULTORIO" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_DIAS_SEMANA" Association="Self.FK_HONRARIOATENCION_DIAS_SEMANA">
+      <End Role="DIAS_SEMANA" EntitySet="DIAS_SEMANA" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_MEDICO" Association="Self.FK_HONRARIOATENCION_MEDICO">
+      <End Role="MEDICO" EntitySet="MEDICO" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LENTE_DEFINITIVO_ATENCION" Association="Self.FK_LENTE_DEFINITIVO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTE_DEFINITIVO" EntitySet="LENTE_DEFINITIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LENTE_PRUEBA_ATENCION" Association="Self.FK_LENTE_PRUEBA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTE_PRUEBA" EntitySet="LENTE_PRUEBA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LENTES_CONTACTO_ATENCION" Association="Self.FK_LENTES_CONTACTO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTES_CONTACTO" EntitySet="LENTES_CONTACTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICO_USUARIO" Association="Self.FK_MEDICO_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="MEDICO" EntitySet="MEDICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OFTALMOLOGIA_ATENCION" Association="Self.FK_OFTALMOLOGIA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="OFTALMOLOGIA" EntitySet="OFTALMOLOGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTE_CONVENIO" Association="Self.FK_PACIENTE_CONVENIO">
+      <End Role="CONVENIO" EntitySet="CONVENIO" />
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETINOSCOPIA_DILATADA_ATENCION" Association="Self.FK_RETINOSCOPIA_DILATADA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RETINOSCOPIA_DILATADA" EntitySet="RETINOSCOPIA_DILATADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RX_EN_USO_ATENCION" Association="Self.FK_RX_EN_USO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RX_EN_USO" EntitySet="RX_EN_USO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RX_FINAL_ATENCION" Association="Self.FK_RX_FINAL_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RX_FINAL" EntitySet="RX_FINAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_NIVEL_USUARIO" Association="Self.FK_USUARIO_NIVEL_USUARIO">
+      <End Role="NIVEL_USUARIO" EntitySet="NIVEL_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

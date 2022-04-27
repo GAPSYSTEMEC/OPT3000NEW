@@ -1,0 +1,192 @@
+﻿
+namespace Opt3000.Vista.Utilitarios.Menu
+{
+    partial class AgrupaCuentas
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.g_Pacientes = new System.Windows.Forms.DataGridView();
+            this.g_Pacientes2 = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.r_Cedula = new System.Windows.Forms.RadioButton();
+            this.r_Hc = new System.Windows.Forms.RadioButton();
+            this.r_Nombre = new System.Windows.Forms.RadioButton();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.g_Pacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g_Pacientes2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // g_Pacientes
+            // 
+            this.g_Pacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.g_Pacientes.Location = new System.Drawing.Point(12, 110);
+            this.g_Pacientes.Name = "g_Pacientes";
+            this.g_Pacientes.Size = new System.Drawing.Size(561, 150);
+            this.g_Pacientes.TabIndex = 0;
+            this.g_Pacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.g_Pacientes_CellClick);
+            // 
+            // g_Pacientes2
+            // 
+            this.g_Pacientes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.g_Pacientes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.paciente});
+            this.g_Pacientes2.Location = new System.Drawing.Point(12, 313);
+            this.g_Pacientes2.Name = "g_Pacientes2";
+            this.g_Pacientes2.Size = new System.Drawing.Size(561, 150);
+            this.g_Pacientes2.TabIndex = 1;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // paciente
+            // 
+            this.paciente.HeaderText = "PACIENTE";
+            this.paciente.Name = "paciente";
+            this.paciente.ReadOnly = true;
+            this.paciente.Width = 300;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.r_Cedula);
+            this.groupBox1.Controls.Add(this.r_Hc);
+            this.groupBox1.Controls.Add(this.r_Nombre);
+            this.groupBox1.Location = new System.Drawing.Point(78, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(427, 51);
+            this.groupBox1.TabIndex = 40;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "CRITERIO DE BUSQUEDA";
+            // 
+            // r_Cedula
+            // 
+            this.r_Cedula.AutoSize = true;
+            this.r_Cedula.Location = new System.Drawing.Point(311, 26);
+            this.r_Cedula.Name = "r_Cedula";
+            this.r_Cedula.Size = new System.Drawing.Size(110, 17);
+            this.r_Cedula.TabIndex = 38;
+            this.r_Cedula.Text = "IDENTIFICACIÓN";
+            this.r_Cedula.UseVisualStyleBackColor = true;
+            // 
+            // r_Hc
+            // 
+            this.r_Hc.AutoSize = true;
+            this.r_Hc.Location = new System.Drawing.Point(167, 26);
+            this.r_Hc.Name = "r_Hc";
+            this.r_Hc.Size = new System.Drawing.Size(120, 17);
+            this.r_Hc.TabIndex = 37;
+            this.r_Hc.Text = "HISTORIA CLÍNICA";
+            this.r_Hc.UseVisualStyleBackColor = true;
+            // 
+            // r_Nombre
+            // 
+            this.r_Nombre.AutoSize = true;
+            this.r_Nombre.Checked = true;
+            this.r_Nombre.Location = new System.Drawing.Point(6, 26);
+            this.r_Nombre.Name = "r_Nombre";
+            this.r_Nombre.Size = new System.Drawing.Size(137, 17);
+            this.r_Nombre.TabIndex = 36;
+            this.r_Nombre.TabStop = true;
+            this.r_Nombre.Text = "NOMBRE Y APELLIDO";
+            this.r_Nombre.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBuscador.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtBuscador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscador.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscador.Location = new System.Drawing.Point(78, 69);
+            this.txtBuscador.MaxLength = 5;
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(427, 24);
+            this.txtBuscador.TabIndex = 39;
+            this.txtBuscador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenerar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.Color.Black;
+            this.btnGenerar.Location = new System.Drawing.Point(469, 488);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(102, 44);
+            this.btnGenerar.TabIndex = 292;
+            this.btnGenerar.Text = "CONFIRMAR";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // AgrupaCuentas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(583, 561);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtBuscador);
+            this.Controls.Add(this.g_Pacientes2);
+            this.Controls.Add(this.g_Pacientes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "AgrupaCuentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AgrupaCuentas";
+            ((System.ComponentModel.ISupportInitialize)(this.g_Pacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.g_Pacientes2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView g_Pacientes;
+        private System.Windows.Forms.DataGridView g_Pacientes2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton r_Cedula;
+        private System.Windows.Forms.RadioButton r_Hc;
+        private System.Windows.Forms.RadioButton r_Nombre;
+        private System.Windows.Forms.TextBox txtBuscador;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
+    }
+}

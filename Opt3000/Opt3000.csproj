@@ -1,0 +1,1359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08B2EC8A-13F7-4C0A-A6BC-60BA51B5FE45}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Opt3000</RootNamespace>
+    <AssemblyName>Opt3000</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3949ED75DF1C39821F99BFD4E297647C4727119C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Opt3000_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.Designer.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeConverter.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Web, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Web.Mvc, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Web.Mvc5, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Web.WebForms, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Win, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v19.1.Wpf, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DemoData.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DemoData.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DemoReports.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=4c3bc44151be4b47, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DevAV.v19.1.Data, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DevAV.v19.1.Reports, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.EasyTest.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.CloneObject.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Dashboards.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Dashboards.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Dashboards.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.DataService.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EasyTest.WebAdapter.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EasyTest.WinAdapter.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EF.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.HtmlPropertyEditor.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Images.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Kpi.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Localization.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Maps.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Maps.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Notifications.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Objects.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Office.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Office.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Web.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Reports.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Reports.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Mobile.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Scheduler.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Scheduler.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.Win.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Workflow.Activities.v19.1.Design, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Accordion.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Carousel.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Dashboard.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DataAccess.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DemoBase.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Dialogs.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ExpressionEditor.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Gantt.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Gauges.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Map.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PdfViewer.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PrismAdapters.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Scheduler.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Scheduling.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.SpellChecker.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.SpellChecker.v19.1.Design, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.DXStyle.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.HybridApp.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.LightGray.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisDark.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisLight.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Black.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Blue.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Silver.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Black.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Blue.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Silver.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2013.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2013DarkGray.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2013LightGray.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Black.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016BlackSE.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016ColorfulSE.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016DarkGraySE.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Black.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019DarkGray.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019White.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Seven.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.TouchlineDark.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.VS2010.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Blue.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Dark.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Light.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.TreeMap.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.TypedStyles.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Wizard, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDiagram.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Presets, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Win, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraMap.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.CodeCompletion, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Service, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.GoogleCalendar, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Reporting, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Reporting.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeMap.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Infragistics2.Shared.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.Misc.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.v10.3, Version=10.3.20103.1000, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Shared.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Misc.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v19.2, Version=19.2.20192.134, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatos\ADAPTACION_LENTES.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\AGENDA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ANTICIPOS.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ATENCION.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\BANCOS.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CAJA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CIE_10.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CLIENTE.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CONSULTORIO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CONTADOR_PRODUCTOS.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CONVENIO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\CUENTA_PACIENTE.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\DETALLE.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\DETALLE_ORDEN.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\DIAS_SEMANA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\EMPRESA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ESPECIALIDAD.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\FACTURA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\FACTURA_PAGO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\FORMA_PAGO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\GARANTIA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\HONRARIOATENCION.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\LENTES_CONTACTO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\LENTE_DEFINITIVO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\LENTE_PRUEBA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\MEDICO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\NIVEL_USUARIO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\OFTALMOLOGIA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\Opt3000.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Opt3000.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\Opt3000.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\Opt3000.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Opt3000.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\Orden1.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_LEJANA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_LENTESBLANDOS.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_LENTES_CONTACTO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_LENTES_PROGESIVOS.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_PEDIDO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\ORDEN_VISION_CERCA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\PACIENTE.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\PARAMETRO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\PRODUCTO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\RETINOSCOPIA_DILATADA.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\RX_EN_USO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\RX_FINAL.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\SUCURSAL.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\TIEMPODIFERIDO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\TIPO_LENTECONTACTO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\TIPO_PRODUCTO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\USUARIO.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\vAtenciones.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\vAtenciones1.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDatos\visFactura.cs">
+      <DependentUpon>Opt3000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DatActualizacion.cs" />
+    <Compile Include="Datos\DatConsultas.cs" />
+    <Compile Include="Datos\DatGuarda.cs" />
+    <Compile Include="Datos\ExploradorController.cs" />
+    <Compile Include="Entidades\AnticipoRecibo.cs" />
+    <Compile Include="Entidades\Certificados.cs" />
+    <Compile Include="Entidades\CuentasAgrupadas.cs" />
+    <Compile Include="Entidades\DevolucionLista.cs" />
+    <Compile Include="Entidades\DTOAnticipos.cs" />
+    <Compile Include="Entidades\DTOBlandos.cs" />
+    <Compile Include="Entidades\DTOCerca.cs" />
+    <Compile Include="Entidades\DTOCitas.cs" />
+    <Compile Include="Entidades\DTOConsulta.cs" />
+    <Compile Include="Entidades\DTOFactura.cs" />
+    <Compile Include="Entidades\DTOLejana.cs" />
+    <Compile Include="Entidades\DTONota.cs" />
+    <Compile Include="Entidades\DTOOftalmologia.cs" />
+    <Compile Include="Entidades\DTOOrden.cs" />
+    <Compile Include="Entidades\DTOPacientes.cs" />
+    <Compile Include="Entidades\Garantias.cs" />
+    <Compile Include="Entidades\Medicos.cs" />
+    <Compile Include="Entidades\OrdenGeneral.cs" />
+    <Compile Include="Entidades\OrdenPendiente.cs" />
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\FuncionesBasicas.cs" />
+    <Compile Include="Negocio\NegActualizacion.cs" />
+    <Compile Include="Negocio\NegConsultas.cs" />
+    <Compile Include="Negocio\NegGuarda.cs" />
+    <Compile Include="Negocio\Cesion.cs" />
+    <Compile Include="OPT3000DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPT3000DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OPT3000DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPT3000DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OPT3000DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPT3000DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OPT3000DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPT3000DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Caja\Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Caja\Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Clientes\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Clientes\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Clientes\Agendamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Clientes\Agendamiento.Designer.cs">
+      <DependentUpon>Agendamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Consultas\LentesContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Consultas\LentesContacto.Designer.cs">
+      <DependentUpon>LentesContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Consultas\Oftalmica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Consultas\Oftalmica.Designer.cs">
+      <DependentUpon>Oftalmica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Consultas\NuevaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Consultas\NuevaConsulta.Designer.cs">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmAgenda.Designer.cs">
+      <DependentUpon>frmAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmAnticipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmAnticipos.Designer.cs">
+      <DependentUpon>frmAnticipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmFacturta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmFacturta.Designer.cs">
+      <DependentUpon>frmFacturta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmMenuExploradopres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmMenuExploradopres.Designer.cs">
+      <DependentUpon>frmMenuExploradopres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmNotasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmNotasVentas.Designer.cs">
+      <DependentUpon>frmNotasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOftalmologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOftalmologia.Designer.cs">
+      <DependentUpon>frmOftalmologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenBlandos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenBlandos.Designer.cs">
+      <DependentUpon>frmOrdenBlandos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenCercana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenCercana.Designer.cs">
+      <DependentUpon>frmOrdenCercana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenLejana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenLejana.Designer.cs">
+      <DependentUpon>frmOrdenLejana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenTrabaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenTrabaj.Designer.cs">
+      <DependentUpon>frmOrdenTrabaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmOrdenTrabajo.Designer.cs">
+      <DependentUpon>frmOrdenTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmPaciente.Designer.cs">
+      <DependentUpon>frmPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBienvenida.Designer.cs">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Agenda.cs" />
+    <Compile Include="Vista\Utilitarios\Anticipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Anticipo.Designer.cs">
+      <DependentUpon>Anticipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Anticipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Anticipos.Designer.cs">
+      <DependentUpon>Anticipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Bancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Bancos.Designer.cs">
+      <DependentUpon>Bancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscadorAtencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscadorAtencion.Designer.cs">
+      <DependentUpon>BuscadorAtencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscadorPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscadorPacientes.Designer.cs">
+      <DependentUpon>BuscadorPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscarInventario.Designer.cs">
+      <DependentUpon>BuscarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\BuscaUsuarios.Designer.cs">
+      <DependentUpon>BuscaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Calculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Calculadora.Designer.cs">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\CertificadoMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\CertificadoMedico.Designer.cs">
+      <DependentUpon>CertificadoMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Cie10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Cie10.Designer.cs">
+      <DependentUpon>Cie10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\CuentaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\CuentaIndividual.Designer.cs">
+      <DependentUpon>CuentaIndividual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Devolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Devolucion.Designer.cs">
+      <DependentUpon>Devolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\DividirCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\DividirCuenta.Designer.cs">
+      <DependentUpon>DividirCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\FormasPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\FormasPago.Designer.cs">
+      <DependentUpon>FormasPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\frmOrdenesTrab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\frmOrdenesTrab.Designer.cs">
+      <DependentUpon>frmOrdenesTrab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Garantias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Garantias.designer.cs">
+      <DependentUpon>Garantias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Medicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Medicos.Designer.cs">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\MenuUtilitario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\MenuUtilitario.Designer.cs">
+      <DependentUpon>MenuUtilitario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Agenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Agenda.Designer.cs">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\AgrupaCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\AgrupaCuentas.Designer.cs">
+      <DependentUpon>AgrupaCuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Contadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Contadores.Designer.cs">
+      <DependentUpon>Contadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Convenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Convenios.Designer.cs">
+      <DependentUpon>Convenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\CreaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\CreaMedico.Designer.cs">
+      <DependentUpon>CreaMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\DescuentoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\DescuentoFactura.Designer.cs">
+      <DependentUpon>DescuentoFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\RecuperaOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\RecuperaOrden.Designer.cs">
+      <DependentUpon>RecuperaOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Menu\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\MoverArchivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\MoverArchivo.Designer.cs">
+      <DependentUpon>MoverArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenLentesBlandos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenLentesBlandos.Designer.cs">
+      <DependentUpon>OrdenLentesBlandos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenLentesEspeciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenLentesEspeciales.Designer.cs">
+      <DependentUpon>OrdenLentesEspeciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenPedido.Designer.cs">
+      <DependentUpon>OrdenPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenVisionCerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenVisionCerca.Designer.cs">
+      <DependentUpon>OrdenVisionCerca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenVisionLejana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\OrdenVisionLejana.Designer.cs">
+      <DependentUpon>OrdenVisionLejana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Orden_Normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Orden_Normal.Designer.cs">
+      <DependentUpon>Orden_Normal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\CertificadoDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificadoDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\CertificadoReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificadoReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\GarantiaDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GarantiaDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\GarantiaReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GarantiaReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\GarantiaReporte2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GarantiaReporte2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenBifocal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenBifocal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenBifocalDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenBifocalDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenContactoEspeciales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenContactoEspeciales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenContactoEspecialesDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenContactoEspecialesDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenVisionCercanaDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenVisionCercanaDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenVisionLentesBlandos.cs">
+      <DependentUpon>OrdenVisionLentesBlandos.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenVisionLejana.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenVisionLejana.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenVisionLejanaDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenVisionLejanaDatos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\OrdenVisonCercana.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdenVisonCercana.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\ReciboAnticipo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReciboAnticipo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\RecivoAnticipoReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecivoAnticipoReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\Reporteador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\Reportes\Reporteador.Designer.cs">
+      <DependentUpon>Reporteador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\RevisionEstadoOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\TiempoDiferido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\TiempoDiferido.Designer.cs">
+      <DependentUpon>TiempoDiferido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\Caja\Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Clientes\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Clientes\Agendamiento.resx">
+      <DependentUpon>Agendamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Consultas\LentesContacto.resx">
+      <DependentUpon>LentesContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Consultas\Oftalmica.resx">
+      <DependentUpon>Oftalmica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Consultas\NuevaConsulta.resx">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmAgenda.resx">
+      <DependentUpon>frmAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmAnticipos.resx">
+      <DependentUpon>frmAnticipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmFacturta.resx">
+      <DependentUpon>frmFacturta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmMenuExploradopres.resx">
+      <DependentUpon>frmMenuExploradopres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmNotasVentas.resx">
+      <DependentUpon>frmNotasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOftalmologia.resx">
+      <DependentUpon>frmOftalmologia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOrdenBlandos.resx">
+      <DependentUpon>frmOrdenBlandos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOrdenCercana.resx">
+      <DependentUpon>frmOrdenCercana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOrdenLejana.resx">
+      <DependentUpon>frmOrdenLejana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOrdenTrabaj.resx">
+      <DependentUpon>frmOrdenTrabaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmOrdenTrabajo.resx">
+      <DependentUpon>frmOrdenTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmPaciente.resx">
+      <DependentUpon>frmPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmBienvenida.resx">
+      <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Anticipo.resx">
+      <DependentUpon>Anticipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Anticipos.resx">
+      <DependentUpon>Anticipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Bancos.resx">
+      <DependentUpon>Bancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\BuscadorAtencion.resx">
+      <DependentUpon>BuscadorAtencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\BuscadorPacientes.resx">
+      <DependentUpon>BuscadorPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\BuscarInventario.resx">
+      <DependentUpon>BuscarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\BuscaUsuarios.resx">
+      <DependentUpon>BuscaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Calculadora.resx">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\CertificadoMedico.resx">
+      <DependentUpon>CertificadoMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Cie10.resx">
+      <DependentUpon>Cie10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\CuentaIndividual.resx">
+      <DependentUpon>CuentaIndividual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Devolucion.resx">
+      <DependentUpon>Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\DividirCuenta.resx">
+      <DependentUpon>DividirCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\FormasPago.resx">
+      <DependentUpon>FormasPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\frmOrdenesTrab.resx">
+      <DependentUpon>frmOrdenesTrab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Garantias.resx">
+      <DependentUpon>Garantias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Medicos.resx">
+      <DependentUpon>Medicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\MenuUtilitario.resx">
+      <DependentUpon>MenuUtilitario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\AgrupaCuentas.resx">
+      <DependentUpon>AgrupaCuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Contadores.resx">
+      <DependentUpon>Contadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Convenios.resx">
+      <DependentUpon>Convenios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\CreaMedico.resx">
+      <DependentUpon>CreaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\DescuentoFactura.resx">
+      <DependentUpon>DescuentoFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\RecuperaOrden.resx">
+      <DependentUpon>RecuperaOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Menu\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\MoverArchivo.resx">
+      <DependentUpon>MoverArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\OrdenLentesBlandos.resx">
+      <DependentUpon>OrdenLentesBlandos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\OrdenLentesEspeciales.resx">
+      <DependentUpon>OrdenLentesEspeciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\OrdenPedido.resx">
+      <DependentUpon>OrdenPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\OrdenVisionCerca.resx">
+      <DependentUpon>OrdenVisionCerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\OrdenVisionLejana.resx">
+      <DependentUpon>OrdenVisionLejana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Orden_Normal.resx">
+      <DependentUpon>Orden_Normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\CertificadoReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CertificadoReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\GarantiaReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GarantiaReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\GarantiaReporte2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GarantiaReporte2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\OrdenBifocal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenBifocal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\OrdenContactoEspeciales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenContactoEspeciales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\OrdenVisionLejana.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenVisionLejana.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\OrdenVisonCercana.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenVisonCercana.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\RecivoAnticipoReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RecivoAnticipoReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\Reporteador.resx">
+      <DependentUpon>Reporteador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\RevisionEstadoOrdenes.resx">
+      <DependentUpon>RevisionEstadoOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\TiempoDiferido.resx">
+      <DependentUpon>TiempoDiferido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="BaseDatos\Opt3000.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Opt3000.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BaseDatos\Opt3000.edmx.diagram">
+      <DependentUpon>Opt3000.edmx</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet.xsc">
+      <DependentUpon>OPT3000DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPT3000DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OPT3000DataSet.xss">
+      <DependentUpon>OPT3000DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet1.xsc">
+      <DependentUpon>OPT3000DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPT3000DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OPT3000DataSet1.xss">
+      <DependentUpon>OPT3000DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet2.xsc">
+      <DependentUpon>OPT3000DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPT3000DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OPT3000DataSet2.xss">
+      <DependentUpon>OPT3000DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet3.xsc">
+      <DependentUpon>OPT3000DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="OPT3000DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OPT3000DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OPT3000DataSet3.xss">
+      <DependentUpon>OPT3000DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Vista\Utilitarios\Reportes\CertificadoDatos.xsc">
+      <DependentUpon>CertificadoDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\CertificadoDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CertificadoDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\CertificadoDatos.xss">
+      <DependentUpon>CertificadoDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\GarantiaDatos.xsc">
+      <DependentUpon>GarantiaDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\GarantiaDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GarantiaDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\GarantiaDatos.xss">
+      <DependentUpon>GarantiaDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenBifocalDatos.xsc">
+      <DependentUpon>OrdenBifocalDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenBifocalDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdenBifocalDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenBifocalDatos.xss">
+      <DependentUpon>OrdenBifocalDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenContactoEspecialesDatos.xsc">
+      <DependentUpon>OrdenContactoEspecialesDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenContactoEspecialesDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdenContactoEspecialesDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenContactoEspecialesDatos.xss">
+      <DependentUpon>OrdenContactoEspecialesDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionCercanaDatos.xsc">
+      <DependentUpon>OrdenVisionCercanaDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionCercanaDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdenVisionCercanaDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionCercanaDatos.xss">
+      <DependentUpon>OrdenVisionCercanaDatos.xsd</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Vista\Utilitarios\Reportes\OrdenVisionLentesBlandos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdenVisionLentesBlandos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionLejanaDatos.xsc">
+      <DependentUpon>OrdenVisionLejanaDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionLejanaDatos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdenVisionLejanaDatos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\OrdenVisionLejanaDatos.xss">
+      <DependentUpon>OrdenVisionLejanaDatos.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\ReciboAnticipo.xsc">
+      <DependentUpon>ReciboAnticipo.xsd</DependentUpon>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\ReciboAnticipo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReciboAnticipo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Vista\Utilitarios\Reportes\ReciboAnticipo.xss">
+      <DependentUpon>ReciboAnticipo.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BaseDatos\Opt3000.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Opt3000.edmx</DependentUpon>
+      <LastGenOutput>Opt3000.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BaseDatos\Opt3000.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Opt3000.edmx</DependentUpon>
+      <LastGenOutput>Opt3000.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

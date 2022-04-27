@@ -1,0 +1,1335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Opt3000Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADAPTACION_LENTES">
+    <Key>
+      <PropertyRef Name="ID_ADAPTACIONLENTES" />
+    </Key>
+    <Property Name="ID_ADAPTACIONLENTES" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="PupilarOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PupilarOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CornealOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CornealOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaipebralOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaipebralOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="But" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Shirmer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_ADAPTACION_LENTES_ATENCION" FromRole="ADAPTACION_LENTES" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="AGENDA">
+    <Key>
+      <PropertyRef Name="ID_AGENDA" />
+    </Key>
+    <Property Name="ID_AGENDA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_DIASATENCION" Type="Int64" Nullable="false" />
+    <Property Name="FachaCita" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Hora" Type="Int16" Nullable="false" />
+    <Property Name="Minutos" Type="Int16" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_PACIENTE" Type="Int64" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cie10" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONSULTORIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HONRARIOATENCION" Relationship="Self.FK_AGENDA_HONRARIOATENCION" FromRole="AGENDA" ToRole="HONRARIOATENCION" />
+    <NavigationProperty Name="PACIENTE" Relationship="Self.FK_AGENDA_PACIENTE" FromRole="AGENDA" ToRole="PACIENTE" />
+  </EntityType>
+  <EntityType Name="ATENCION">
+    <Key>
+      <PropertyRef Name="ID_ATENCION" />
+    </Key>
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PACIENTE" Type="Int64" Nullable="false" />
+    <Property Name="Tipo_Consulta" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tipo_Seguro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiagnosticoOD" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiagnosticoOI" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Recomendaciones" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="Int32" Nullable="false" />
+    <Property Name="Ate_Facturada" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ADAPTACION_LENTES" Relationship="Self.FK_ADAPTACION_LENTES_ATENCION" FromRole="ATENCION" ToRole="ADAPTACION_LENTES" />
+    <NavigationProperty Name="PACIENTE" Relationship="Self.FK_ATENCION_PACIENTE" FromRole="ATENCION" ToRole="PACIENTE" />
+    <NavigationProperty Name="CUENTA_PACIENTE" Relationship="Self.FK_CUENTA_PACIENTE_ATENCION" FromRole="ATENCION" ToRole="CUENTA_PACIENTE" />
+    <NavigationProperty Name="LENTE_DEFINITIVO" Relationship="Self.FK_LENTE_DEFINITIVO_ATENCION" FromRole="ATENCION" ToRole="LENTE_DEFINITIVO" />
+    <NavigationProperty Name="LENTE_PRUEBA" Relationship="Self.FK_LENTE_PRUEBA_ATENCION" FromRole="ATENCION" ToRole="LENTE_PRUEBA" />
+    <NavigationProperty Name="OFTALMOLOGIA" Relationship="Self.FK_OFTALMOLOGIA_ATENCION" FromRole="ATENCION" ToRole="OFTALMOLOGIA" />
+    <NavigationProperty Name="RETINOSCOPIA_DILATADA" Relationship="Self.FK_RETINOSCOPIA_DILATADA_ATENCION" FromRole="ATENCION" ToRole="RETINOSCOPIA_DILATADA" />
+    <NavigationProperty Name="RX_EN_USO" Relationship="Self.FK_RX_EN_USO_ATENCION" FromRole="ATENCION" ToRole="RX_EN_USO" />
+    <NavigationProperty Name="RX_FINAL" Relationship="Self.FK_RX_FINAL_ATENCION" FromRole="ATENCION" ToRole="RX_FINAL" />
+    <NavigationProperty Name="FACTURA" Relationship="Opt3000Model.FK_FACTURA_ATENCION" FromRole="ATENCION" ToRole="FACTURA" />
+    <Property Name="OPTOMETRA" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Mpc" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LENTES_CONTACTO" Relationship="Opt3000Model.FK_LENTES_CONTACTO_ATENCION" FromRole="ATENCION" ToRole="LENTES_CONTACTO" />
+    <Property Name="FACTURAR" Type="Boolean" />
+    <Property Name="CUENTADIVIDIA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CAJA">
+    <Key>
+      <PropertyRef Name="ID_CAJA" />
+    </Key>
+    <Property Name="ID_CAJA" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SUCURSAL" Type="Int16" Nullable="false" />
+    <Property Name="PtoEmision" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Caja" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Secuencial" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="SUCURSAL" Relationship="Self.FK_CAJA_SUCURSAL" FromRole="CAJA" ToRole="SUCURSAL" />
+    <NavigationProperty Name="FACTURA" Relationship="Opt3000Model.FK_FACTURA_CAJA" FromRole="CAJA" ToRole="FACTURA" />
+  </EntityType>
+  <EntityType Name="CIE_10">
+    <Key>
+      <PropertyRef Name="IDCIE10" />
+    </Key>
+    <Property Name="IDCIE10" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cie_Padre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Identificacion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CUENTA_PACIENTE" Relationship="Self.FK_CUENTA_PACIENTE_CLIENTE" FromRole="CLIENTE" ToRole="CUENTA_PACIENTE" />
+  </EntityType>
+  <EntityType Name="CONSULTORIO">
+    <Key>
+      <PropertyRef Name="ID_CONSULTORIO" />
+    </Key>
+    <Property Name="ID_CONSULTORIO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_SUCURSAL" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="SUCURSAL" Relationship="Self.FK_CONSULTORIO_SUCURSAL" FromRole="CONSULTORIO" ToRole="SUCURSAL" />
+    <NavigationProperty Name="HONRARIOATENCION" Relationship="Self.FK_HONRARIOATENCION_CONSULTORIO" FromRole="CONSULTORIO" ToRole="HONRARIOATENCION" />
+  </EntityType>
+  <EntityType Name="CONVENIO">
+    <Key>
+      <PropertyRef Name="ID_TIPO" />
+    </Key>
+    <Property Name="ID_TIPO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PACIENTE" Relationship="Self.FK_PACIENTE_CONVENIO" FromRole="CONVENIO" ToRole="PACIENTE" />
+  </EntityType>
+  <EntityType Name="CUENTA_PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_CUENTA_PACIENTE" />
+    </Key>
+    <Property Name="ID_CUENTA_PACIENTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CLIENTE" Type="Int64" Nullable="false" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_CUENTA_PACIENTE_ATENCION" FromRole="CUENTA_PACIENTE" ToRole="ATENCION" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CUENTA_PACIENTE_CLIENTE" FromRole="CUENTA_PACIENTE" ToRole="CLIENTE" />
+    <NavigationProperty Name="DETALLE" Relationship="Self.FK_DETALLE_CUENTA_PACIENTE" FromRole="CUENTA_PACIENTE" ToRole="DETALLE" />
+    <Property Name="AGRUPACION" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DETALLE">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CUENTA_PACIENTE" Type="Int64" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int64" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Iva" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <NavigationProperty Name="CUENTA_PACIENTE" Relationship="Self.FK_DETALLE_CUENTA_PACIENTE" FromRole="DETALLE" ToRole="CUENTA_PACIENTE" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_DETALLE_PRODUCTO" FromRole="DETALLE" ToRole="PRODUCTO" />
+    <Property Name="Sub_total" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="Descuento" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="DIAS_SEMANA">
+    <Key>
+      <PropertyRef Name="ID_DIAS" />
+    </Key>
+    <Property Name="ID_DIAS" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="HONRARIOATENCION" Relationship="Self.FK_HONRARIOATENCION_DIAS_SEMANA" FromRole="DIAS_SEMANA" ToRole="HONRARIOATENCION" />
+  </EntityType>
+  <EntityType Name="HONRARIOATENCION">
+    <Key>
+      <PropertyRef Name="ID_DIASATENCION" />
+    </Key>
+    <Property Name="ID_DIASATENCION" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_MEDICO" Type="Int32" Nullable="false" />
+    <Property Name="ID_DIA" Type="Int16" Nullable="false" />
+    <Property Name="ID_CONSULTORIO" Type="Int16" Nullable="false" />
+    <Property Name="HoraInicio" Type="Int16" Nullable="false" />
+    <Property Name="HoraFin" Type="Int16" Nullable="false" />
+    <Property Name="HoraAlmuerzo" Type="Int16" Nullable="false" />
+    <Property Name="Intervalo" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="AGENDA" Relationship="Self.FK_AGENDA_HONRARIOATENCION" FromRole="HONRARIOATENCION" ToRole="AGENDA" />
+    <NavigationProperty Name="CONSULTORIO" Relationship="Self.FK_HONRARIOATENCION_CONSULTORIO" FromRole="HONRARIOATENCION" ToRole="CONSULTORIO" />
+    <NavigationProperty Name="DIAS_SEMANA" Relationship="Self.FK_HONRARIOATENCION_DIAS_SEMANA" FromRole="HONRARIOATENCION" ToRole="DIAS_SEMANA" />
+    <NavigationProperty Name="MEDICO" Relationship="Self.FK_HONRARIOATENCION_MEDICO" FromRole="HONRARIOATENCION" ToRole="MEDICO" />
+  </EntityType>
+  <EntityType Name="LENTE_DEFINITIVO">
+    <Key>
+      <PropertyRef Name="ID_LENTEDEFINITIVO" />
+    </Key>
+    <Property Name="ID_LENTEDEFINITIVO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="BaseOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BaseOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PoderOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PoderOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiametroOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiametroOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaterialOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaterialOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_LENTE_DEFINITIVO_ATENCION" FromRole="LENTE_DEFINITIVO" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="LENTE_PRUEBA">
+    <Key>
+      <PropertyRef Name="ID_LENTEPRUEBA" />
+    </Key>
+    <Property Name="ID_LENTEPRUEBA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="BaseOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BaseOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PoderOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PoderOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaterialOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaterialOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiametroOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiametroOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RefraccionOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RefraccionOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VisualOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VisualOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_LENTE_PRUEBA_ATENCION" FromRole="LENTE_PRUEBA" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="MEDICO">
+    <Key>
+      <PropertyRef Name="ID_MEDICO" />
+    </Key>
+    <Property Name="ID_MEDICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="Identificacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Especialidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TiempoConsulta" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="HONRARIOATENCION" Relationship="Self.FK_HONRARIOATENCION_MEDICO" FromRole="MEDICO" ToRole="HONRARIOATENCION" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_MEDICO_USUARIO" FromRole="MEDICO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="NIVEL_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_NIVEL" />
+    </Key>
+    <Property Name="ID_NIVEL" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripsion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_USUARIO_NIVEL_USUARIO" FromRole="NIVEL_USUARIO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="OFTALMOLOGIA">
+    <Key>
+      <PropertyRef Name="ID_OFTALMICA" />
+    </Key>
+    <Property Name="ID_OFTALMICA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="Anamnesis" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Examen_Fisico" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Biomicroscopia" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ButOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ButOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PioOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PioID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_OFTALMOLOGIA_ATENCION" FromRole="OFTALMOLOGIA" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="PACIENTE">
+    <Key>
+      <PropertyRef Name="ID_PACIENTE" />
+    </Key>
+    <Property Name="ID_PACIENTE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO" Type="Int16" Nullable="false" />
+    <Property Name="Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Celular" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Convencional" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Ocupacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AGENDA" Relationship="Self.FK_AGENDA_PACIENTE" FromRole="PACIENTE" ToRole="AGENDA" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_ATENCION_PACIENTE" FromRole="PACIENTE" ToRole="ATENCION" />
+    <NavigationProperty Name="CONVENIO" Relationship="Self.FK_PACIENTE_CONVENIO" FromRole="PACIENTE" ToRole="CONVENIO" />
+    <NavigationProperty Name="ANTICIPOS" Relationship="Opt3000Model.FK_ANTICIPOS_PACIENTE" FromRole="PACIENTE" ToRole="ANTICIPOS" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="PagaIva" Type="Boolean" Nullable="false" />
+    <Property Name="Especificaciones" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STOCK" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLE1" Relationship="Self.FK_DETALLE_PRODUCTO" FromRole="PRODUCTO" ToRole="DETALLE" />
+    <Property Name="ID_DETALLE" Type="Int64" Nullable="false" />
+    <Property Name="CodProducto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RETINOSCOPIA_DILATADA">
+    <Key>
+      <PropertyRef Name="ID_RETINOSCOPIA" />
+    </Key>
+    <Property Name="ID_RETINOSCOPIA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="Esfera" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cilindro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Eje" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Avl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OJO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_RETINOSCOPIA_DILATADA_ATENCION" FromRole="RETINOSCOPIA_DILATADA" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="RX_EN_USO">
+    <Key>
+      <PropertyRef Name="ID_RXUSO" />
+    </Key>
+    <Property Name="ID_RXUSO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="AvsLejosOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvsLejosOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AVcercaOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AVcercaOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RxUsoOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RxUsoOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvcLejosOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvcLejosOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvcCercaOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvcCercaOI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_RX_EN_USO_ATENCION" FromRole="RX_EN_USO" ToRole="ATENCION" />
+  </EntityType>
+  <EntityType Name="RX_FINAL">
+    <Key>
+      <PropertyRef Name="ID_RXFINAL" />
+    </Key>
+    <Property Name="ID_RXFINAL" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="Esfera" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cilindro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Eje" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="A_D_D" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AVL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AVC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ALT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DNP_DP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OJO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Self.FK_RX_FINAL_ATENCION" FromRole="RX_FINAL" ToRole="ATENCION" />
+    <Property Name="AVSC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AVCC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SUCURSAL">
+    <Key>
+      <PropertyRef Name="ID_SUCURSAL" />
+    </Key>
+    <Property Name="ID_SUCURSAL" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacturaElectronica" Type="Boolean" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CAJA" Relationship="Self.FK_CAJA_SUCURSAL" FromRole="SUCURSAL" ToRole="CAJA" />
+    <NavigationProperty Name="CONSULTORIO" Relationship="Self.FK_CONSULTORIO_SUCURSAL" FromRole="SUCURSAL" ToRole="CONSULTORIO" />
+  </EntityType>
+  <EntityType Name="TIPO_LENTECONTACTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO" />
+    </Key>
+    <Property Name="ID_TIPO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_NIVEL" Type="Int16" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Celular" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Clave" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MEDICO" Relationship="Self.FK_MEDICO_USUARIO" FromRole="USUARIO" ToRole="MEDICO" />
+    <NavigationProperty Name="NIVEL_USUARIO" Relationship="Self.FK_USUARIO_NIVEL_USUARIO" FromRole="USUARIO" ToRole="NIVEL_USUARIO" />
+  </EntityType>
+  <Association Name="FK_ADAPTACION_LENTES_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="ADAPTACION_LENTES" Type="Self.ADAPTACION_LENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="ADAPTACION_LENTES">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AGENDA_HONRARIOATENCION">
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="1" />
+    <End Role="AGENDA" Type="Self.AGENDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_DIASATENCION" />
+      </Principal>
+      <Dependent Role="AGENDA">
+        <PropertyRef Name="ID_DIASATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AGENDA_PACIENTE">
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="1" />
+    <End Role="AGENDA" Type="Self.AGENDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="AGENDA">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ATENCION_PACIENTE">
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="1" />
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="ATENCION">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_PACIENTE_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LENTE_DEFINITIVO_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="LENTE_DEFINITIVO" Type="Self.LENTE_DEFINITIVO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTE_DEFINITIVO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LENTE_PRUEBA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="LENTE_PRUEBA" Type="Self.LENTE_PRUEBA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTE_PRUEBA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OFTALMOLOGIA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="OFTALMOLOGIA" Type="Self.OFTALMOLOGIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="OFTALMOLOGIA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RETINOSCOPIA_DILATADA_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RETINOSCOPIA_DILATADA" Type="Self.RETINOSCOPIA_DILATADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RETINOSCOPIA_DILATADA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RX_EN_USO_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RX_EN_USO" Type="Self.RX_EN_USO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RX_EN_USO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RX_FINAL_ATENCION">
+    <End Role="ATENCION" Type="Self.ATENCION" Multiplicity="1" />
+    <End Role="RX_FINAL" Type="Self.RX_FINAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="RX_FINAL">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CAJA_SUCURSAL">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="CAJA" Type="Self.CAJA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Principal>
+      <Dependent Role="CAJA">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_PACIENTE_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONSULTORIO_SUCURSAL">
+    <End Role="SUCURSAL" Type="Self.SUCURSAL" Multiplicity="1" />
+    <End Role="CONSULTORIO" Type="Self.CONSULTORIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUCURSAL">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Principal>
+      <Dependent Role="CONSULTORIO">
+        <PropertyRef Name="ID_SUCURSAL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_CONSULTORIO">
+    <End Role="CONSULTORIO" Type="Self.CONSULTORIO" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONSULTORIO">
+        <PropertyRef Name="ID_CONSULTORIO" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_CONSULTORIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PACIENTE_CONVENIO">
+    <End Role="CONVENIO" Type="Self.CONVENIO" Multiplicity="1" />
+    <End Role="PACIENTE" Type="Self.PACIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONVENIO">
+        <PropertyRef Name="ID_TIPO" />
+      </Principal>
+      <Dependent Role="PACIENTE">
+        <PropertyRef Name="ID_TIPO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_CUENTA_PACIENTE">
+    <End Role="CUENTA_PACIENTE" Type="Self.CUENTA_PACIENTE" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUENTA_PACIENTE">
+        <PropertyRef Name="ID_CUENTA_PACIENTE" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="ID_CUENTA_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLE_PRODUCTO">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_DIAS_SEMANA">
+    <End Role="DIAS_SEMANA" Type="Self.DIAS_SEMANA" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIAS_SEMANA">
+        <PropertyRef Name="ID_DIAS" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_DIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HONRARIOATENCION_MEDICO">
+    <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="1" />
+    <End Role="HONRARIOATENCION" Type="Self.HONRARIOATENCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEDICO">
+        <PropertyRef Name="ID_MEDICO" />
+      </Principal>
+      <Dependent Role="HONRARIOATENCION">
+        <PropertyRef Name="ID_MEDICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEDICO_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+    <End Role="MEDICO" Type="Self.MEDICO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="MEDICO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_NIVEL_USUARIO">
+    <End Role="NIVEL_USUARIO" Type="Self.NIVEL_USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIVEL_USUARIO">
+        <PropertyRef Name="ID_NIVEL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_NIVEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Opt3000Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADAPTACION_LENTES" EntityType="Self.ADAPTACION_LENTES" />
+    <EntitySet Name="AGENDA" EntityType="Self.AGENDA" />
+    <EntitySet Name="ATENCION" EntityType="Self.ATENCION" />
+    <EntitySet Name="CAJA" EntityType="Self.CAJA" />
+    <EntitySet Name="CIE_10" EntityType="Self.CIE_10" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="CONSULTORIO" EntityType="Self.CONSULTORIO" />
+    <EntitySet Name="CONVENIO" EntityType="Self.CONVENIO" />
+    <EntitySet Name="CUENTA_PACIENTE" EntityType="Self.CUENTA_PACIENTE" />
+    <EntitySet Name="DETALLE" EntityType="Self.DETALLE" />
+    <EntitySet Name="DIAS_SEMANA" EntityType="Self.DIAS_SEMANA" />
+    <EntitySet Name="HONRARIOATENCION" EntityType="Self.HONRARIOATENCION" />
+    <EntitySet Name="LENTE_DEFINITIVO" EntityType="Self.LENTE_DEFINITIVO" />
+    <EntitySet Name="LENTE_PRUEBA" EntityType="Self.LENTE_PRUEBA" />
+    <EntitySet Name="MEDICO" EntityType="Self.MEDICO" />
+    <EntitySet Name="NIVEL_USUARIO" EntityType="Self.NIVEL_USUARIO" />
+    <EntitySet Name="OFTALMOLOGIA" EntityType="Self.OFTALMOLOGIA" />
+    <EntitySet Name="PACIENTE" EntityType="Self.PACIENTE" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="RETINOSCOPIA_DILATADA" EntityType="Self.RETINOSCOPIA_DILATADA" />
+    <EntitySet Name="RX_EN_USO" EntityType="Self.RX_EN_USO" />
+    <EntitySet Name="RX_FINAL" EntityType="Self.RX_FINAL" />
+    <EntitySet Name="SUCURSAL" EntityType="Self.SUCURSAL" />
+    <EntitySet Name="TIPO_LENTECONTACTO" EntityType="Self.TIPO_LENTECONTACTO" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+    <AssociationSet Name="FK_ADAPTACION_LENTES_ATENCION" Association="Self.FK_ADAPTACION_LENTES_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="ADAPTACION_LENTES" EntitySet="ADAPTACION_LENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AGENDA_HONRARIOATENCION" Association="Self.FK_AGENDA_HONRARIOATENCION">
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+      <End Role="AGENDA" EntitySet="AGENDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AGENDA_PACIENTE" Association="Self.FK_AGENDA_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="AGENDA" EntitySet="AGENDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ATENCION_PACIENTE" Association="Self.FK_ATENCION_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="ATENCION" EntitySet="ATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_PACIENTE_ATENCION" Association="Self.FK_CUENTA_PACIENTE_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LENTE_DEFINITIVO_ATENCION" Association="Self.FK_LENTE_DEFINITIVO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTE_DEFINITIVO" EntitySet="LENTE_DEFINITIVO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LENTE_PRUEBA_ATENCION" Association="Self.FK_LENTE_PRUEBA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTE_PRUEBA" EntitySet="LENTE_PRUEBA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OFTALMOLOGIA_ATENCION" Association="Self.FK_OFTALMOLOGIA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="OFTALMOLOGIA" EntitySet="OFTALMOLOGIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RETINOSCOPIA_DILATADA_ATENCION" Association="Self.FK_RETINOSCOPIA_DILATADA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RETINOSCOPIA_DILATADA" EntitySet="RETINOSCOPIA_DILATADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RX_EN_USO_ATENCION" Association="Self.FK_RX_EN_USO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RX_EN_USO" EntitySet="RX_EN_USO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RX_FINAL_ATENCION" Association="Self.FK_RX_FINAL_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="RX_FINAL" EntitySet="RX_FINAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CAJA_SUCURSAL" Association="Self.FK_CAJA_SUCURSAL">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="CAJA" EntitySet="CAJA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_PACIENTE_CLIENTE" Association="Self.FK_CUENTA_PACIENTE_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONSULTORIO_SUCURSAL" Association="Self.FK_CONSULTORIO_SUCURSAL">
+      <End Role="SUCURSAL" EntitySet="SUCURSAL" />
+      <End Role="CONSULTORIO" EntitySet="CONSULTORIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_CONSULTORIO" Association="Self.FK_HONRARIOATENCION_CONSULTORIO">
+      <End Role="CONSULTORIO" EntitySet="CONSULTORIO" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PACIENTE_CONVENIO" Association="Self.FK_PACIENTE_CONVENIO">
+      <End Role="CONVENIO" EntitySet="CONVENIO" />
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_CUENTA_PACIENTE" Association="Self.FK_DETALLE_CUENTA_PACIENTE">
+      <End Role="CUENTA_PACIENTE" EntitySet="CUENTA_PACIENTE" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLE_PRODUCTO" Association="Self.FK_DETALLE_PRODUCTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_DIAS_SEMANA" Association="Self.FK_HONRARIOATENCION_DIAS_SEMANA">
+      <End Role="DIAS_SEMANA" EntitySet="DIAS_SEMANA" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HONRARIOATENCION_MEDICO" Association="Self.FK_HONRARIOATENCION_MEDICO">
+      <End Role="MEDICO" EntitySet="MEDICO" />
+      <End Role="HONRARIOATENCION" EntitySet="HONRARIOATENCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEDICO_USUARIO" Association="Self.FK_MEDICO_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="MEDICO" EntitySet="MEDICO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_NIVEL_USUARIO" Association="Self.FK_USUARIO_NIVEL_USUARIO">
+      <End Role="NIVEL_USUARIO" EntitySet="NIVEL_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <EntitySet Name="PARAMETRO" EntityType="Opt3000Model.PARAMETRO" />
+    <EntitySet Name="ANTICIPOS" EntityType="Opt3000Model.ANTICIPOS" />
+    <AssociationSet Name="FK_ANTICIPOS_PACIENTE" Association="Opt3000Model.FK_ANTICIPOS_PACIENTE">
+      <End Role="PACIENTE" EntitySet="PACIENTE" />
+      <End Role="ANTICIPOS" EntitySet="ANTICIPOS" />
+    </AssociationSet>
+    <EntitySet Name="FACTURA" EntityType="Opt3000Model.FACTURA" />
+    <EntitySet Name="FACTURA_PAGO" EntityType="Opt3000Model.FACTURA_PAGO" />
+    <EntitySet Name="FORMA_PAGO" EntityType="Opt3000Model.FORMA_PAGO" />
+    <AssociationSet Name="FK_FACTURA_ATENCION" Association="Opt3000Model.FK_FACTURA_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_CAJA" Association="Opt3000Model.FK_FACTURA_CAJA">
+      <End Role="CAJA" EntitySet="CAJA" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_PAGO_FACTURA1" Association="Opt3000Model.FK_FACTURA_PAGO_FACTURA1">
+      <End Role="FACTURA" EntitySet="FACTURA" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_PAGO_FORMA_PAGO" Association="Opt3000Model.FK_FACTURA_PAGO_FORMA_PAGO">
+      <End Role="FORMA_PAGO" EntitySet="FORMA_PAGO" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <EntitySet Name="TIEMPODIFERIDO" EntityType="Opt3000Model.TIEMPODIFERIDO" />
+    <AssociationSet Name="FK_FACTURA_PAGO_TIEMPODIFERIDO" Association="Opt3000Model.FK_FACTURA_PAGO_TIEMPODIFERIDO">
+      <End Role="TIEMPODIFERIDO" EntitySet="TIEMPODIFERIDO" />
+      <End Role="FACTURA_PAGO" EntitySet="FACTURA_PAGO" />
+    </AssociationSet>
+    <EntitySet Name="EMPRESA" EntityType="Opt3000Model.EMPRESA" />
+    <EntitySet Name="ESPECIALIDAD" EntityType="Opt3000Model.ESPECIALIDAD" />
+    <EntitySet Name="DETALLE_ORDEN" EntityType="Opt3000Model.DETALLE_ORDEN" />
+    <EntitySet Name="ORDEN_PEDIDO" EntityType="Opt3000Model.ORDEN_PEDIDO" />
+    <AssociationSet Name="FK_DETALLE_ORDEN_ORDEN_PEDIDO" Association="Opt3000Model.FK_DETALLE_ORDEN_ORDEN_PEDIDO">
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+      <End Role="DETALLE_ORDEN" EntitySet="DETALLE_ORDEN" />
+    </AssociationSet>
+    <EntitySet Name="CONTADOR_PRODUCTOS" EntityType="Opt3000Model.CONTADOR_PRODUCTOS" />
+    <EntitySet Name="TIPO_PRODUCTO" EntityType="Opt3000Model.TIPO_PRODUCTO" />
+    <EntitySet Name="ORDEN_LENTES_CONTACTO" EntityType="Opt3000Model.ORDEN_LENTES_CONTACTO" />
+    <EntitySet Name="ORDEN_LENTES_PROGESIVOS" EntityType="Opt3000Model.ORDEN_LENTES_PROGESIVOS" />
+    <EntitySet Name="Orden1" EntityType="Opt3000Model.Orden1" />
+    <EntitySet Name="BANCOS" EntityType="Opt3000Model.BANCOS" />
+    <EntitySet Name="LENTES_CONTACTO" EntityType="Opt3000Model.LENTES_CONTACTO" />
+    <AssociationSet Name="FK_LENTES_CONTACTO_ATENCION" Association="Opt3000Model.FK_LENTES_CONTACTO_ATENCION">
+      <End Role="ATENCION" EntitySet="ATENCION" />
+      <End Role="LENTES_CONTACTO" EntitySet="LENTES_CONTACTO" />
+    </AssociationSet>
+    <EntitySet Name="GARANTIA" EntityType="Opt3000Model.GARANTIA" />
+    <EntitySet Name="vAtenciones" EntityType="Opt3000Model.vAtenciones" />
+    <EntitySet Name="ORDEN_VISION_CERCA" EntityType="Opt3000Model.ORDEN_VISION_CERCA" />
+    <EntitySet Name="ORDEN_LEJANA" EntityType="Opt3000Model.ORDEN_LEJANA" />
+    <EntitySet Name="ORDEN_LENTESBLANDOS" EntityType="Opt3000Model.ORDEN_LENTESBLANDOS" />
+    <FunctionImport Name="sp_DuplicaFactura">
+      <Parameter Name="atencion" Mode="In" Type="Int64" />
+      <Parameter Name="valor1" Mode="In" Type="Decimal" />
+      <Parameter Name="valor2" Mode="In" Type="Decimal" />
+      <Parameter Name="iva" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <EntitySet Name="visFactura" EntityType="Opt3000Model.visFactura" />
+    <EntitySet Name="vAtenciones1" EntityType="Opt3000Model.vAtenciones1" />
+  </EntityContainer>
+  <EntityType Name="PARAMETRO">
+    <Key>
+      <PropertyRef Name="ID_PARAMETRO" />
+    </Key>
+    <Property Name="ID_PARAMETRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripciones" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ANTICIPOS">
+    <Key>
+      <PropertyRef Name="ID_ANTICIPOS" />
+    </Key>
+    <Property Name="ID_ANTICIPOS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PACIENTE" Type="Int64" Nullable="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="Saldo" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <NavigationProperty Name="PACIENTE" Relationship="Opt3000Model.FK_ANTICIPOS_PACIENTE" FromRole="ANTICIPOS" ToRole="PACIENTE" />
+    <Property Name="Fecha_Registro" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <Association Name="FK_ANTICIPOS_PACIENTE">
+    <End Type="Opt3000Model.PACIENTE" Role="PACIENTE" Multiplicity="1" />
+    <End Type="Opt3000Model.ANTICIPOS" Role="ANTICIPOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PACIENTE">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Principal>
+      <Dependent Role="ANTICIPOS">
+        <PropertyRef Name="ID_PACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="ID_FACTURA" />
+    </Key>
+    <Property Name="ID_FACTURA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="Fecha_Emision" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Arqueada" Type="Boolean" Nullable="false" />
+    <Property Name="Fecha_Arqueo" Type="DateTime" Precision="3" />
+    <Property Name="ID_CAJA" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Opt3000Model.FK_FACTURA_ATENCION" FromRole="FACTURA" ToRole="ATENCION" />
+    <NavigationProperty Name="CAJA" Relationship="Opt3000Model.FK_FACTURA_CAJA" FromRole="FACTURA" ToRole="CAJA" />
+    <NavigationProperty Name="FACTURA_PAGO" Relationship="Opt3000Model.FK_FACTURA_PAGO_FACTURA1" FromRole="FACTURA" ToRole="FACTURA_PAGO" />
+    <Property Name="Numero_Factura" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FACTURA_PAGO">
+    <Key>
+      <PropertyRef Name="ID_FACTURAPAGO" />
+    </Key>
+    <Property Name="ID_FACTURAPAGO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_FORMAPAGO" Type="Int32" Nullable="false" />
+    <Property Name="ID_FACTURA" Type="Int64" Nullable="false" />
+    <Property Name="Lote" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Autorizacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FACTURA" Relationship="Opt3000Model.FK_FACTURA_PAGO_FACTURA1" FromRole="FACTURA_PAGO" ToRole="FACTURA" />
+    <NavigationProperty Name="FORMA_PAGO" Relationship="Opt3000Model.FK_FACTURA_PAGO_FORMA_PAGO" FromRole="FACTURA_PAGO" ToRole="FORMA_PAGO" />
+    <Property Name="Duenio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Tiempo_Diferido" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="TIEMPODIFERIDO" Relationship="Opt3000Model.FK_FACTURA_PAGO_TIEMPODIFERIDO" FromRole="FACTURA_PAGO" ToRole="TIEMPODIFERIDO" />
+  </EntityType>
+  <EntityType Name="FORMA_PAGO">
+    <Key>
+      <PropertyRef Name="ID_FORMAPAGO" />
+    </Key>
+    <Property Name="ID_FORMAPAGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <Property Name="CodigoSri" Type="Int16" Nullable="false" />
+    <Property Name="Diferido" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="FACTURA_PAGO" Relationship="Opt3000Model.FK_FACTURA_PAGO_FORMA_PAGO" FromRole="FORMA_PAGO" ToRole="FACTURA_PAGO" />
+  </EntityType>
+  <Association Name="FK_FACTURA_ATENCION">
+    <End Type="Opt3000Model.ATENCION" Role="ATENCION" Multiplicity="1" />
+    <End Type="Opt3000Model.FACTURA" Role="FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_CAJA">
+    <End Type="Opt3000Model.CAJA" Role="CAJA" Multiplicity="1" />
+    <End Type="Opt3000Model.FACTURA" Role="FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAJA">
+        <PropertyRef Name="ID_CAJA" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="ID_CAJA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_PAGO_FACTURA1">
+    <End Type="Opt3000Model.FACTURA" Role="FACTURA" Multiplicity="1" />
+    <End Type="Opt3000Model.FACTURA_PAGO" Role="FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA">
+        <PropertyRef Name="ID_FACTURA" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="ID_FACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_PAGO_FORMA_PAGO">
+    <End Type="Opt3000Model.FORMA_PAGO" Role="FORMA_PAGO" Multiplicity="1" />
+    <End Type="Opt3000Model.FACTURA_PAGO" Role="FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FORMA_PAGO">
+        <PropertyRef Name="ID_FORMAPAGO" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="ID_FORMAPAGO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TIEMPODIFERIDO">
+    <Key>
+      <PropertyRef Name="ID_TIEMPODIFERIDO" />
+    </Key>
+    <Property Name="ID_TIEMPODIFERIDO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FACTURA_PAGO" Relationship="Opt3000Model.FK_FACTURA_PAGO_TIEMPODIFERIDO" FromRole="TIEMPODIFERIDO" ToRole="FACTURA_PAGO" />
+  </EntityType>
+  <Association Name="FK_FACTURA_PAGO_TIEMPODIFERIDO">
+    <End Type="Opt3000Model.TIEMPODIFERIDO" Role="TIEMPODIFERIDO" Multiplicity="1" />
+    <End Type="Opt3000Model.FACTURA_PAGO" Role="FACTURA_PAGO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIEMPODIFERIDO">
+        <PropertyRef Name="ID_TIEMPODIFERIDO" />
+      </Principal>
+      <Dependent Role="FACTURA_PAGO">
+        <PropertyRef Name="Tiempo_Diferido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EMPRESA">
+    <Key>
+      <PropertyRef Name="ID_EMPRESA" />
+    </Key>
+    <Property Name="ID_EMPRESA" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Razon_Social" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre_Comercial" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Ruc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Ambiente" Type="Int16" Nullable="false" />
+    <Property Name="Emision" Type="Int16" Nullable="false" />
+    <Property Name="Direccion_Matriz" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Contribuyente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lleva_Contabilidad" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ESPECIALIDAD">
+    <Key>
+      <PropertyRef Name="ID_ESPECIALIDAD" />
+    </Key>
+    <Property Name="ID_ESPECIALIDAD" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DETALLE_ORDEN">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ORDEN" Type="Int64" Nullable="false" />
+    <Property Name="CodProducto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int16" Nullable="false" />
+    <Property Name="Costo" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="PagaIva" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ORDEN_PEDIDO" Relationship="Opt3000Model.FK_DETALLE_ORDEN_ORDEN_PEDIDO" FromRole="DETALLE_ORDEN" ToRole="ORDEN_PEDIDO" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Ganacia" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="Imagen" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_PEDIDO">
+    <Key>
+      <PropertyRef Name="ID_ORDEN" />
+    </Key>
+    <Property Name="ID_ORDEN" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalFactura" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="NumeroFactura" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FechaFactura" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Proveedor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CargaInventario" Type="Boolean" Nullable="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DETALLE_ORDEN" Relationship="Opt3000Model.FK_DETALLE_ORDEN_ORDEN_PEDIDO" FromRole="ORDEN_PEDIDO" ToRole="DETALLE_ORDEN" />
+    <Property Name="IMAGEN" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_DETALLE_ORDEN_ORDEN_PEDIDO">
+    <End Type="Opt3000Model.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="1" />
+    <End Type="Opt3000Model.DETALLE_ORDEN" Role="DETALLE_ORDEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_PEDIDO">
+        <PropertyRef Name="ID_ORDEN" />
+      </Principal>
+      <Dependent Role="DETALLE_ORDEN">
+        <PropertyRef Name="ID_ORDEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CONTADOR_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_SECUENCIACODIGO" />
+    </Key>
+    <Property Name="ID_SECUENCIACODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPOPRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="Contador" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPO_PRODUCTO">
+    <Key>
+      <PropertyRef Name="ID_TIPOPRODUCTO" />
+    </Key>
+    <Property Name="ID_TIPOPRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTES_CONTACTO">
+    <Key>
+      <PropertyRef Name="ID_ORDEN3" />
+    </Key>
+    <Property Name="ID_ORDEN3" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" />
+    <Property Name="CodPaciente" Type="Int64" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTES_PROGESIVOS">
+    <Key>
+      <PropertyRef Name="ID_ORDEN2" />
+    </Key>
+    <Property Name="ID_ORDEN2" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" />
+    <Property Name="CodPaciente" Type="Int64" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvccDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvccIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mecanica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mayor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Horinzotal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Verical" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Puente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodArmazon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Filtros" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tinturado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Luna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bisel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Orden1">
+    <Key>
+      <PropertyRef Name="ID_ORDEN1" />
+    </Key>
+    <Property Name="ID_ORDEN1" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" />
+    <Property Name="CodPaciente" Type="Int64" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AddIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AltDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AltIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpDer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpIz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mecanica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mayor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Horinzotal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Verical" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Puente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodArmazon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Filtros" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tinturado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Luna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bisel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GENERADO" Type="Boolean" />
+    <Property Name="enviado" Type="Boolean" />
+    <Property Name="RECIBIDO" Type="Boolean" />
+    <Property Name="ENTREGADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BANCOS">
+    <Key>
+      <PropertyRef Name="ID_BANCO" />
+    </Key>
+    <Property Name="ID_BANCO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Detalle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LENTES_CONTACTO">
+    <Key>
+      <PropertyRef Name="ID_LENTES" />
+    </Key>
+    <Property Name="ID_LENTES" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="Esfera" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Cilindro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Eje" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="OJO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ATENCION" Relationship="Opt3000Model.FK_LENTES_CONTACTO_ATENCION" FromRole="LENTES_CONTACTO" ToRole="ATENCION" />
+  </EntityType>
+  <Association Name="FK_LENTES_CONTACTO_ATENCION">
+    <End Type="Opt3000Model.ATENCION" Role="ATENCION" Multiplicity="1" />
+    <End Type="Opt3000Model.LENTES_CONTACTO" Role="LENTES_CONTACTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATENCION">
+        <PropertyRef Name="ID_ATENCION" />
+      </Principal>
+      <Dependent Role="LENTES_CONTACTO">
+        <PropertyRef Name="ID_ATENCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GARANTIA">
+    <Key>
+      <PropertyRef Name="ID_GARANTIA" />
+    </Key>
+    <Property Name="ID_GARANTIA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_ATENCION" Type="Int64" Nullable="false" />
+    <Property Name="ID_FACTURA" Type="Int64" Nullable="false" />
+    <Property Name="DetalleGarantia" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Cod_Producto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Detalle_Producto" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Valor_Producto" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Cantidad_Producto" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vAtenciones">
+    <Key>
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Cliente" />
+      <PropertyRef Name="Cuenta" />
+      <PropertyRef Name="Atencion" />
+      <PropertyRef Name="Detalle" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Identificacion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Cliente" Type="String" Nullable="false" MaxLength="201" FixedLength="false" Unicode="false" />
+    <Property Name="Cuenta" Type="Int64" Nullable="false" />
+    <Property Name="Atencion" Type="Int64" Nullable="false" />
+    <Property Name="Detalle" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SubTotal" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="Decimal" Precision="38" Scale="4" />
+  </EntityType>
+  <EntityType Name="ORDEN_VISION_CERCA">
+    <Key>
+      <PropertyRef Name="ID_ORDEN2" />
+    </Key>
+    <Property Name="ID_ORDEN2" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" Nullable="false" />
+    <Property Name="CodPaciente" Type="Int64" Nullable="false" />
+    <Property Name="FechaPedio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvccDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AvccIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Metrica" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mayor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Horizontal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vertical" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Puente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodArmazon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Filtros" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Tinturado" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Generado" Type="Boolean" Nullable="false" />
+    <Property Name="Enviado" Type="Boolean" Nullable="false" />
+    <Property Name="Recibido" Type="Boolean" Nullable="false" />
+    <Property Name="Entregado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LEJANA">
+    <Key>
+      <PropertyRef Name="ID_ORDEN3" />
+    </Key>
+    <Property Name="ID_ORDEN3" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" Nullable="false" />
+    <Property Name="CodPaciente" Type="Int64" Nullable="false" />
+    <Property Name="FechaPedio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DnpIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Metrica" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mayor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Horizontal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Vertical" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Puente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CodArmazon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Filtros" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Tinturado" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Generado" Type="Boolean" Nullable="false" />
+    <Property Name="Enviado" Type="Boolean" Nullable="false" />
+    <Property Name="Recibido" Type="Boolean" Nullable="false" />
+    <Property Name="Entregado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDEN_LENTESBLANDOS">
+    <Key>
+      <PropertyRef Name="ID_ORDEN4" />
+    </Key>
+    <Property Name="ID_ORDEN4" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AteCodigo" Type="Int64" Nullable="false" />
+    <Property Name="CodPaciente" Type="Int64" Nullable="false" />
+    <Property Name="FechaPedio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EsferaDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EsferaIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CilindroIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeDer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EjeIz" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDer" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TipoIz" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Filtros" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Generado" Type="Boolean" Nullable="false" />
+    <Property Name="Enviado" Type="Boolean" Nullable="false" />
+    <Property Name="Recibido" Type="Boolean" Nullable="false" />
+    <Property Name="Entregado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="visFactura">
+    <Key>
+      <PropertyRef Name="ReciboCaja" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="TiempoDiferido" />
+      <PropertyRef Name="Caja" />
+      <PropertyRef Name="Direccion" />
+    </Key>
+    <Property Name="ReciboCaja" Type="Int64" Nullable="false" />
+    <Property Name="Identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Paciente" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="Factura" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TiempoDiferido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Caja" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="Decimal" Precision="38" Scale="4" />
+  </EntityType>
+  <EntityType Name="vAtenciones1">
+    <Key>
+      <PropertyRef Name="HCL" />
+      <PropertyRef Name="ReciboCaja" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Paciente" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Observaciones" />
+      <PropertyRef Name="Anticipo" />
+    </Key>
+    <Property Name="HCL" Type="Int64" Nullable="false" />
+    <Property Name="ReciboCaja" Type="Int64" Nullable="false" />
+    <Property Name="Identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Paciente" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Iva" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Total" Type="Decimal" Precision="38" Scale="4" />
+    <Property Name="Anticipo" Type="Decimal" Nullable="false" Precision="38" Scale="4" />
+    <Property Name="Saldo" Type="Decimal" Precision="38" Scale="4" />
+  </EntityType>
+</Schema>
