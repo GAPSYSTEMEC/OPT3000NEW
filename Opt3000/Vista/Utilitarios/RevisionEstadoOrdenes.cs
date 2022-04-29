@@ -247,9 +247,6 @@ namespace Opt3000.Vista.Utilitarios
                 try
                 {
                     //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[0].Value;
-                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[1].Value;
-                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[2].Value;
-                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[3].Value;
                     //txtcodigo.Text = (string)dgv_Detalle1.Rows[e.RowIndex].Cells[4].Value;
                     chkGenerado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[0].Value);
                     chkEnviado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[1].Value);
