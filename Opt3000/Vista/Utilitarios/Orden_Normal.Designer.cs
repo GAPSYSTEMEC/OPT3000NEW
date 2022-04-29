@@ -88,8 +88,6 @@ namespace Opt3000.Vista.Utilitarios
             this.btnBusca = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
-            this.btnInvetario2 = new System.Windows.Forms.Button();
-            this.btnFiltros = new System.Windows.Forms.Button();
             this.p_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
@@ -229,7 +227,6 @@ namespace Opt3000.Vista.Utilitarios
             this.txtArmazon.Location = new System.Drawing.Point(113, 393);
             this.txtArmazon.MaxLength = 5000;
             this.txtArmazon.Name = "txtArmazon";
-            this.txtArmazon.ReadOnly = true;
             this.txtArmazon.Size = new System.Drawing.Size(335, 24);
             this.txtArmazon.TabIndex = 234;
             // 
@@ -250,7 +247,6 @@ namespace Opt3000.Vista.Utilitarios
             this.txtMaterial.Location = new System.Drawing.Point(113, 423);
             this.txtMaterial.MaxLength = 5000;
             this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.ReadOnly = true;
             this.txtMaterial.Size = new System.Drawing.Size(335, 24);
             this.txtMaterial.TabIndex = 236;
             // 
@@ -271,7 +267,6 @@ namespace Opt3000.Vista.Utilitarios
             this.txtFiltro.Location = new System.Drawing.Point(113, 454);
             this.txtFiltro.MaxLength = 5000;
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.ReadOnly = true;
             this.txtFiltro.Size = new System.Drawing.Size(335, 24);
             this.txtFiltro.TabIndex = 238;
             // 
@@ -743,34 +738,12 @@ namespace Opt3000.Vista.Utilitarios
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // btnInvetario2
-            // 
-            this.btnInvetario2.Location = new System.Drawing.Point(68, 423);
-            this.btnInvetario2.Name = "btnInvetario2";
-            this.btnInvetario2.Size = new System.Drawing.Size(40, 23);
-            this.btnInvetario2.TabIndex = 260;
-            this.btnInvetario2.Text = "F1";
-            this.btnInvetario2.UseVisualStyleBackColor = true;
-            this.btnInvetario2.Click += new System.EventHandler(this.btnInvetario2_Click);
-            // 
-            // btnFiltros
-            // 
-            this.btnFiltros.Location = new System.Drawing.Point(68, 452);
-            this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(40, 23);
-            this.btnFiltros.TabIndex = 261;
-            this.btnFiltros.Text = "F1";
-            this.btnFiltros.UseVisualStyleBackColor = true;
-            this.btnFiltros.Click += new System.EventHandler(this.btnFiltros_Click);
-            // 
             // Orden_Normal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(461, 567);
-            this.Controls.Add(this.btnFiltros);
-            this.Controls.Add(this.btnInvetario2);
             this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.p_superior);
             this.Controls.Add(this.dt_FechaEntrega);
@@ -898,7 +871,5 @@ namespace Opt3000.Vista.Utilitarios
         private System.Windows.Forms.PictureBox btnBusca;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnInventario;
-        private System.Windows.Forms.Button btnInvetario2;
-        private System.Windows.Forms.Button btnFiltros;
     }
 }

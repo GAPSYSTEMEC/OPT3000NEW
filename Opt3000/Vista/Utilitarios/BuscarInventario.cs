@@ -19,7 +19,7 @@ namespace Opt3000.Vista.Utilitarios
         DataTable porCargar = new DataTable();
         DataTable productos = new DataTable();
         bool agrupado = false;
-        public BuscarInventario(CLIENTE obj = null, Int64 ateCod = 0, bool _agrupado = false, string _busca="")
+        public BuscarInventario(CLIENTE obj = null, Int64 ateCod = 0, bool _agrupado = false)
         {
             InitializeComponent();
             agrupado = _agrupado;
@@ -31,7 +31,7 @@ namespace Opt3000.Vista.Utilitarios
             productos.Columns.Add("PRECIO").ReadOnly = true;
             productos.Columns.Add("STOCK").ReadOnly = true;
             productos.Columns.Add("ESP").ReadOnly = true;
-            Buscador(_busca);
+            Buscador("");
             porCargar.Columns.Add("ID").ReadOnly = true;
             porCargar.Columns.Add("DETALLE").ReadOnly = true;
             porCargar.Columns.Add("CANTIDAD").ReadOnly = true;

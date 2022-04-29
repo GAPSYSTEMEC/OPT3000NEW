@@ -24,6 +24,9 @@ namespace Opt3000.Vista.Caja
         DataTable datForamaPago = new DataTable();
         private decimal valorAnticipo = 0;
         bool gridFPago = false;
+        public bool cargar = false;
+        public string cedula = "";
+        public string atencion = "";
         public Factura()
         {
             InitializeComponent();
@@ -64,7 +67,54 @@ namespace Opt3000.Vista.Caja
             label22.Visible = true;
             label22.Text = (total - anticipo).ToString();
         }
+        public void desdeExplorador()
+        {
+            if (cedula != "")
+                objPaciente = NegConsultas.getInstance().CargaPaciente(cedula);
+            else
+                return;
+            if (objPaciente != null)
+            {
+                lblNombrePaciente.Text = objPaciente.Apellidos + " " + objPaciente.Nombres;
+                lblIdentificacion.Text = objPaciente.Identificacion;
+                lblOcupacion.Text = objPaciente.Ocupacion;
+                lblHc.Text = objPaciente.ID_PACIENTE.ToString();
+                lblEdad.Text = FuncionesBasicas.getInstance().CalculaEdad(objPaciente.F_Nacimiento).ToString();
+                CONVENIO objConvenio = new CONVENIO();
+                objConvenio = NegConsultas.getInstance().ConsultaConvenio(objPaciente.ID_TIPO);
+                lblTipo.Text = objConvenio.Detalle;
 
+                if (atencion != "")
+                {
+                    objAtencion = NegConsultas.getInstance().CargaAtencion(Convert.ToInt64(atencion));
+                    p_PacienteDatos.Visible = true;
+                    p_Atencion.Enabled = true;
+                    btnBusca.Visible = false;
+                    btnFacturar.Visible = true;
+                    btnAgrupacion.Visible = true;
+                }
+                else
+                    return;
+
+                if (objAtencion != null)
+                {
+                    lblAtencion.Text = objAtencion.ID_ATENCION.ToString();
+                    p_Atencion.Enabled = true;
+                    btnFacturar.Visible = false;
+                    btnAgrupacion.Visible = false;
+                    btnNuevo.Visible = false;
+                }
+                txtNombre.Text = objPaciente.Nombres;
+                txtApellido.Text = objPaciente.Apellidos;
+                txtDireccion.Text = objPaciente.Direccion;
+                txtTelefono.Text = objPaciente.Celular;
+                txtIdentificacion.Text = objPaciente.Identificacion;
+                txtEmail.Text = objPaciente.Email;
+                CargaCuentaPaciente();
+                CargaAnticipos();
+                SumaSaldos();
+            }
+        }
         private void btnBusca_Click(object sender, EventArgs e)
         {
             BuscadorPacientes frmBuscador = new BuscadorPacientes();
@@ -147,7 +197,7 @@ namespace Opt3000.Vista.Caja
                     foreach (var item in lista)
                     {
                         PRODUCTO detalle = NegConsultas.getInstance().Producto(item.ID_PRODUCTO);
-                        objDetalle.Rows.Add(new object[] { detalle.CodProducto, detalle.Detalle, item.Cantidad, item.Sub_total, item.Descuento, item.Iva, item.Total + item.Iva });
+                        objDetalle.Rows.Add(new object[] { detalle.CodProducto, detalle.Detalle, item.Cantidad, item.Sub_total, item.Descuento, item.Iva, item.Total });
                         subTotal += item.Sub_total;
                         descuento += item.Descuento;
                         if (item.Iva != 0)
@@ -623,7 +673,7 @@ namespace Opt3000.Vista.Caja
             factura.ID_CAJA = 1;
             factura.Numero_Factura = objCaja.Secuencial.ToString("D" + n_factura.ToString());
 
-            if (NegGuarda.getInstance().GuardaFactura(cliente, anticipos, facturaPago, factura, objCaja, detalleNuevo))
+            if (NegGuarda.getInstance().GuardaFactura(cliente, anticipos, facturaPago, factura, objCaja))
             {
                 MessageBox.Show("Factura Guardada con EXITO :)", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (GeneraXML())
@@ -752,73 +802,39 @@ namespace Opt3000.Vista.Caja
                 }
                 XElement detalles = new XElement("detalles");
                 factura.Add(detalles);
-                if (detalleNuevo == "")
+                foreach (DataGridViewRow inspector in dgv_Detalle.Rows)
                 {
-                    foreach (DataGridViewRow inspector in dgv_Detalle.Rows)
+                    if (inspector.Cells["DESCUENTO"].Value != null)
                     {
-                        if (inspector.Cells["DESCUENTO"].Value != null)
+                        int codigo = 0;
+                        decimal descuento = Convert.ToDecimal(inspector.Cells["DESCUENTO"].Value.ToString()) / Convert.ToDecimal(inspector.Cells["cantidad"].Value.ToString());
+                        decimal sinImpuestos = Convert.ToDecimal(inspector.Cells["PRECIO UNITARIO"].Value.ToString()) - descuento;
+                        decimal subtotal = Convert.ToDecimal(inspector.Cells["PRECIO UNITARIO"].Value.ToString()) * Convert.ToDecimal(inspector.Cells["CANTIDAD"].Value.ToString());
+                        XElement detalle = new XElement("detalle");
+                        detalles.Add(detalle);
+                        detalle.Add(new XElement("codigoPrincipal", inspector.Cells["ID"].Value.ToString()));
+                        detalle.Add(new XElement("codigoAuxiliar", inspector.Cells["ID"].Value.ToString()));
+                        detalle.Add(new XElement("descripcion", inspector.Cells["DETALLE"].Value.ToString()));
+                        detalle.Add(new XElement("cantidad", inspector.Cells["CANTIDAD"].Value.ToString()));
+                        detalle.Add(new XElement("precioUnitario", subtotal.ToString("N2")));
+                        detalle.Add(new XElement("descuento", descuento.ToString("N2")));
+                        detalle.Add(new XElement("precioTotalSinImpuesto", sinImpuestos.ToString("N2")));
+                        XElement impuestos = new XElement("impuestos");
+                        detalle.Add(impuestos);
+                        XElement impuesto = new XElement("impuesto");
+                        impuestos.Add(impuesto);
+                        decimal iva = Convert.ToDecimal(inspector.Cells["iva"].Value.ToString());
+                        if (iva != 0)
                         {
-                            int codigo = 0;
-                            decimal descuento = Convert.ToDecimal(inspector.Cells["DESCUENTO"].Value.ToString()) / Convert.ToDecimal(inspector.Cells["cantidad"].Value.ToString());
-                            decimal sinImpuestos = Convert.ToDecimal(inspector.Cells["PRECIO UNITARIO"].Value.ToString()) - descuento;
-                            decimal subtotal = Convert.ToDecimal(inspector.Cells["PRECIO UNITARIO"].Value.ToString()) * Convert.ToDecimal(inspector.Cells["CANTIDAD"].Value.ToString());
-                            XElement detalle = new XElement("detalle");
-                            detalles.Add(detalle);
-                            detalle.Add(new XElement("codigoPrincipal", inspector.Cells["ID"].Value.ToString()));
-                            detalle.Add(new XElement("codigoAuxiliar", inspector.Cells["ID"].Value.ToString()));
-                            detalle.Add(new XElement("descripcion", inspector.Cells["DETALLE"].Value.ToString()));
-                            detalle.Add(new XElement("cantidad", inspector.Cells["CANTIDAD"].Value.ToString()));
-                            detalle.Add(new XElement("precioUnitario", subtotal.ToString("N2")));
-                            detalle.Add(new XElement("descuento", descuento.ToString("N2")));
-                            detalle.Add(new XElement("precioTotalSinImpuesto", sinImpuestos.ToString("N2")));
-                            XElement impuestos = new XElement("impuestos");
-                            detalle.Add(impuestos);
-                            XElement impuesto = new XElement("impuesto");
-                            impuestos.Add(impuesto);
-                            decimal iva = Convert.ToDecimal(inspector.Cells["iva"].Value.ToString());
-                            if (iva != 0)
-                            {
-                                codigo = 2;
-                            }
-                            impuesto.Add(new XElement("codigo", 2));
-                            impuesto.Add(new XElement("codigoPorcentaje", codigo));
-                            impuesto.Add(new XElement("tarifa", 0));
-                            impuesto.Add(new XElement("baseImponible", sinImpuestos.ToString("N2")));
-                            impuesto.Add(new XElement("valor", iva.ToString("N2")));
+                            codigo = 2;
                         }
+                        impuesto.Add(new XElement("codigo", 2));
+                        impuesto.Add(new XElement("codigoPorcentaje", codigo));
+                        impuesto.Add(new XElement("tarifa", 0));
+                        impuesto.Add(new XElement("baseImponible", sinImpuestos.ToString("N2")));
+                        impuesto.Add(new XElement("valor", iva.ToString("N2")));
                     }
                 }
-                else
-                {
-                    int codigo = 0;
-                    decimal descuento = Convert.ToDecimal(txtDescuento.Text);
-                    decimal sinImpuestos = Convert.ToDecimal(txtSinIva.Text);
-                    decimal subtotal = Convert.ToDecimal(txtSubtotal.Text);
-                    XElement detalle = new XElement("detalle");
-                    detalles.Add(detalle);
-                    detalle.Add(new XElement("codigoPrincipal", "1001"));
-                    detalle.Add(new XElement("codigoAuxiliar", "1001"));
-                    detalle.Add(new XElement("descripcion", detalleNuevo));
-                    detalle.Add(new XElement("cantidad", "1"));
-                    detalle.Add(new XElement("precioUnitario", subtotal.ToString("N2")));
-                    detalle.Add(new XElement("descuento", descuento.ToString("N2")));
-                    detalle.Add(new XElement("precioTotalSinImpuesto", sinImpuestos.ToString("N2")));
-                    XElement impuestos = new XElement("impuestos");
-                    detalle.Add(impuestos);
-                    XElement impuesto = new XElement("impuesto");
-                    impuestos.Add(impuesto);
-                    decimal iva = Convert.ToDecimal(txtConIva.Text);
-                    if (iva != 0)
-                    {
-                        codigo = 2;
-                    }
-                    impuesto.Add(new XElement("codigo", 2));
-                    impuesto.Add(new XElement("codigoPorcentaje", codigo));
-                    impuesto.Add(new XElement("tarifa", 0));
-                    impuesto.Add(new XElement("baseImponible", sinImpuestos.ToString("N2")));
-                    impuesto.Add(new XElement("valor", iva.ToString("N2")));
-                }
-                
                 XElement infoAdicional = new XElement("infoAdicional");
                 factura.Add(infoAdicional);
                 infoAdicional.Add(new XElement("campoAdicional", new XAttribute("nombre", "Email"), txtEmail.Text));
@@ -1098,18 +1114,11 @@ namespace Opt3000.Vista.Caja
             SumaSaldos();
         }
 
-        string detalleNuevo = "";
-
         private void btnFacturar_Click(object sender, EventArgs e)
         {
             if (ValidaFormulario())
             {
-                if(MessageBox.Show("Desea Cambiar el detalle de la factura???", "OPT3000", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    NuevoDetalle frm = new NuevoDetalle();
-                    frm.ShowDialog();
-                    detalleNuevo = frm.detalle;
-                }
+
                 decimal suma = 0;
                 for (int i = 0; i < dgv_FormasPago.Rows.Count - 1; i++)
                 {
@@ -1178,11 +1187,20 @@ namespace Opt3000.Vista.Caja
 
         private void btn_divideCuenta_Click(object sender, EventArgs e)
         {
-            DividirCuenta frm = new DividirCuenta(Convert.ToInt64(lblAtencion.Text), txtTotal.Text, lblIva.Text);
+            DividirCuenta frm = new DividirCuenta(Convert.ToInt64(lblAtencion.Text), txtSubtotal.Text, lblIva.Text);
             frm.ShowDialog();
             if (frm.dividida)
             {
                 this.Close();
+            }
+        }
+
+        private void Factura_Load(object sender, EventArgs e)
+        {
+
+            if (cargar)
+            {
+                desdeExplorador();
             }
         }
     }

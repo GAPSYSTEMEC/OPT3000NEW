@@ -139,6 +139,11 @@ namespace Opt3000.Vista.Consultas
                 objRx = NegConsultas.getInstance().CargaRxFinal(objAtencion.ID_ATENCION, "D");
                 if (objRx != null)
                 {
+                    //if (objRx.Esfera != "")
+                    //    if (objRx.A_D_D != "")
+                    //txtEsferaRXod.Text = (Convert.ToDecimal(objRx.Esfera) + Convert.ToDecimal(objRx.A_D_D)).ToString();
+                    //    else
+                    //        txtEsferaRXod.Text = objRx.Esfera;
                     txtEsferaRXod.Text = objRx.Esfera.ToString();
                     txtCilindroRXod.Text = objRx.Cilindro;
                     txtEjeRXod.Text = objRx.Eje;
@@ -1736,15 +1741,11 @@ namespace Opt3000.Vista.Consultas
 
         private void btnGeneral_Click(object sender, EventArgs e)
         {
-
             Orden1 orden = new Orden1();
             orden = NegConsultas.getInstance().RecuperaOrden2(Convert.ToInt64(lblAtencion.Text));
             Int64 reimprimirOrden1 = Convert.ToInt64(lblAtencion.Text);
-            if (orden != null) 
-            {
-                reimprimirOrden1 = (long)orden.ID_ORDEN1;
-                mensaje = true;
-            }
+            if (orden != null)
+                reimprimirOrden1 = (long)orden.AteCodigo;
             else
                 mensaje = false;
             if (txtEsferaRXod.Text == "")
@@ -1757,41 +1758,17 @@ namespace Opt3000.Vista.Consultas
                 MessageBox.Show("No se puede imprimir orden de trabajo Progresivo o Bifocal ya que no tiene datos en ADD :(", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Orden_Normal frm = new Orden_Normal(reimprimirOrden1, lblIdentificacion.Text, mensaje, lblAtencion.Text);
+            Orden_Normal frm = new Orden_Normal(reimprimirOrden1, lblIdentificacion.Text, mensaje);
             frm.ShowDialog();
         }
 
         private void btnOrdenCercana_Click(object sender, EventArgs e)
         {
-            ORDEN_LEJANA orden = new ORDEN_LEJANA();
-            orden = NegConsultas.getInstance().RecuperaOrdenLejana2(Convert.ToInt64(lblAtencion.Text));
-            Int64 reimprimirOrden2 = Convert.ToInt64(lblAtencion.Text);
-            if (orden != null)
-            {
-                reimprimirOrden2 = orden.ID_ORDEN3;
-                mensaje = true;
-            }
-            else
-                mensaje = false;
-            if (txtEsferaRXod.Text == "")
-            {
-                MessageBox.Show("No se puede imprimir orden de trabajo Visión Lejana ya que no tiene datos en RxFinal :(", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            OrdenVisionLejana frm = new OrdenVisionLejana(reimprimirOrden2, lblIdentificacion.Text, mensaje, lblAtencion.Text);
-            frm.ShowDialog();
-        }
-
-        private void btnOrdenLejana_Click(object sender, EventArgs e)
-        {
             ORDEN_VISION_CERCA orden = new ORDEN_VISION_CERCA();
             orden = NegConsultas.getInstance().RecuperaOrdenVC2(Convert.ToInt64(lblAtencion.Text));
             Int64 reimprimirOrden2 = Convert.ToInt64(lblAtencion.Text);
             if (orden != null)
-            {
                 reimprimirOrden2 = orden.ID_ORDEN2;
-                mensaje = true;
-            }
             else
                 mensaje = false;
             if (txtEsferaVCod.Text == "")
@@ -1799,9 +1776,26 @@ namespace Opt3000.Vista.Consultas
                 MessageBox.Show("No se puede imprimir orden de trabajo Visión Cercana ya que no tiene datos en Visión Cercana :(", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            OrdenVisionCerca frm = new OrdenVisionCerca(reimprimirOrden2, lblIdentificacion.Text, mensaje, lblAtencion.Text);
+            OrdenVisionCerca frm = new OrdenVisionCerca(reimprimirOrden2, lblIdentificacion.Text, mensaje);
             frm.ShowDialog();
-            
+        }
+
+        private void btnOrdenLejana_Click(object sender, EventArgs e)
+        {
+            ORDEN_LEJANA orden = new ORDEN_LEJANA();
+            orden = NegConsultas.getInstance().RecuperaOrdenLejana2(Convert.ToInt64(lblAtencion.Text));
+            Int64 reimprimirOrden2 = Convert.ToInt64(lblAtencion.Text);
+            if (orden != null)
+                reimprimirOrden2 = orden.ID_ORDEN3;
+            else
+                mensaje = false;
+            if (txtEsferaRXod.Text == "")
+            {
+                MessageBox.Show("No se puede imprimir orden de trabajo Visión Lejana ya que no tiene datos en RxFinal :(", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            OrdenVisionLejana frm = new OrdenVisionLejana(reimprimirOrden2, lblIdentificacion.Text, mensaje);
+            frm.ShowDialog();
         }
 
         private void btnLentesBlandos_Click(object sender, EventArgs e)
@@ -1811,10 +1805,7 @@ namespace Opt3000.Vista.Consultas
             orden = NegConsultas.getInstance().RecuperaOrdenLentesBlandos2(Convert.ToInt64(lblAtencion.Text));
             Int64 reimprimirOrden2 = Convert.ToInt64(lblAtencion.Text);
             if (orden != null)
-            {
                 reimprimirOrden2 = orden.ID_ORDEN4;
-                mensaje = true;
-            }
             else
                 mensaje = false;
             if (txtEsferaLenteOD.Text == "")
@@ -1822,7 +1813,7 @@ namespace Opt3000.Vista.Consultas
                 MessageBox.Show("No se puede imprimir orden de trabajo Lentes de Contacto Blandos ya que no tiene datos en Lentes Blandos :(", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            OrdenLentesBlandos frm = new OrdenLentesBlandos(reimprimirOrden2, lblIdentificacion.Text, mensaje, lblAtencion.Text);
+            OrdenLentesBlandos frm = new OrdenLentesBlandos(reimprimirOrden2, lblIdentificacion.Text, mensaje);
             frm.ShowDialog();
         }
 

@@ -95,7 +95,7 @@ namespace Opt3000.Datos
                     using (var contexto = new Opt3000Entities())
                     {
                         lista = (from p in contexto.PRODUCTO
-                                 where p.STOCK > 0 
+                                 where p.STOCK > 0
                                  select p).ToList();
                         return lista;
                     }
@@ -114,7 +114,7 @@ namespace Opt3000.Datos
                         using (var contexto = new Opt3000Entities())
                         {
                             lista = (from p in contexto.PRODUCTO
-                                     where p.CodProducto.Contains(esp) && p.STOCK > 0
+                                     where p.Especificaciones == esp && p.STOCK > 0
                                      select p).ToList();
                             return lista;
                         }
@@ -241,78 +241,6 @@ namespace Opt3000.Datos
                 {
                     return max = (from a in contexto.ATENCION
                                   select a.ID_ATENCION).Max();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public Int64 MaxOrden1()
-        {
-            try
-            {
-                Int64 max = 0;
-                using (var contexto = new Opt3000Entities())
-                {
-                    return max = (from a in contexto.Orden1
-                                  select a.ID_ORDEN1).Max();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public Int64 MaxOrdenVC()
-        {
-            try
-            {
-                Int64 max = 0;
-                using (var contexto = new Opt3000Entities())
-                {
-                    return max = (from a in contexto.ORDEN_VISION_CERCA
-                                  select a.ID_ORDEN2).Max();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public Int64 MaxOrdenLB()
-        {
-            try
-            {
-                Int64 max = 0;
-                using (var contexto = new Opt3000Entities())
-                {
-                    return max = (from a in contexto.ORDEN_LENTESBLANDOS
-                                  select a.ID_ORDEN4).Max();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public Int64 MaxOrdenVL()
-        {
-            try
-            {
-                Int64 max = 0;
-                using (var contexto = new Opt3000Entities())
-                {
-                    return max = (from a in contexto.ORDEN_LEJANA
-                                  select a.ID_ORDEN3).Max();
                 }
             }
             catch (Exception ex)
@@ -1419,16 +1347,15 @@ namespace Opt3000.Datos
                             }).ToList();
                 }
             }
-            catch (Exception err)
+            catch (Exception )
             {
 
                 throw;
             }
         }
 
-        public void actualizaOrdenes(bool generado,bool enviado,bool recibido,bool entregado,int codigo)
+        public void ordenes1modificar(bool generado,bool enviado,bool recibido,bool entregado,int codigo)
         {
-
             try
             {
                 using (var contexto = new Opt3000Entities())
@@ -1442,6 +1369,17 @@ namespace Opt3000.Datos
             {
                 Console.Write(error);
             }
+        }
+
+
+        public void ordenesparamodificar(bool generado, bool enviado, bool recibido, bool entregado, int codigo)
+        {
+                using (var contexto = new Opt3000Entities())
+                {
+                    Orden1 paises = contexto.Orden1.FirstOrDefault(p => p.ID_ORDEN1 == codigo);
+                    paises.GENERADO = generado; paises.enviado = enviado; paises.RECIBIDO = recibido; paises.ENTREGADO = entregado;
+                    contexto.SaveChanges();
+                }
         }
 
 

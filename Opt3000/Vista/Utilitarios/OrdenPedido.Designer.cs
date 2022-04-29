@@ -223,7 +223,7 @@ namespace Opt3000.Vista.Utilitarios
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(221, 31);
             this.btnTodos.TabIndex = 21;
-            this.btnTodos.Text = "ESTADO DE ORDENES";
+            this.btnTodos.Text = "TODOS";
             this.btnTodos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTodos.UseVisualStyleBackColor = false;
             this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);

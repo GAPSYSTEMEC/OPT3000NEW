@@ -391,7 +391,7 @@ namespace Opt3000.Datos
             }
         }
 
-        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja, string detalle)
+        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja)
         {
             try
             {
@@ -414,7 +414,6 @@ namespace Opt3000.Datos
                             }
 
                             ATENCION ate = contexto.ATENCION.FirstOrDefault(a => a.ID_ATENCION == factura.ID_ATENCION);
-                            ate.DETALLEFACTURA = detalle;
                             ate.Ate_Facturada = true;
                             contexto.SaveChanges();
 

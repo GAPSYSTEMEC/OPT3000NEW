@@ -64,7 +64,6 @@
     <NavigationProperty Name="LENTES_CONTACTO" Relationship="Opt3000Model.FK_LENTES_CONTACTO_ATENCION" FromRole="ATENCION" ToRole="LENTES_CONTACTO" />
     <Property Name="FACTURAR" Type="Boolean" />
     <Property Name="CUENTADIVIDIA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="DETALLEFACTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="CAJA">
     <Key>

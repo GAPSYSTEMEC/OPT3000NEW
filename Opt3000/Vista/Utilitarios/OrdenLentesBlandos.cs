@@ -16,7 +16,6 @@ namespace Opt3000.Vista.Utilitarios
 {
     public partial class OrdenLentesBlandos : Form
     {
-        string lblAtencion = "";
         bool nuevo = false;
         public Int64 ateCodigo = 0;
         public string nombre = "";
@@ -25,14 +24,13 @@ namespace Opt3000.Vista.Utilitarios
         PRODUCTO producto = new PRODUCTO();
         public string identificacion = "";
         bool mensaje = true;
-        public OrdenLentesBlandos(Int64 _ateCodigo = 0, string _identificacion = "", bool _mensaje = false, string _lblAtencion = "")
+        public OrdenLentesBlandos(Int64 _ateCodigo = 0, string _identificacion = "", bool _mensaje = false)
         {
             InitializeComponent();
             txtLaboratorio.Text = "GENERICOS";
             ateCodigo = _ateCodigo;
             identificacion = _identificacion;
             mensaje = _mensaje;
-            lblAtencion = _lblAtencion;
             if (ateCodigo != 0)
             {
                 CargaPaciente();
@@ -81,24 +79,26 @@ namespace Opt3000.Vista.Utilitarios
 
         public void CargaDatos()
         {
-            Int64 ordenN = NegConsultas.getInstance().MaxOrdenLB();
-            lblNumeroOrden.Text = "N°: " + (ordenN + 1);
             if (mensaje == false)
             {
-                LENTES_CONTACTO objLentes = new LENTES_CONTACTO();
-                objLentes = NegConsultas.getInstance().CargaLentes(Convert.ToInt64(lblAtencion), "D");
-                if (objLentes != null)
+                ORDEN_LENTESBLANDOS orden = new ORDEN_LENTESBLANDOS();
+                orden = NegConsultas.getInstance().RecuperaOrdenLentesBlandos(ateCodigo);
+                if (orden != null)
                 {
-                    txtEsferaLenteOD.Text = objLentes.Esfera;
-                    txtCilindroLenteOD.Text = objLentes.Cilindro;
-                    txtEjeLenteOD.Text = objLentes.Eje;
-                    txtTipoOD.Text = objLentes.Tipo;
-                    objLentes = new LENTES_CONTACTO();
-                    objLentes = NegConsultas.getInstance().CargaLentes(ateCodigo, "I");
-                    txtEsferaLenteOI.Text = objLentes.Esfera;
-                    txtCilindroLenteOI.Text = objLentes.Cilindro;
-                    txtEjeLenteOI.Text = objLentes.Eje;
-                    txtTipoOI.Text = objLentes.Tipo;
+                    lblNumeroOrden.Text = "N°: " + orden.ID_ORDEN4;
+                    txtEsferaLenteOD.Text = orden.EsferaDer;
+                    txtCilindroLenteOD.Text = orden.CilindroDer;
+                    txtEjeLenteOD.Text = orden.EjeDer;
+                    txtTipoOD.Text = orden.TipoDer;
+
+                    txtEsferaLenteOI.Text = orden.EsferaIz;
+                    txtCilindroLenteOI.Text = orden.CilindroIz;
+                    txtEjeLenteOI.Text = orden.EjeIz;
+                    txtTipoOI.Text = orden.TipoIz;
+
+                    txtMaterial.Text = orden.Material;
+                    txtFiltro.Text = orden.Filtros;
+                    txtObservacion.Text = orden.Observaciones;
                 }
                 nuevo = true;
             }
@@ -122,11 +122,9 @@ namespace Opt3000.Vista.Utilitarios
                     {
                         if (MessageBox.Show("Desea Generar una nueva orden de trabajo???", "OPT3000", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                         {
-                            PRODUCTO producto = new PRODUCTO();
-                            producto = NegConsultas.getInstance().RecuperaProducto(orden.Material);
-                            txtMaterial.Text = producto.Detalle;
                             dt_FechaPedido.Value = orden.FechaPedio;
                             dt_FechaEntrega.Value = orden.FechaEntrega;
+                            txtMaterial.Text = orden.Material;
                             txtFiltro.Text = orden.Filtros;
                             txtObservacion.Text = orden.Observaciones;
                         }
@@ -191,7 +189,7 @@ namespace Opt3000.Vista.Utilitarios
                 objOrdenNormal.CilindroIz = txtCilindroLenteOI.Text;
                 objOrdenNormal.EjeDer = txtEjeLenteOD.Text;
                 objOrdenNormal.EjeIz = txtEjeLenteOI.Text;
-                objOrdenNormal.Material = lunas;
+                objOrdenNormal.Material = txtMaterial.Text;
                 objOrdenNormal.Filtros = txtFiltro.Text;
                 objOrdenNormal.Observaciones = txtObservacion.Text;
 
@@ -224,23 +222,6 @@ namespace Opt3000.Vista.Utilitarios
             obj.pedidoPor = Cesion.usuario;
             Reporteador frm = new Reporteador(obj, "VisionLentesBlandos");
             frm.Show();
-        }
-
-        string lunas = "";
-
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Vista.Utilitarios.BuscarInventario buscador = new Vista.Utilitarios.BuscarInventario(cli, Convert.ToInt64(lblAtencion), false, "LE");
-                buscador.ShowDialog();
-                producto = NegConsultas.getInstance().RecuperaDetalleOrden(Convert.ToInt64(lblAtencion));
-                txtMaterial.Text = producto.Detalle;
-                lunas = producto.CodProducto;
-            }
-            catch
-            {
-            }
         }
     }
 }
