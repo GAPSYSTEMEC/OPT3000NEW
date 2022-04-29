@@ -169,11 +169,11 @@ namespace Opt3000.Negocio
             }
         }
 
-        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja)
+        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja, string detalle)
         {
             try
             {
-                return DatGuarda.getInstance().GuardaFactura(cliente, anticipo, facturaPago, factura, caja);
+                return DatGuarda.getInstance().GuardaFactura(cliente, anticipo, facturaPago, factura, caja, detalle);
             }
             catch (Exception)
             {

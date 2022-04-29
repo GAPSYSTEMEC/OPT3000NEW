@@ -16,6 +16,7 @@ namespace Opt3000.Vista.Utilitarios
 {
     public partial class OrdenVisionLejana : Form
     {
+        string lblAtencion = "";
         bool nuevo = false;
         public Int64 ateCodigo = 0;
         public string nombre = "";
@@ -24,13 +25,14 @@ namespace Opt3000.Vista.Utilitarios
         PRODUCTO producto = new PRODUCTO();
         public string identificacion = "";
         bool mensaje = true;
-        public OrdenVisionLejana(Int64 _ateCodigo = 0, string _identificacion = "", bool _mensaje = false)
+        public OrdenVisionLejana(Int64 _ateCodigo = 0, string _identificacion = "", bool _mensaje = false, string _lblAtencion = "")
         {
             InitializeComponent();
             txtLaboratorio.Text = "GENERICOS";
             ateCodigo = _ateCodigo;
             identificacion = _identificacion;
             mensaje = _mensaje;
+            lblAtencion = _lblAtencion;
             if (ateCodigo != 0)
             {
                 CargaPaciente();
@@ -79,38 +81,28 @@ namespace Opt3000.Vista.Utilitarios
 
         public void CargaDatos()
         {
-            if(mensaje==false)
+            Int64 ordenN = NegConsultas.getInstance().MaxOrdenVL();
+            lblNumeroOrden.Text = "N°: " + (ordenN + 1);
+            if (mensaje == false)
             {
-                ORDEN_LEJANA orden = new ORDEN_LEJANA();
-                orden = NegConsultas.getInstance().RecuperaOrdenLejana(ateCodigo);
+                RX_FINAL orden = new RX_FINAL();
                 if (orden != null)
                 {
-                    lblNumeroOrden.Text = "N°: " + orden.ID_ORDEN3;
-                    txtEsferaRXod.Text = orden.EsferaDer;
-                    txtCilindroRXod.Text = orden.CilindroDer;
-                    txtEjeRXod.Text = orden.EjeDer;
-                    txtDnpRXod.Text = orden.DnpDer;
+                    orden = NegConsultas.getInstance().CargaRxFinal(Convert.ToInt64(lblAtencion), "D");
+                    txtEsferaRXod.Text = orden.Esfera;
+                    txtCilindroRXod.Text = orden.Cilindro;
+                    txtEjeRXod.Text = orden.Eje;
+                    txtDnpRXod.Text = orden.DNP_DP;
 
-                    txtEsferaRXoi.Text = orden.EsferaIz;
-                    txtCilindroRXoi.Text = orden.CilindroIz;
-                    txtEjeRXoi.Text = orden.EjeIz;
-                    txtDnpRXoi.Text = orden.DnpIz;
-
-                    txtMetrica.Text = orden.Metrica;
-                    txtMayor.Text = orden.Mayor;
-                    txtHorizontal.Text = orden.Horizontal;
-                    txtVertical.Text = orden.Vertical;
-                    txtPuente.Text = orden.Puente;
-
-                    txtArmazon.Text = orden.CodArmazon;
-                    txtMaterial.Text = orden.Material;
-                    txtFiltro.Text = orden.Filtros;
-                    txtTinturada.Text = orden.Tinturado;
-                    txtObservacion.Text = orden.Observaciones;
+                    orden = NegConsultas.getInstance().CargaRxFinal(Convert.ToInt64(lblAtencion), "I");
+                    txtEsferaRXoi.Text = orden.Esfera;
+                    txtCilindroRXoi.Text = orden.Cilindro;
+                    txtEjeRXoi.Text = orden.Eje;
+                    txtDnpRXoi.Text = orden.DNP_DP;
                 }
-                    nuevo = true;
+                nuevo = true;
             }
-            else 
+            else
             {
                 ORDEN_LEJANA orden = new ORDEN_LEJANA();
                 orden = NegConsultas.getInstance().RecuperaOrdenLejana(ateCodigo);
@@ -142,8 +134,10 @@ namespace Opt3000.Vista.Utilitarios
                             PRODUCTO producto = new PRODUCTO();
                             producto = NegConsultas.getInstance().RecuperaProducto(orden.CodArmazon);
                             txtArmazon.Text = producto.Detalle;
-                            txtMaterial.Text = orden.Material;
-                            txtFiltro.Text = orden.Filtros;
+                            producto = NegConsultas.getInstance().RecuperaProducto(orden.Material);
+                            txtMaterial.Text = producto.Detalle;
+                            producto = NegConsultas.getInstance().RecuperaProducto(orden.Filtros);
+                            txtFiltro.Text = producto.Detalle;
                             txtTinturada.Text = orden.Tinturado;
                             txtObservacion.Text = orden.Observaciones;
                         }
@@ -176,7 +170,7 @@ namespace Opt3000.Vista.Utilitarios
                     nuevo = true;
                 }
             }
-            
+
 
 
         }
@@ -202,6 +196,11 @@ namespace Opt3000.Vista.Utilitarios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (armazon == "")
+            {
+                MessageBox.Show("Ingrese un armazon", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Password frm1 = new Password();
             frm1.ShowDialog();
             if (frm1.idUsuario == 0)
@@ -229,9 +228,9 @@ namespace Opt3000.Vista.Utilitarios
                 objOrdenNormal.Horizontal = txtHorizontal.Text;
                 objOrdenNormal.Vertical = txtVertical.Text;
                 objOrdenNormal.Puente = txtPuente.Text;
-                objOrdenNormal.CodArmazon = producto.CodProducto;
-                objOrdenNormal.Material = txtMaterial.Text;
-                objOrdenNormal.Filtros = txtFiltro.Text;
+                objOrdenNormal.CodArmazon = armazon;
+                objOrdenNormal.Material = lunas;
+                objOrdenNormal.Filtros = filtro;
                 objOrdenNormal.Tinturado = txtTinturada.Text;
                 objOrdenNormal.Observaciones = txtObservacion.Text;
 
@@ -272,13 +271,53 @@ namespace Opt3000.Vista.Utilitarios
             Reporteador frm = new Reporteador(obj, "VisionLejana");
             frm.Show();
         }
-
+        string armazon = "";
+        string lunas = "";
+        string filtro = "";
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            Vista.Utilitarios.BuscarInventario buscador = new Vista.Utilitarios.BuscarInventario(cli, ateCodigo);
-            buscador.ShowDialog();
-            producto = NegConsultas.getInstance().RecuperaDetalleOrden(ateCodigo);
-            txtArmazon.Text = producto.Detalle;
+            try
+            {
+                Vista.Utilitarios.BuscarInventario buscador = new Vista.Utilitarios.BuscarInventario(cli, Convert.ToInt64(lblAtencion));
+                buscador.ShowDialog();
+                producto = NegConsultas.getInstance().RecuperaDetalleOrden(Convert.ToInt64(lblAtencion));
+                txtArmazon.Text = producto.Detalle;
+                armazon = producto.CodProducto;
+            }
+            catch 
+            {
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Vista.Utilitarios.BuscarInventario buscador = new Vista.Utilitarios.BuscarInventario(cli, Convert.ToInt64(lblAtencion), false, "LU");
+                buscador.ShowDialog();
+                producto = NegConsultas.getInstance().RecuperaDetalleOrden(Convert.ToInt64(lblAtencion));
+                txtMaterial.Text = producto.Detalle;
+                lunas = producto.CodProducto;
+            }
+            catch
+            {
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Vista.Utilitarios.BuscarInventario buscador = new Vista.Utilitarios.BuscarInventario(cli, Convert.ToInt64(lblAtencion), false, "FI");
+                buscador.ShowDialog();
+                producto = NegConsultas.getInstance().RecuperaDetalleOrden(Convert.ToInt64(lblAtencion));
+                txtFiltro.Text = producto.Detalle;
+                filtro = producto.CodProducto;
+            }
+            catch
+            {
+            }
         }
     }
 }

@@ -26,6 +26,9 @@ namespace Opt3000.Vista.Utilitarios
         private DataGridView dgv_Detalle1;
         private Label label2;
         private TextBox txtcodigo;
+        private CheckBox checkBox2;
+        private CheckBox checkBox3;
+        private CheckBox checkBox4;
         Orden1 orden;
         public RevisionEstadoOrdenes()
         {
@@ -64,6 +67,9 @@ namespace Opt3000.Vista.Utilitarios
             this.chkEntregado = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Detalle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             this.SuspendLayout();
@@ -126,51 +132,47 @@ namespace Opt3000.Vista.Utilitarios
             // chkGenerado
             // 
             this.chkGenerado.AutoSize = true;
-            this.chkGenerado.BackColor = System.Drawing.Color.LightGray;
             this.chkGenerado.Location = new System.Drawing.Point(167, 12);
             this.chkGenerado.Name = "chkGenerado";
             this.chkGenerado.Size = new System.Drawing.Size(73, 17);
             this.chkGenerado.TabIndex = 77;
             this.chkGenerado.Text = "Generado";
-            this.chkGenerado.UseVisualStyleBackColor = false;
+            this.chkGenerado.UseVisualStyleBackColor = true;
             // 
             // chkEnviado
             // 
             this.chkEnviado.AutoSize = true;
-            this.chkEnviado.BackColor = System.Drawing.Color.LightGray;
-            this.chkEnviado.Location = new System.Drawing.Point(279, 12);
+            this.chkEnviado.Location = new System.Drawing.Point(289, 12);
             this.chkEnviado.Name = "chkEnviado";
             this.chkEnviado.Size = new System.Drawing.Size(65, 17);
             this.chkEnviado.TabIndex = 78;
             this.chkEnviado.Text = "Enviado";
-            this.chkEnviado.UseVisualStyleBackColor = false;
+            this.chkEnviado.UseVisualStyleBackColor = true;
             // 
             // chkRecibido
             // 
             this.chkRecibido.AutoSize = true;
-            this.chkRecibido.BackColor = System.Drawing.Color.LightGray;
-            this.chkRecibido.Location = new System.Drawing.Point(373, 13);
+            this.chkRecibido.Location = new System.Drawing.Point(403, 12);
             this.chkRecibido.Name = "chkRecibido";
             this.chkRecibido.Size = new System.Drawing.Size(68, 17);
             this.chkRecibido.TabIndex = 79;
             this.chkRecibido.Text = "Recibido";
-            this.chkRecibido.UseVisualStyleBackColor = false;
+            this.chkRecibido.UseVisualStyleBackColor = true;
             // 
             // chkEntregado
             // 
             this.chkEntregado.AutoSize = true;
-            this.chkEntregado.BackColor = System.Drawing.Color.LightGray;
-            this.chkEntregado.Location = new System.Drawing.Point(466, 12);
+            this.chkEntregado.Location = new System.Drawing.Point(518, 12);
             this.chkEntregado.Name = "chkEntregado";
             this.chkEntregado.Size = new System.Drawing.Size(75, 17);
             this.chkEntregado.TabIndex = 80;
             this.chkEntregado.Text = "Entregado";
-            this.chkEntregado.UseVisualStyleBackColor = false;
+            this.chkEntregado.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(14, 14);
             this.label2.Name = "label2";
@@ -188,13 +190,46 @@ namespace Opt3000.Vista.Utilitarios
             this.txtcodigo.Size = new System.Drawing.Size(61, 20);
             this.txtcodigo.TabIndex = 81;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(263, 12);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(65, 17);
+            this.checkBox2.TabIndex = 78;
+            this.checkBox2.Text = "Enviado";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(377, 12);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(68, 17);
+            this.checkBox3.TabIndex = 79;
+            this.checkBox3.Text = "Recibido";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(492, 12);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(75, 17);
+            this.checkBox4.TabIndex = 80;
+            this.checkBox4.Text = "Entregado";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // RevisionEstadoOrdenes
             // 
             this.ClientSize = new System.Drawing.Size(1054, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtcodigo);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.chkEntregado);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.chkRecibido);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.chkEnviado);
             this.Controls.Add(this.chkGenerado);
             this.Controls.Add(this.dgv_Detalle1);
@@ -218,11 +253,11 @@ namespace Opt3000.Vista.Utilitarios
             {
                 NegConsultas.actualizaOrdenes(chkGenerado.Checked,chkEnviado.Checked,chkRecibido.Checked,chkEntregado.Checked,Convert.ToUInt16(txtcodigo.Text));
                 MessageBox.Show("Datos Almacenados Correctamente.", "OPT3000", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                limpiar();
                 CargaOrdenes();
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
@@ -231,35 +266,22 @@ namespace Opt3000.Vista.Utilitarios
         {
             this.Close();
         }
-        public void limpiar()
-        {
-            chkGenerado.Checked = false;
-            chkEnviado.Checked = false;
-            chkRecibido.Checked = false;
-            chkEntregado.Checked = false;
-            txtcodigo.Text = "";
-        }
 
         private void dgv_Detalle1_DoubleClick(object sender, EventArgs e)
         {
-            if (dgv_Detalle1.SelectedRows.Count==1)
+            try
             {
-                try
-                {
-                    //chkGenerado.Checked = (bool)dgv_Detalle1.Rows[e.RowIndex].Cells[0].Value;
-                    //txtcodigo.Text = (string)dgv_Detalle1.Rows[e.RowIndex].Cells[4].Value;
-                    chkGenerado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[0].Value);
-                    chkEnviado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[1].Value);
-                    chkRecibido.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[2].Value);
-                    chkEntregado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[3].Value);
-                    txtcodigo.Text = Convert.ToString(this.dgv_Detalle1.SelectedRows[0].Cells[4].Value);
+                chkGenerado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[0].Value);
+                chkEnviado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[1].Value);
+                chkRecibido.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[2].Value);
+                chkEntregado.Checked = Convert.ToBoolean(this.dgv_Detalle1.SelectedRows[0].Cells[3].Value);
+                txtcodigo.Text = Convert.ToString(this.dgv_Detalle1.SelectedRows[0].Cells[4].Value);
 
-                }
-                catch (Exception)
-                {
+            }
+            catch (Exception)
+            {
 
-                    throw;
-                }
+                throw;
             }
         }
     }

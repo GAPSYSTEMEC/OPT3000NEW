@@ -85,6 +85,8 @@ namespace Opt3000.Vista.Utilitarios
             this.txtMaterial = new System.Windows.Forms.TextBox();
             this.txtArmazon = new System.Windows.Forms.TextBox();
             this.btnInventario = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.p_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
@@ -703,12 +705,34 @@ namespace Opt3000.Vista.Utilitarios
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(67, 418);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 341;
+            this.button1.Text = "F1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(67, 449);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 23);
+            this.button2.TabIndex = 342;
+            this.button2.Text = "F1";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // OrdenVisionCerca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(461, 567);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.txtObservacion);
             this.Controls.Add(this.txtTinturada);
@@ -764,7 +788,7 @@ namespace Opt3000.Vista.Utilitarios
             this.Location = new System.Drawing.Point(677, 101);
             this.Name = "OrdenVisionCerca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Orden Vision de Cerca";
+            this.Text = "Orden Vision de Lejos";
             this.p_superior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
@@ -831,5 +855,7 @@ namespace Opt3000.Vista.Utilitarios
         private System.Windows.Forms.TextBox txtMaterial;
         private System.Windows.Forms.TextBox txtArmazon;
         private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

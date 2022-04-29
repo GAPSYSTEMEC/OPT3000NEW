@@ -66,6 +66,7 @@
           <Property Name="Mpc" Type="varchar" MaxLength="5000" Nullable="false" />
           <Property Name="FACTURAR" Type="bit" />
           <Property Name="CUENTADIVIDIA" Type="varchar" MaxLength="2" />
+          <Property Name="DETALLEFACTURA" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="BANCOS">
           <Key>
@@ -1391,6 +1392,7 @@ FROM [dbo].[visFactura] AS [visFactura]</DefiningQuery>
           <NavigationProperty Name="LENTES_CONTACTO" Relationship="Opt3000Model.FK_LENTES_CONTACTO_ATENCION" FromRole="ATENCION" ToRole="LENTES_CONTACTO" />
           <Property Name="FACTURAR" Type="Boolean" />
           <Property Name="CUENTADIVIDIA" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DETALLEFACTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CAJA">
           <Key>
@@ -2701,6 +2703,7 @@ FROM [dbo].[visFactura] AS [visFactura]</DefiningQuery>
           <EntitySetMapping Name="ATENCION">
             <EntityTypeMapping TypeName="Opt3000Model.ATENCION">
               <MappingFragment StoreEntitySet="ATENCION">
+                <ScalarProperty Name="DETALLEFACTURA" ColumnName="DETALLEFACTURA" />
                 <ScalarProperty Name="CUENTADIVIDIA" ColumnName="CUENTADIVIDIA" />
                 <ScalarProperty Name="FACTURAR" ColumnName="FACTURAR" />
                 <ScalarProperty Name="Mpc" ColumnName="Mpc" />

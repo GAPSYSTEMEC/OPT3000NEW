@@ -36,10 +36,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3949ED75DF1C39821F99BFD4E297647C4727119C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>ED43929BAC9E53A84D401F15E01F76498A57CAE5</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Opt3000_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Opt3000_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -803,6 +803,12 @@
     <Compile Include="Vista\Utilitarios\MoverArchivo.Designer.cs">
       <DependentUpon>MoverArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Utilitarios\NuevoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\NuevoDetalle.Designer.cs">
+      <DependentUpon>NuevoDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Utilitarios\OrdenLentesBlandos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1118,6 +1124,9 @@
     <EmbeddedResource Include="Vista\Utilitarios\MoverArchivo.resx">
       <DependentUpon>MoverArchivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\NuevoDetalle.resx">
+      <DependentUpon>NuevoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Utilitarios\OrdenLentesBlandos.resx">
       <DependentUpon>OrdenLentesBlandos.cs</DependentUpon>
     </EmbeddedResource>
@@ -1234,6 +1243,8 @@
     <None Include="OPT3000DataSet3.xss">
       <DependentUpon>OPT3000DataSet3.xsd</DependentUpon>
     </None>
+    <None Include="Opt3000_1_TemporaryKey.pfx" />
+    <None Include="Opt3000_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

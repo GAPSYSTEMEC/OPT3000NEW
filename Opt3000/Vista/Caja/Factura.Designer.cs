@@ -519,7 +519,7 @@ namespace Opt3000.Vista.Caja
             this.btn_divideCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_divideCuenta.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_divideCuenta.ForeColor = System.Drawing.Color.Black;
-            this.btn_divideCuenta.Location = new System.Drawing.Point(266, 196);
+            this.btn_divideCuenta.Location = new System.Drawing.Point(368, 196);
             this.btn_divideCuenta.Name = "btn_divideCuenta";
             this.btn_divideCuenta.Size = new System.Drawing.Size(101, 44);
             this.btn_divideCuenta.TabIndex = 295;
@@ -549,12 +549,13 @@ namespace Opt3000.Vista.Caja
             this.btnCargaIndividual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargaIndividual.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargaIndividual.ForeColor = System.Drawing.Color.Black;
-            this.btnCargaIndividual.Location = new System.Drawing.Point(370, 196);
+            this.btnCargaIndividual.Location = new System.Drawing.Point(245, 195);
             this.btnCargaIndividual.Name = "btnCargaIndividual";
             this.btnCargaIndividual.Size = new System.Drawing.Size(101, 44);
             this.btnCargaIndividual.TabIndex = 292;
             this.btnCargaIndividual.Text = "CARGA INDIVIDUAL";
             this.btnCargaIndividual.UseVisualStyleBackColor = false;
+            this.btnCargaIndividual.Visible = false;
             this.btnCargaIndividual.Click += new System.EventHandler(this.btnCargaIndividual_Click);
             // 
             // label8
@@ -1267,7 +1268,6 @@ namespace Opt3000.Vista.Caja
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Factura";
             this.Text = "Factura";
-            this.Load += new System.EventHandler(this.Factura_Load);
             this.p_superior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();

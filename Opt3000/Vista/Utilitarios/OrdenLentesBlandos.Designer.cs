@@ -67,6 +67,7 @@ namespace Opt3000.Vista.Utilitarios
             this.label19 = new System.Windows.Forms.Label();
             this.txtTipoOD = new System.Windows.Forms.TextBox();
             this.txtTipoOI = new System.Windows.Forms.TextBox();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.p_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
@@ -490,12 +491,23 @@ namespace Opt3000.Vista.Utilitarios
             this.txtTipoOI.TabIndex = 439;
             this.txtTipoOI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnInventario
+            // 
+            this.btnInventario.Location = new System.Drawing.Point(73, 353);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(32, 23);
+            this.btnInventario.TabIndex = 440;
+            this.btnInventario.Text = "F1";
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
             // OrdenLentesBlandos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(461, 567);
+            this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.txtTipoOI);
             this.Controls.Add(this.txtTipoOD);
             this.Controls.Add(this.label49);
@@ -581,5 +593,6 @@ namespace Opt3000.Vista.Utilitarios
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtTipoOD;
         private System.Windows.Forms.TextBox txtTipoOI;
+        private System.Windows.Forms.Button btnInventario;
     }
 }
