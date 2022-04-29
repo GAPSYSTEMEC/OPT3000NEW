@@ -43,6 +43,7 @@ namespace Opt3000.BaseDatos
         public string Mpc { get; set; }
         public Nullable<bool> FACTURAR { get; set; }
         public string CUENTADIVIDIA { get; set; }
+        public string DETALLEFACTURA { get; set; }
     
         public virtual ICollection<ADAPTACION_LENTES> ADAPTACION_LENTES { get; set; }
         public virtual PACIENTE PACIENTE { get; set; }

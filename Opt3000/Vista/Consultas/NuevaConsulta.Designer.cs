@@ -2621,9 +2621,9 @@
             this.btnOrdenCercana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(224)))));
             this.btnOrdenCercana.Location = new System.Drawing.Point(320, 19);
             this.btnOrdenCercana.Name = "btnOrdenCercana";
-            this.btnOrdenCercana.Size = new System.Drawing.Size(239, 27);
+            this.btnOrdenCercana.Size = new System.Drawing.Size(259, 27);
             this.btnOrdenCercana.TabIndex = 265;
-            this.btnOrdenCercana.Text = "MEDIDAS VISIÓN LEJANA";
+            this.btnOrdenCercana.Text = "MEDIDAS VISIÓN DE CERCA";
             this.btnOrdenCercana.UseVisualStyleBackColor = false;
             this.btnOrdenCercana.Click += new System.EventHandler(this.btnOrdenCercana_Click);
             // 
@@ -2638,11 +2638,11 @@
             this.btnOrdenLejana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdenLejana.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenLejana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(224)))));
-            this.btnOrdenLejana.Location = new System.Drawing.Point(565, 19);
+            this.btnOrdenLejana.Location = new System.Drawing.Point(585, 19);
             this.btnOrdenLejana.Name = "btnOrdenLejana";
-            this.btnOrdenLejana.Size = new System.Drawing.Size(253, 27);
+            this.btnOrdenLejana.Size = new System.Drawing.Size(232, 27);
             this.btnOrdenLejana.TabIndex = 266;
-            this.btnOrdenLejana.Text = "MEDIDAS VISIÓN DE CERCA";
+            this.btnOrdenLejana.Text = "MEDIDAS VISIÓN LEJANA";
             this.btnOrdenLejana.UseVisualStyleBackColor = false;
             this.btnOrdenLejana.Click += new System.EventHandler(this.btnOrdenLejana_Click);
             // 
