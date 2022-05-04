@@ -22,7 +22,7 @@ namespace Opt3000.Vista.Exploradores
         public string numliq;
         public bool abrir = false;
         string reimprimirOrden;
-        bool modelo = false;
+        bool modelo = true;
         public frmOrdenBlandos()
         {
             InitializeComponent();
@@ -72,7 +72,8 @@ namespace Opt3000.Vista.Exploradores
                 DialogResult dialogResult = MessageBox.Show("Se abrira la Orden de Trabajo Nro. " + numliq + "¿Desea Continuar?", "Cuentas", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    OrdenLentesBlandos frm = new OrdenLentesBlandos(Convert.ToInt64(numliq), reimprimirOrden);
+                    OrdenLentesBlandos frm = new OrdenLentesBlandos(Convert.ToInt64(numliq), reimprimirOrden,modelo);
+                    frm.StartPosition = FormStartPosition.CenterParent;
                     frm.ShowDialog();
                 }
 

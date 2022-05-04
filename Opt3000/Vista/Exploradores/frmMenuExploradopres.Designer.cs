@@ -33,6 +33,7 @@ namespace Opt3000.Vista.Exploradores
             this.p_superior = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.p_Central = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnOrdenes = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@ namespace Opt3000.Vista.Exploradores
             // p_Central
             // 
             this.p_Central.BackColor = System.Drawing.Color.Gainsboro;
+            this.p_Central.Controls.Add(this.button2);
             this.p_Central.Controls.Add(this.button3);
             this.p_Central.Controls.Add(this.btnOrdenes);
             this.p_Central.Controls.Add(this.button1);
@@ -84,6 +86,24 @@ namespace Opt3000.Vista.Exploradores
             this.p_Central.Name = "p_Central";
             this.p_Central.Size = new System.Drawing.Size(800, 400);
             this.p_Central.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(244)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(607, 128);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 53);
+            this.button2.TabIndex = 247;
+            this.button2.Text = "BUSCADOR";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -232,5 +252,6 @@ namespace Opt3000.Vista.Exploradores
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnOrdenes;
+        private System.Windows.Forms.Button button2;
     }
 }

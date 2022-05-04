@@ -37,6 +37,7 @@
     <EntitySetMapping Name="ATENCION">
       <EntityTypeMapping TypeName="Opt3000Model.ATENCION">
         <MappingFragment StoreEntitySet="ATENCION">
+          <ScalarProperty Name="DETALLEFACTURA" ColumnName="DETALLEFACTURA" />
           <ScalarProperty Name="CUENTADIVIDIA" ColumnName="CUENTADIVIDIA" />
           <ScalarProperty Name="FACTURAR" ColumnName="FACTURAR" />
           <ScalarProperty Name="Mpc" ColumnName="Mpc" />

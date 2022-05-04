@@ -36,10 +36,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>3949ED75DF1C39821F99BFD4E297647C4727119C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>FD922B9F74C07BAC71BDF0E695133F95D73C7166</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Opt3000_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Opt3000_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -616,6 +616,12 @@
     <Compile Include="Vista\Exploradores\frmPaciente.Designer.cs">
       <DependentUpon>frmPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Exploradores\frmRevisionEstadoOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Exploradores\frmRevisionEstadoOrdenes.Designer.cs">
+      <DependentUpon>frmRevisionEstadoOrdenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -802,6 +808,12 @@
     </Compile>
     <Compile Include="Vista\Utilitarios\MoverArchivo.Designer.cs">
       <DependentUpon>MoverArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\NuevoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Utilitarios\NuevoDetalle.Designer.cs">
+      <DependentUpon>NuevoDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Utilitarios\OrdenLentesBlandos.cs">
       <SubType>Form</SubType>
@@ -1025,6 +1037,9 @@
     <EmbeddedResource Include="Vista\Exploradores\frmPaciente.resx">
       <DependentUpon>frmPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Exploradores\frmRevisionEstadoOrdenes.resx">
+      <DependentUpon>frmRevisionEstadoOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
@@ -1117,6 +1132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Utilitarios\MoverArchivo.resx">
       <DependentUpon>MoverArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Utilitarios\NuevoDetalle.resx">
+      <DependentUpon>NuevoDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Utilitarios\OrdenLentesBlandos.resx">
       <DependentUpon>OrdenLentesBlandos.cs</DependentUpon>
@@ -1234,6 +1252,9 @@
     <None Include="OPT3000DataSet3.xss">
       <DependentUpon>OPT3000DataSet3.xsd</DependentUpon>
     </None>
+    <None Include="Opt3000_1_TemporaryKey.pfx" />
+    <None Include="Opt3000_2_TemporaryKey.pfx" />
+    <None Include="Opt3000_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

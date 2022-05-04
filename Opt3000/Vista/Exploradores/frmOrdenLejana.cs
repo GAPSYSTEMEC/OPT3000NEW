@@ -22,14 +22,14 @@ namespace Opt3000.Vista.Exploradores
         public string numliq;
         public bool abrir = false;
         string reimprimirOrden;
-        bool modelo = false;
+        bool modelo = true;
         public frmOrdenLejana()
         {
             InitializeComponent();
             DateTime oPrimerDiaDelMes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             DateTime oUltimoDiaDelMes = oPrimerDiaDelMes.AddMonths(1).AddDays(-1);
-            dtpDesde.EditValue = oPrimerDiaDelMes;
-            dtpHasta.EditValue = oUltimoDiaDelMes;
+            dateEdit1.EditValue = oPrimerDiaDelMes;
+            dateEdit2.EditValue = oUltimoDiaDelMes;
             cargarConsulta();
             CreaSummaries(gridView1);
             Edicion(gridView1);
@@ -72,7 +72,8 @@ namespace Opt3000.Vista.Exploradores
                 DialogResult dialogResult = MessageBox.Show("Se abrira la Orden de Trabajo Nro. " + numliq + "¿Desea Continuar?", "Cuentas", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    OrdenVisionLejana frm = new OrdenVisionLejana(Convert.ToInt64(numliq), reimprimirOrden);
+                    OrdenVisionLejana frm = new OrdenVisionLejana(Convert.ToInt64(numliq), reimprimirOrden,modelo);
+                    frm.StartPosition = FormStartPosition.CenterParent;
                     frm.ShowDialog();
                 }
 
@@ -86,7 +87,7 @@ namespace Opt3000.Vista.Exploradores
 
         public void cargarConsulta()
         {
-            gridControl1.DataSource = ExploradorController.OrdenLejana(dtpDesde.DateTime, dtpHasta.DateTime);
+            gridControl1.DataSource = ExploradorController.OrdenLejana(dateEdit1.DateTime, dateEdit2.DateTime);
             gridView1.BestFitColumns();
         }
         private void CreaSummaries(DevExpress.XtraGrid.Views.Grid.GridView x)

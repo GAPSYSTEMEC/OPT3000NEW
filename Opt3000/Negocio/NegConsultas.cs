@@ -197,6 +197,58 @@ namespace Opt3000.Negocio
             }
         }
 
+        public Int64 MaxOrden1()
+        {
+            try
+            {
+                return DatConsultas.getInstance().MaxOrden1();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public Int64 MaxOrdenVC()
+        {
+            try
+            {
+                return DatConsultas.getInstance().MaxOrdenVC();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public Int64 MaxOrdenLB()
+        {
+            try
+            {
+                return DatConsultas.getInstance().MaxOrdenLB();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public Int64 MaxOrdenVL()
+        {
+            try
+            {
+                return DatConsultas.getInstance().MaxOrdenVL();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public ATENCION CargaAtencion(Int64 ateCodigo)
         {
             try
@@ -456,7 +508,30 @@ namespace Opt3000.Negocio
                 throw;
             }
         }
+        public PRODUCTO ProductoOrden(Int64 codPro)
+        {
+            try
+            {
+                return DatConsultas.getInstance().ProductoOrden(codPro);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
+        public DETALLE RecuperaDetalleOrdenNumero(Int64 cuentaPaciente, Int64 producto)
+        {
+            try
+            {
+                return DatConsultas.getInstance().RecuperaDetalleOrdenNumero(cuentaPaciente, producto);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public CLIENTE RecuperaCliente(string identificacion)
         {
             try
@@ -870,18 +945,6 @@ namespace Opt3000.Negocio
                 throw;
             }
         }
-        //public static void actualizaOrdenes(bool generado, bool enviado, bool recibido, bool entregado,int codigo)
-        //{
-        //    try
-        //    {
-        //        new DatConsultas().ordenes1modificar(generado, enviado, recibido, entregado, codigo);
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //}
         public static void actualizaOrdenes(bool generado, bool enviado, bool recibido, bool entregado, int codigo) =>
 
             DatConsultas.getInstance().ordenes1modificar(generado, enviado, recibido, entregado, codigo);

@@ -327,7 +327,7 @@ namespace Opt3000.Vista.Utilitarios.Reportes
                 }
                 #endregion
             }
-            catch (Exception err)
+            catch (Exception )
             {
                 throw;
             }

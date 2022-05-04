@@ -189,6 +189,7 @@ namespace Opt3000.Vista.Exploradores
                     xr.cargar = modelo;
                     xr.cedula = _cedula;
                     xr.atencion = _atencion;
+                    xr.StartPosition = FormStartPosition.CenterParent;
                     xr.ShowDialog();
                 }
 

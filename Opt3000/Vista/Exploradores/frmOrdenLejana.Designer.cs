@@ -40,9 +40,7 @@ namespace Opt3000.Vista.Exploradores
             this.tileNavPane2 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButton1 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,19 +49,21 @@ namespace Opt3000.Vista.Exploradores
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpHasta.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpHasta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tileNavPane1
@@ -200,24 +200,6 @@ namespace Opt3000.Vista.Exploradores
             this.navButton2.Caption = "Exportar";
             this.navButton2.Name = "navButton2";
             // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(279, 14);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew;
-            this.dateEdit1.Properties.MaxValue = new System.DateTime(2199, 12, 31, 23, 59, 0, 0);
-            this.dateEdit1.Properties.MinValue = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateEdit1.Properties.NullDate = new System.DateTime(2199, 12, 31, 10, 27, 14, 0);
-            this.dateEdit1.Properties.NullDateCalendarValue = new System.DateTime(2199, 12, 31, 0, 0, 0, 0);
-            this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit1.Size = new System.Drawing.Size(112, 20);
-            this.dateEdit1.TabIndex = 69;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -229,24 +211,6 @@ namespace Opt3000.Vista.Exploradores
             this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 68;
             this.label3.Text = "hasta";
-            // 
-            // dateEdit2
-            // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(107, 12);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew;
-            this.dateEdit2.Properties.MaxValue = new System.DateTime(2199, 12, 31, 23, 59, 0, 0);
-            this.dateEdit2.Properties.MinValue = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateEdit2.Properties.NullDate = new System.DateTime(2021, 1, 6, 10, 25, 59, 323);
-            this.dateEdit2.Properties.NullDateCalendarValue = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateEdit2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit2.Size = new System.Drawing.Size(112, 20);
-            this.dateEdit2.TabIndex = 67;
             // 
             // label4
             // 
@@ -326,15 +290,51 @@ namespace Opt3000.Vista.Exploradores
             this.label6.TabIndex = 0;
             this.label6.Text = "OJO DERECHO";
             // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(107, 14);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew;
+            this.dateEdit1.Properties.MaxValue = new System.DateTime(2199, 12, 31, 23, 59, 0, 0);
+            this.dateEdit1.Properties.MinValue = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateEdit1.Properties.NullDate = new System.DateTime(2199, 12, 31, 10, 27, 14, 0);
+            this.dateEdit1.Properties.NullDateCalendarValue = new System.DateTime(2199, 12, 31, 0, 0, 0, 0);
+            this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEdit1.Size = new System.Drawing.Size(112, 20);
+            this.dateEdit1.TabIndex = 76;
+            // 
+            // dateEdit2
+            // 
+            this.dateEdit2.EditValue = null;
+            this.dateEdit2.Location = new System.Drawing.Point(279, 14);
+            this.dateEdit2.Name = "dateEdit2";
+            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.ClassicNew;
+            this.dateEdit2.Properties.MaxValue = new System.DateTime(2199, 12, 31, 23, 59, 0, 0);
+            this.dateEdit2.Properties.MinValue = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateEdit2.Properties.NullDate = new System.DateTime(2021, 1, 6, 10, 25, 59, 323);
+            this.dateEdit2.Properties.NullDateCalendarValue = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateEdit2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEdit2.Size = new System.Drawing.Size(112, 20);
+            this.dateEdit2.TabIndex = 75;
+            // 
             // frmOrdenLejana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dateEdit2);
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tileNavPane1);
             this.Controls.Add(this.panel1);
@@ -347,14 +347,14 @@ namespace Opt3000.Vista.Exploradores
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDesde.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,9 +373,7 @@ namespace Opt3000.Vista.Exploradores
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane2;
         private DevExpress.XtraBars.Navigation.NavButton navButton1;
         private DevExpress.XtraBars.Navigation.NavButton navButton2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -384,5 +382,7 @@ namespace Opt3000.Vista.Exploradores
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEdit2;
     }
 }

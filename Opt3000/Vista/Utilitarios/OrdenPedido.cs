@@ -30,6 +30,7 @@ namespace Opt3000.Vista.Utilitarios
         {
             //Orden_Normal frm = new Orden_Normal();
             frmOrdenTrabaj frm = new frmOrdenTrabaj();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 
@@ -37,6 +38,7 @@ namespace Opt3000.Vista.Utilitarios
         {
             //OrdenVisionCerca frm = new OrdenVisionCerca();
             frmOrdenCercana frm = new frmOrdenCercana();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 
@@ -44,6 +46,7 @@ namespace Opt3000.Vista.Utilitarios
         {
             //OrdenVisionLejana frm = new OrdenVisionLejana();
             frmOrdenLejana frm = new frmOrdenLejana();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 
@@ -51,6 +54,7 @@ namespace Opt3000.Vista.Utilitarios
         {
             //OrdenLentesBlandos frm = new OrdenLentesBlandos();
             frmOrdenBlandos frm = new frmOrdenBlandos();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 
@@ -68,7 +72,8 @@ namespace Opt3000.Vista.Utilitarios
 
         private void btnTodos_Click(object sender, EventArgs e)
         {
-            RevisionEstadoOrdenes frm = new RevisionEstadoOrdenes();
+            frmRevisionEstadoOrdenes frm = new frmRevisionEstadoOrdenes();
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 

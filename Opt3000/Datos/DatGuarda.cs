@@ -157,7 +157,7 @@ namespace Opt3000.Datos
                     return true;
                 }
             }
-            catch (Exception EX)
+            catch (Exception)
             {
 
                 throw;
@@ -391,7 +391,7 @@ namespace Opt3000.Datos
             }
         }
 
-        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja)
+        public bool GuardaFactura(CLIENTE cliente, List<ANTICIPOS> anticipo, List<FACTURA_PAGO> facturaPago, FACTURA factura, CAJA caja, string detalle)
         {
             try
             {
@@ -414,6 +414,7 @@ namespace Opt3000.Datos
                             }
 
                             ATENCION ate = contexto.ATENCION.FirstOrDefault(a => a.ID_ATENCION == factura.ID_ATENCION);
+                            ate.DETALLEFACTURA = detalle;
                             ate.Ate_Facturada = true;
                             contexto.SaveChanges();
 
@@ -726,7 +727,7 @@ namespace Opt3000.Datos
                 //        new SqlParameter("@atencion",ateCodigo),)
                 //}
             }
-            catch (Exception EX)
+            catch (Exception )
             {
 
                 throw;

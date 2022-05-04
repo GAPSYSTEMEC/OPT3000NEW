@@ -61,6 +61,7 @@
     <Property Name="Mpc" Type="varchar" MaxLength="5000" Nullable="false" />
     <Property Name="FACTURAR" Type="bit" />
     <Property Name="CUENTADIVIDIA" Type="varchar" MaxLength="2" />
+    <Property Name="DETALLEFACTURA" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="BANCOS">
     <Key>
